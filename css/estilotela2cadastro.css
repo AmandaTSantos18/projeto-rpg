@@ -34,22 +34,6 @@ body
     box-shadow: black 3px 3px;
 }
 
-.botao_login
-{
-    width: 300px;
-    height: 80px;
-    margin-top: 20px;
-    background-color: (0, 0, 0);
-    border-color: rgba(146, 0, 0, 1);
-    color: white;
-    border-style: solid;
-    border-width: 2px;
-    border-radius: 20px;
-    font-size: 20px;
-    font-weight: bold;
-    box-shadow: black 3px 3px;
-}
-
 .alinhado
 {
     display: flex;
