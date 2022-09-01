@@ -57,19 +57,9 @@ body
     justify-content: center;
 }
 
-.outros
-{
-    font-size: 10px;
-    margin-top: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: white
-}
-
 .logos
 {
+    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -96,7 +86,12 @@ a
 {
     width: 400px;
     height: 40px;
+    padding:  0 0 0 15px;
     border-radius: 10px;
-    border-color: rgba(146, 0, 0, 1)
-    
+    border-color: rgba(146, 0, 0, 1);
+    background: rgb(193, 168, 168);
+}
+
+input::placeholder {
+    color: rgba(223, 204, 204, 1);
 }
