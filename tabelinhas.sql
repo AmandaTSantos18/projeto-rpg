@@ -145,10 +145,11 @@ create table elemento(
 );
 
 insert into elemento(nome_elemento) values
-    ("sangue"),
-    ("morte"),
-    ("energia"),
-    ("conhecimento");
+	("Nenhum"),
+    ("Sangue"),
+    ("Morte"),
+    ("Energia"),
+    ("Conhecimento");
 
 create table patente(
 	id_patente int (3) auto_increment primary key,
