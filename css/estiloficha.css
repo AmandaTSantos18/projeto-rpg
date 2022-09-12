@@ -137,12 +137,12 @@ body
 
 .i
 {
-    width: 600px;
+    width: 450px;
 }
 
 .invent
 {
-    width: 600px;
+    width: 450px;
     height: 487px;
 }
 
@@ -155,7 +155,7 @@ body
 
 .rd
 {
-    width: 800px;
+    width: 650px;
 }
 
 .tipos
@@ -164,39 +164,30 @@ body
     flex-direction: row;
 }
 
-.peri
-{
-    width: 410px;
-}
-
 .valor
 {
     display: flex;
     flex-direction: column;
-    margin: 9px;
+    margin: 5px;
     align-items: center;
     text-justify: auto;
     text-align: center;
+    font-size: 18.5px;
 }
 
 .ataques_e_defesas
 {
     align-self: center;
 }
+
 .atedef
 {
-    width: 800px;
+    width: 650px;
     height: 360px;
-}
-
-.ha
-{
-    width: 410px;
 }
 
 .habil
 {
-    width: 410px;
     height: 370px;
 }
 
@@ -205,11 +196,39 @@ body
     align-self: center;
 }
 
-.habilidades
-{
-
-}
 .historico
 {
     align-self: flex-end;
+}
+
+.rituais
+{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    position: relative;
+}
+
+.inventario
+{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+}
+
+.direita
+{
+    width: 450px;
+}
+
+.habilidades
+{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+}
+
+.meio
+{
+
 }
