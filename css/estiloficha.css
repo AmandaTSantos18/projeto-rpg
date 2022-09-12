@@ -124,32 +124,23 @@ body
     margin-bottom: 10px;
 }
 
-.pr
-{
-    width: 590px;
-}
-
-.profic
-{
-    width: 590px;
-    height: 182.93px;
-}
-
-.i
+.direita
 {
     width: 450px;
 }
 
-.invent
+.meio
+{
+    width: 650px;
+}
+
+.esquerda
 {
     width: 450px;
-    height: 487px;
 }
 
 .resistenciasadano
 {
-    display: flex;
-    flex-direction: column;
     align-self: center;
 }
 
@@ -180,15 +171,9 @@ body
     align-self: center;
 }
 
-.atedef
+.proficiencias
 {
-    width: 650px;
-    height: 360px;
-}
-
-.habil
-{
-    height: 370px;
+    align-self: flex-end;
 }
 
 .rituais
@@ -203,32 +188,16 @@ body
 
 .rituais
 {
-    display: flex;
-    flex-direction: column;
     align-self: center;
-    position: relative;
 }
 
 .inventario
 {
-    display: flex;
-    flex-direction: column;
     align-self: flex-end;
-}
-
-.direita
-{
-    width: 450px;
 }
 
 .habilidades
 {
-    display: flex;
-    flex-direction: column;
     align-self: flex-start;
 }
 
-.meio
-{
-
-}
