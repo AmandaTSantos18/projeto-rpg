@@ -344,41 +344,45 @@ h3
     width: 60px;
     height: 50px;
     border: none;
+    font-size: 40px;
+    font-weight: bolder;
+    font-family: 'Paprika';
+    text-align: center
 }
 
 .forca
 {
     position: relative;
-    right: 585px;
-    bottom: 282px;
+    right: 575px;
+    bottom: 272px;
 }
 
 .presenca
 {
     position: relative;
-    right: 590px;
-    bottom: 100px;
+    right: 580px;
+    bottom: 90px;
 }
 
 .agilidade
 {
     position: relative;
-    right: 570px;
-    bottom: 395px;
+    right: 565px;
+    bottom: 385px;
 }
 
 .intelecto
 {
     position: relative;
-    right: 488px;
-    bottom: 282px;
+    right: 478px;
+    bottom: 272px;
 }
 
 .vigor
 {
     position: relative;
-    right: 615px;
-    bottom: 102px;
+    right: 607px;
+    bottom: 90px;
 }
 
 .atributos
