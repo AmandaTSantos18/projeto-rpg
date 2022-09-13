@@ -61,10 +61,8 @@
         db.transaction(function(tx){
             tx.executeSql('INSERT INTO users(nome,email,senha) VALUES(?,?,?)',[nome.value,email.value,senha.value]);
         });
-    
-    }
         location.href="tela3login.html"
-
+        }
     };
 </script>
 </html>
