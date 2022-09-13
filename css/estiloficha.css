@@ -381,7 +381,19 @@ h3
     font-size: 40px;
     font-weight: bolder;
     font-family: 'Paprika';
-    text-align: center
+    text-align: center;
+    background: transparent;
+}
+
+.atri2
+{
+    width: 70px;
+    height: 50px;
+    border: none;
+    font-size: 30px;
+    font-family: 'Paprika';
+    text-align: center;
+    background: transparent;
 }
 
 .forca
@@ -417,6 +429,14 @@ h3
     position: relative;
     right: 607px;
     bottom: 90px;
+}
+
+.nex
+{
+    position: relative;
+    right: 490px;
+    bottom: 435px;
+    color: white;
 }
 
 .atributos
