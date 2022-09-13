@@ -260,7 +260,7 @@ h4
 {
     align-self: flex-end;
     position: relative;
-    bottom: 770px;
+    bottom: 790px;
 }
 
 .inv
@@ -289,6 +289,7 @@ h4
 .sa
 {
     width: 370px;
+    margin-bottom: 10px;
 }
 
 .saude
@@ -303,8 +304,7 @@ h4
     display: flex;
     flex-direction: row;
     margin-right: 25px;
-    margin-top: -10px;
-    margin-bottom: -8px;
+    margin-top: -18px;
     justify-content: flex-end;
 }
 
@@ -313,8 +313,8 @@ h4
     display: flex;
     flex-direction: row;
     margin-right: 25px;
-    margin-top: -10px;
-    margin-bottom: -15px;
+    margin-top: -18px;
+    margin-bottom: -8px;
     justify-content: flex-end;
 }
 
@@ -399,7 +399,7 @@ h3
 
 .atri2
 {
-    width: 70px;
+    width: 75px;
     height: 50px;
     border: none;
     font-size: 30px;
@@ -446,8 +446,8 @@ h3
 .nex
 {
     position: relative;
-    right: 490px;
-    bottom: 435px;
+    right: 497px;
+    bottom: 427px;
     color: white;
 }
 
