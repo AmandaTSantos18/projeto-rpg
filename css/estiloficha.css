@@ -78,6 +78,37 @@ body
 .pericias
 {
     margin-top: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: flex-start;
+}
+
+
+#soma
+{
+    width: 20px;
+    height: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 13px;
+}
+
+.peri
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: -33px;
+    margin-bottom: -25px;
+    margin-right: 5px;
+}
+
+h4
+{
+    margin-top: 50px;
+    margin-right: 5px;
 }
 
 #simb
@@ -111,8 +142,10 @@ body
     height: 65px;
     background: black;
     color: white;
+
     display: flex;
     align-items: center;
+
     justify-content: center;
     text-align: center;
     text-justify: auto;
@@ -124,6 +157,7 @@ body
     background: #D9D9D9;
     border: none;
     margin-bottom: 10px;
+
     font-size: 15px;
     font-family: 'Paprika';
 }
@@ -374,7 +408,7 @@ h3
 .intelecto
 {
     position: relative;
-    right: 478px;
+    right: 480px;
     bottom: 272px;
 }
 
@@ -390,4 +424,3 @@ h3
     align-self: center;
     margin-left: 350px;
 }
-
