@@ -196,7 +196,7 @@
         <input type="number" class="atri intelecto">
         <input type="number" class="atri vigor">
 
-        <input type="number" class="atri2 nex">
+        <input type="number" min="0" max="100" id="inputNumber" class="atri2 nex">
     </div>
 
     <div class="bloco">
@@ -322,32 +322,44 @@
 
     <div class="proficiencias">
         <div class="escrito">PROFICIÊNCIAS</div>
-        <input type="text" class="espaco esquerda prof">
+        <textarea cols="30" rows="5" class="espaco esquerda prof"></textarea>
     </div>
 
     <div class="ataques_e_defesas">
             <div class="escrito">ATAQUES E DEFESAS DETALHADOS</div>
-            <input type="text" class="espaco meio at">
+            <textarea cols="30" rows="5" class="espaco meio at"></textarea>
     </div>
 
     <div class="inventario">
             <div class="escrito">INVENTÁRIO</div>
-            <input type="text" class="espaco esquerda inv">
+            <textarea cols="30" rows="5" class="espaco esquerda inv"></textarea>
     </div>
 
     <div class="habilidades">
             <div class="escrito">HABILIDADES</div>
-            <input type="text" class="espaco direita hab">
+            <textarea cols="30" rows="5" class="espaco direita hab"></textarea>
     </div>
 
     <div class="rituais">
             <div class="escrito">RITUAIS CONHECIDOS</div>
-            <input type="text" class="espaco meio at">
+            <textarea cols="30" rows="5" class="espaco meio at"></textarea>
     </div>
 
     <div class="historico">
             <div class="escrito">HISTÓRICO</div>
-            <input type="text" class="espaco esquerda his">
+            <textarea cols="30" rows="5" class="espaco esquerda his"></textarea>
     </div>
 </body>
+<script>
+            window.onload = function()
+        {
+            document.getElementById('inputNumber').addEventListener('keydown', function(event)
+            {
+                if (!Math.sign(event.key))
+                {
+                    event.preventDefault();
+                }
+            });
+        }
+</script>
 </html>
