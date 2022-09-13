@@ -343,6 +343,7 @@ h3
 {
     width: 60px;
     height: 50px;
+    border: none;
 }
 
 .forca
@@ -352,8 +353,37 @@ h3
     bottom: 282px;
 }
 
+.presenca
+{
+    position: relative;
+    right: 590px;
+    bottom: 100px;
+}
+
+.agilidade
+{
+    position: relative;
+    right: 570px;
+    bottom: 395px;
+}
+
+.intelecto
+{
+    position: relative;
+    right: 488px;
+    bottom: 282px;
+}
+
+.vigor
+{
+    position: relative;
+    right: 615px;
+    bottom: 102px;
+}
+
 .atributos
 {
     align-self: center;
     margin-left: 350px;
 }
+
