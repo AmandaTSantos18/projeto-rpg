@@ -324,6 +324,7 @@ insert into equipamentos(nome_equipamento, fk_categoria, dano, critico, fk_alcan
 create table personagem(
 	id_personagem int (3) auto_increment primary key,
     nome varchar (50),
+    is_padrao boolean,
     idade int (3),
     pm int(5),
     xp int(5),
