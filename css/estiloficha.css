@@ -53,17 +53,12 @@ body
 
 .pe
 {
-    width: 600px;
-}
-
-.jog
-{
-    width: 600px;
+    width: 615px;
 }
 
 .ori
 {
-    width: 400px;
+    width: 432px;
 }
 
 .tri
@@ -71,9 +66,14 @@ body
     width: 350px;
 }
 
+.ele
+{
+    width: 397px;
+}
+
 .pm
 {
-    width: 150px;
+    width: 159px;
 }
 
 .pericias
