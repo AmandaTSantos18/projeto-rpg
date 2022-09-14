@@ -129,62 +129,7 @@
                 <img src="img/igual.png" id="soma">
                 <input type="number" class="dano2">
             </div>
-            <div class="peri">
-                <h4>ATLETISMO</h4>
-                <input type="number" class="dano2">
-                <img src="img/soma.png" id="soma">
-                <input type="number" class="dano2">
-                <img src="img/igual.png" id="soma">
-                <input type="number" class="dano2">
-            </div>
-            <div class="peri">
-                <h4>ATUAÇÃO</h4>
-                <input type="number" class="dano2">
-                <img src="img/soma.png" id="soma">
-                <input type="number" class="dano2">
-                <img src="img/igual.png" id="soma">
-                <input type="number" class="dano2">
-            </div>
-            <div class="peri">
-                <h4>ATUALIDADES</h4>
-                <input type="number" class="dano2">
-                <img src="img/soma.png" id="soma">
-                <input type="number" class="dano2">
-                <img src="img/igual.png" id="soma">
-                <input type="number" class="dano2">
-            </div>
-            <div class="peri">
-                <h4>CIÊNCIA</h4>
-                <input type="number" class="dano2">
-                <img src="img/soma.png" id="soma">
-                <input type="number" class="dano2">
-                <img src="img/igual.png" id="soma">
-                <input type="number" class="dano2">
-            </div>
-            <div class="peri">
-                <h4>CONDUÇÃO</h4>
-                <input type="number" class="dano2">
-                <img src="img/soma.png" id="soma">
-                <input type="number" class="dano2">
-                <img src="img/igual.png" id="soma">
-                <input type="number" class="dano2">
-            </div>
-            <div class="peri">
-                <h4>DIPLOMACIA</h4>
-                <input type="number" class="dano2">
-                <img src="img/soma.png" id="soma">
-                <input type="number" class="dano2">
-                <img src="img/igual.png" id="soma">
-                <input type="number" class="dano2">
-            </div>
-            <div class="peri">
-                <h4>ENGANAÇÃO</h4>
-                <input type="number" class="dano2">
-                <img src="img/soma.png" id="soma">
-                <input type="number" class="dano2">
-                <img src="img/igual.png" id="soma">
-                <input type="number" class="dano2">
-            </div> -->
+ -->
 
     </div>
 
@@ -196,7 +141,7 @@
         <input type="number" class="atri intelecto">
         <input type="number" class="atri vigor">
 
-        <input type="number" min="0" max="100" id="inputNumber" class="atri2 nex">
+        <input type="number" min="0" max="100" class="atri2 nex">
     </div>
 
     <div class="bloco">
@@ -322,7 +267,7 @@
 
     <div class="proficiencias">
         <div class="escrito">PROFICIÊNCIAS</div>
-        <textarea cols="30" rows="5" class="espaco esquerda prof"></textarea>
+        <textarea cols="30" rows="5" class="espaco direita prof"></textarea>
     </div>
 
     <div class="ataques_e_defesas">
@@ -332,12 +277,12 @@
 
     <div class="inventario">
             <div class="escrito">INVENTÁRIO</div>
-            <textarea cols="30" rows="5" class="espaco esquerda inv"></textarea>
+            <textarea cols="30" rows="5" class="espaco direita inv"></textarea>
     </div>
 
     <div class="habilidades">
             <div class="escrito">HABILIDADES</div>
-            <textarea cols="30" rows="5" class="espaco direita hab"></textarea>
+            <textarea cols="30" rows="5" class="espaco esquerda hab"></textarea>
     </div>
 
     <div class="rituais">
@@ -347,19 +292,10 @@
 
     <div class="historico">
             <div class="escrito">HISTÓRICO</div>
-            <textarea cols="30" rows="5" class="espaco esquerda his"></textarea>
+            <textarea cols="30" rows="5" class="espaco direita his"></textarea>
     </div>
 </body>
 <script>
-            window.onload = function()
-        {
-            document.getElementById('inputNumber').addEventListener('keydown', function(event)
-            {
-                if (!Math.sign(event.key))
-                {
-                    event.preventDefault();
-                }
-            });
-        }
+
 </script>
 </html>
