@@ -284,7 +284,6 @@ create table equipamentos(
 );
 
 insert into equipamentos(nome_equipamento, fk_categoria, dano, critico, fk_alcance, fk_tipo, espaco, fk_municao) values
-	("Coronhada", null, "1d4", "x2", null, 2, "2", null),
 	("Faca", 1, "1d4", "19", 1, 1, "1", null),
 	("Martelo", 1, "1d6", "x2", null, 2, "1", null),
 	("Punhal", 1, "1d4", "x3", null, 3, "1", null),
