@@ -165,7 +165,7 @@ h4
 
 .direita
 {
-    width: 450px;
+    width: 440px;
 }
 
 .meio
@@ -175,21 +175,21 @@ h4
 
 .esquerda
 {
-    width: 450px;
+    width: 455px;
 }
 
 .resistenciasadano
 {
-    align-self: center;
     position: absolute;
     top: 700px;
+    left: 470px;
 }
 
 .ataques
 {
-    align-self: center;
     position: absolute;
     top: 845px;
+    left: 470px;
 }
 
 .tipos
@@ -222,9 +222,9 @@ h4
 
 .ataques_e_defesas
 {
-    align-self: center;
     position: absolute;
     top: 990px;
+    left: 470px;
 }
 
 .at
@@ -234,9 +234,9 @@ h4
 
 .proficiencias
 {
-    align-self: flex-end;
     position: absolute;
     top: 700px;
+    left: 1130px;
 }
 
 .prof
@@ -246,16 +246,16 @@ h4
 
 .rituais
 {
-    align-self: center;
     position: absolute;
     top: 1420px;
+    left: 470px;
 }
 
 .historico
 {
-    align-self: flex-end;
     position: absolute;
     top: 1410px;
+    left: 1130px;
 }
 
 .his
@@ -265,9 +265,9 @@ h4
 
 .inventario
 {
-    align-self: flex-end;
     position: absolute;
     top: 960px;
+    left: 1130px;
 }
 
 .inv
@@ -277,7 +277,7 @@ h4
 
 .habilidades
 {
-    align-self: flex-start;
+    left: 5px;
     position: absolute;
     top: 1400px;
 }
@@ -382,12 +382,12 @@ h3
 
     position: absolute;
     top: 189px;
-    align-self: flex-end;
+    left: 1175px;
 }
 
 .atri
 {
-    width: 60px;
+    width: 70px;
     height: 50px;
     border: none;
     font-size: 40px;
@@ -410,44 +410,44 @@ h3
 
 .forca
 {
-    position: relative;
-    right: 575px;
-    bottom: 272px;
+    position: absolute;
+    left: 50px;
+    top: 185px;
 }
 
 .presenca
 {
-    position: relative;
-    right: 580px;
-    bottom: 90px;
+    position: absolute;
+    left: 116px;
+    top: 365px;
 }
 
 .agilidade
 {
-    position: relative;
-    right: 565px;
-    bottom: 385px;
+    position: absolute;
+    left: 205px;
+    top: 75px;
 }
 
 .intelecto
 {
-    position: relative;
-    right: 480px;
-    bottom: 272px;
+    position: absolute;
+    left: 360px;
+    top: 185px;
 }
 
 .vigor
 {
-    position: relative;
-    right: 607px;
-    bottom: 90px;
+    position: absolute;
+    left: 300px;
+    top: 365px;
 }
 
 .nex
 {
-    position: relative;
-    right: 497px;
-    bottom: 427px;
+    position: absolute;
+    left: 482px;
+    top: 30px;
     color: white;
 }
 
