@@ -572,3 +572,11 @@ h3
     top: 5px;
     right: 5px;
 }
+
+#izinho
+{
+    width: 25px;
+    position: absolute;
+    top: 10px;
+    right: 100px;
+}
