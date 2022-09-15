@@ -253,7 +253,7 @@ h4
 
 .at
 {
-    height: 350px;
+    height: 463px;
 }
 
 .proficiencias
@@ -265,38 +265,38 @@ h4
 
 .prof
 {
-    height: 180px;
+    height: 285px;
 }
 
 .rituais
 {
     position: absolute;
-    top: 1420px;
+    top: 1532px;
     left: 470px;
 }
 
 .historico
 {
     position: absolute;
-    top: 1410px;
+    top: 1575px;
     left: 1130px;
 }
 
 .his
 {
-    height: 360px;
+    height: 420px;
 }
 
 .inventario
 {
     position: absolute;
-    top: 960px;
+    top: 1065px;
     left: 1130px;
 }
 
 .inv
 {
-    height: 370px;
+    height: 430px;
 }
 
 .habilidades
