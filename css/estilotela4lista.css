@@ -49,14 +49,6 @@ body
     margin-right: 20px;
 }
 
-.quadradao
-{
-    width: 1000px;
-    height: 504px;
-    
-    border-style: solid;
-    border-radius: 10px;
-}
 
 .personagem
 {
@@ -91,11 +83,10 @@ a
 
 .epadrao
 {
-    width: 200px;
-    height: 30px;;
-    position: absolute;
-    top: 200px;
-    left: 300px;
+    width: 220px;
+    height: 30px;
+    margin-left: -780px;
+    margin-bottom: 5px;
     border: solid black 3px;
     border-radius: 5px;
     background: linear-gradient(rgba(207, 131, 131, 1) , rgba(217, 217, 217, 0.3));
