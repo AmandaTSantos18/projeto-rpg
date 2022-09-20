@@ -1,49 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Info</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilodescricoes.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
-        <div class="carousel-indicators">
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
-          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+    <nav id="navbar-example2" class="navbar bg-light px-3 mb-3">
+        <a class="navbar-brand item" href="ficha.html">VOLTAR</a>
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link item" href="#scrollspyHeading1">ELEMENTOS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link item" href="#scrollspyHeading2">ATRIBUTOS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link item" href="#scrollspyHeading3">ORIGENS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link item" href="#scrollspyHeading4">CLASSES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link item" href="#scrollspyHeading5">TRILHAS</a>
+            </li>
+<!--             <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
+                <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+              </ul>
+            </li> -->
+          </ul>
+        </nav>
+
+      <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example bg-light p-3 rounded-2" tabindex="0">
+        <h4 id="scrollspyHeading1">
+            <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="img/descricoes.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/sanguedesc.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/mortedesc.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/energiadesc.png" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="img/conhecimentodesc.png" class="d-block w-100" alt="...">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </button>
+              </div>
+        </h4>
+
+
+        <div class="atributos">
+        <h3 id="scrollspyHeading2">ATRIBUTOS</h3>
+          <h5>AGILIDADE</h5>
+          <p>Define sua coordenação motora, velocidade de reação e destreza manual.</p>
+          <P class="base">Atributo-base das perícias Acrobacia, Furtividade, Iniciativa, Crime, Pilotagem, Pontaria e Reflexos.</P>
+        
+
+          <h5>FORÇA</h5>
+          <p>Determina sua potência muscular e habilidade atlética.</p>
+          <P class="base">Atributo-base das perícias Atletismo e Luta, além de ser aplicada em suas rolagens de dano corpo a corpo e com armas de arremesso.</P>
+        
+
+          <h5>INTELECTO</h5>
+          <p>Mede seu raciocínio, memória e educação geral. Caso seu Intelecto aumente, você aprende uma perícia adicional para cada ponto. Afeta sua compreensão do Outro Lado e sua capacidade de racionalizar o paranormal, definindo o número de rituais que você pode aprender.</p>
+          <P class="base">Atributo-base das perícias Atualidades, Ciências, Investigação, Medicina, Profissão, Sobrevivência, Tática e Tecnologia.</P>
+        
+
+          <h5>PRESENÇA</h5>
+          <p>Define suas habilidades sociais e resiliência mental-emocional.</p>
+          <P class="base">Atributo-base das perícias Diplomacia, Enganação, Intimidação, Intuição, Percepção, Ocultismo, Religião e Vontade, além de conceder pontos de esforço adicionais por nível de exposição (NEX).</P>
+        
+
+          <h5>VIGOR</h5>
+          <p>Determina mede sua saúde e resistência física.</p>
+          <P class="base">Atributo-base de Fortitude, além de conceder pontos de vida adicionais por nível de exposição.</P>
         </div>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="img/descricoes.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item active">
-            <img src="img/sanguedesc.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="img/mortedesc.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="img/conhecimentodesc.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="img/energiadesc.png" class="d-block w-100" alt="...">
-          </div>
-          <div class="carousel-item">
-            <img src="img/medodesc.png" class="d-block w-100" alt="...">
-        </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        </button>
+
+
+        <h4 id="scrollspyHeading3">ORIGENS</h4>
+        <p>...</p>
+        <h4 id="scrollspyHeading4">CLASSES</h4>
+        <p>...</p>
+        <h4 id="scrollspyHeading5">TRILHAS</h4>
+        <p>...</p>
       </div>
 
 
