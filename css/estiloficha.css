@@ -8,7 +8,8 @@ body
     padding: 5px;
     display: flex;
     flex-direction: column;
-    font-family: 'Manjari';font-size: 22px;
+    font-family: 'Manjari';
+    font-size: 22px;
 }
 
 .cabecalho

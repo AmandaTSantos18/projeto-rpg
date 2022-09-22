@@ -1,17 +1,19 @@
 body
 {
-
+    width: 100%;
+    height: 100%;
+    font-family: 'Paprika';
 }
 
 .item
 {
     color: black !important;
-    font-weight: bold !important;
+    font-weight: 500 !important;
 }
 
 .base
 {
-    font-weight: bold !important;
+    font-weight: 600 !important;
 }
 
 p
@@ -26,6 +28,41 @@ p
 
 .atributos
 {
-    width: 45%;
-    background-image:url("img/pergaminho.png");
+    width: 50%;
+    font-family: 'Manjari';
+    margin-top: 30px;
+}
+
+#simbolo
+{
+    width:700px;
+    position: absolute;
+    top: 620px;
+    right: 30px;
+}
+
+h4
+{
+    font-family: 'Love Ya Like A Sister';
+}
+
+h3
+{
+    text-justify: auto;
+    text-align: center;
+    text-decoration-line: underline;
+    font-family: 'Paprika';
+}
+
+.item2
+{
+    font-weight: bolder;
+}
+
+
+.origens
+{
+    width: 50%;
+    font-family: 'Manjari';
+    margin-top: 30px;
 }
