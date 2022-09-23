@@ -19,6 +19,7 @@ body
 p
 {
     line-height: 18px;
+    font-size: 18px;
 }
 
 .base
@@ -41,13 +42,13 @@ header
     position: absolute;
     top:70px;
 }
+
 .atributos
 {
     width: 50%;
     font-family: 'Manjari';
-    margin-top: 30px;
     position: absolute;
-    top: 500px;
+    top: 515px;
     left: 30px;
 }
 
@@ -83,9 +84,8 @@ h3
 {
     width: 50%;
     font-family: 'Manjari';
-    margin-top: 30px;
     position: absolute;
-    top: 1400px;
+    top: 1350px;
     left: 30px;
 }
 
@@ -97,9 +97,15 @@ h3
 .texto
 {
     width: 70%;
+    font-family: 'Manjari';
+    font-size: 20px;
+}
+
+#comb
+{
     position: absolute;
-    left: 500px;
     top: 50px;
+    left: 450px;
 }
 
 .tit
@@ -111,11 +117,35 @@ h3
 .classes
 {
     position: absolute;
-    top: 2300px;
+    top: 2200px;
 }
 
 .trilhas
 {
     position: absolute;
-    top: 5000px;
+    top: 4330px;
+}
+
+#imgesp
+{
+    position: absolute;
+    left: 1130px;
+    top: 750px;
+}
+
+#espec
+{
+    margin-left: 30px;
+}
+
+.ocultista
+{
+    margin-top: 10px;
+}
+
+#ocul
+{
+    position: absolute;
+    left: 450px;
+    top: 1450px;
 }

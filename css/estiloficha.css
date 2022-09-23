@@ -576,7 +576,7 @@ h3
     color: white;
     position: absolute;
     top: 5px;
-    right: 5px;
+    left: 1495px;
 }
 
 #izinho
@@ -584,5 +584,5 @@ h3
     width: 25px;
     position: absolute;
     top: 10px;
-    right: 100px;
+    left: 1465px;
 }
