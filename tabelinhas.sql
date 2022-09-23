@@ -339,6 +339,7 @@ create table personagem(
     fk_patente int(3),
     fk_origem int(3),
     fk_equipamentos int (3),
+    fk_usuario int (3),
     CONSTRAINT fk_personagem_atributos FOREIGN KEY (fk_atributos) REFERENCES atributos (id_atributos),
     CONSTRAINT fk_personagem_pericias FOREIGN KEY (fk_pericias) REFERENCES pericias (id_pericias),
 	CONSTRAINT fk_personagem_defesas FOREIGN KEY (fk_defesas) REFERENCES defesas (id_defesas),
@@ -350,7 +351,8 @@ create table personagem(
     CONSTRAINT fk_personagem_elemento FOREIGN KEY (fk_elemento) REFERENCES elemento (id_elemento),
     CONSTRAINT fk_personagem_patente FOREIGN KEY (fk_patente) REFERENCES patente (id_patente),
     CONSTRAINT fk_personagem_origem FOREIGN KEY (fk_origem) REFERENCES origem (id_origem),
-    CONSTRAINT fk_personagem_equipamentos FOREIGN KEY (fk_equipamentos) REFERENCES equipamentos (id_equipamentos)
+    CONSTRAINT fk_personagem_equipamentos FOREIGN KEY (fk_equipamentos) REFERENCES equipamentos (id_equipamentos),
+    CONSTRAINT fk_personagem_usuario FOREIGN KEY (fk_usuario) REFERENCES usuario (id_usuario) 
 );
 
 create table usuario(
@@ -358,7 +360,5 @@ create table usuario(
     is_adm boolean,
     nome varchar (50),
     email varchar (50),
-    senha varchar (30),
-    fk_personagem int (3),
-    CONSTRAINT fk_usuario_personagem FOREIGN KEY (fk_personagem) REFERENCES personagem (id_personagem) 
+    senha varchar (30)
 );
