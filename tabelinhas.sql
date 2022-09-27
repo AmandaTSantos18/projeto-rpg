@@ -318,7 +318,13 @@ insert into equipamentos(nome_equipamento, fk_categoria, dano, critico, fk_alcan
     ("Lança-chama", 4, "6d6", "x2", 1, 5, "2", 6),
     ("Metralhadora", 3, "2d12", "19/x3", 2, 4, "2", 3);
 
-
+create table usuario(
+	id_usuario int (3) auto_increment primary key,
+    is_adm boolean,
+    nome varchar (50),
+    email varchar (50),
+    senha varchar (30)
+);
 
 create table personagem(
 	id_personagem int (3) auto_increment primary key,
@@ -353,12 +359,4 @@ create table personagem(
     CONSTRAINT fk_personagem_origem FOREIGN KEY (fk_origem) REFERENCES origem (id_origem),
     CONSTRAINT fk_personagem_equipamentos FOREIGN KEY (fk_equipamentos) REFERENCES equipamentos (id_equipamentos),
     CONSTRAINT fk_personagem_usuario FOREIGN KEY (fk_usuario) REFERENCES usuario (id_usuario) 
-);
-
-create table usuario(
-	id_usuario int (3) auto_increment primary key,
-    is_adm boolean,
-    nome varchar (50),
-    email varchar (50),
-    senha varchar (30)
 );
