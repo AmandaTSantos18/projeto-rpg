@@ -22,7 +22,10 @@ body
     -moz-box-shadow:    -5px 5px 5px  rgb(44, 43, 43);
     box-shadow:        -5px 5px 5px rgb(44, 43, 43);
 
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
 }
 
 h1
