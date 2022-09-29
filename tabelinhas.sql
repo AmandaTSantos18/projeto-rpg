@@ -320,7 +320,7 @@ insert into equipamentos(nome_equipamento, fk_categoria, dano, critico, fk_alcan
 
 create table usuario(
 	id_usuario int (3) auto_increment primary key,
-    is_adm boolean,
+    is_adm binary (1),
     nome varchar (50),
     email varchar (50),
     senha varchar (30)
