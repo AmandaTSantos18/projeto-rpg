@@ -21,13 +21,13 @@
 <body>
     <img src="img/logo.png" id="logo">
     
-    <input type="text" class="input" id="nome" placeholder="NOME" required>
-    <input type="text" class="input" id="email" placeholder="E-MAIL" required>
-    <input type="password" class="input" id="senha" placeholder="SENHA" required>
+    <form action="inserir.php" method="POST" class="form">
+        <input type="text" class="input" name="nome" placeholder="NOME" required>
+        <input type="text" class="input" name="email" placeholder="E-MAIL" required>
+        <input type="password" class="input" name="senha" placeholder="SENHA" required>
 
-    <div class="botao_cadastro alinhado" onclick="Inserir();">
-        CADASTRAR
-    </div>  
+        <input type="submit" value="CADASTRAR" class="botao_cadastro alinhado">
+    </form>
 
     <div class="logos"> 
         <img src="img/facebook.png">
@@ -36,33 +36,4 @@
     </div>
 
 </body>
-<script>
-    var db = openDatabase('APP','v1.0','Minha base',2*1024*1024)
-    db.transaction(function(tx)
-    {
-        tx.executeSql('CREATE TABLE IF NOT EXISTS users(nome VARCHAR(50),email VARCHAR(50) PRIMARY KEY,senha VARCHAR(30))')
-    });
-
-    function Inserir()
-    {
-            if (nome.value == "")
-            {
-                alert("Preencha o nome.")
-            }
-            else if (email.value == "")
-            {
-                alert("Preencha o e-mail.")
-            }
-            else if (senha.value == "")
-            {
-                alert("Preencha a senha.")
-            }
-            else{
-        db.transaction(function(tx){
-            tx.executeSql('INSERT INTO users(nome,email,senha) VALUES(?,?,?)',[nome.value,email.value,senha.value]);
-        });
-        location.href="tela3login.html"
-        }
-    };
-</script>
 </html>
