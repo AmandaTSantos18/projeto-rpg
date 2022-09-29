@@ -12,9 +12,30 @@ body
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.card
+.menu
 {
-    width: 700px;
-    height: 800px;
-    background: rgb(104, 104, 104);
+    width: 550px;
+    height: 650px;
+    background-color: rgb(104, 104, 104);
+    border-radius: 20px;
+    -webkit-box-shadow: -5px 5px 5px  rgb(44, 43, 43);
+    -moz-box-shadow:    -5px 5px 5px  rgb(44, 43, 43);
+    box-shadow:        -5px 5px 5px rgb(44, 43, 43);
+
+    
+}
+
+h1
+{
+    -webkit-text-shadow: -5px 5px 5px  rgb(44, 43, 43);
+    -moz-text-shadow:    -5px 5px 5px  rgb(44, 43, 43);
+    text-shadow:        -5px 5px 5px rgb(44, 43, 43);
+    color: white;
+    font-size: 35px;
+    font-family: 'Inter';
+    font-weight: bolder;
+    letter-spacing: 1px;
+
+    width: 300px;
+    text-align: center;
 }
