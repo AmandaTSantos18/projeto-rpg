@@ -1,0 +1,628 @@
+body
+{
+    width: 100vh;
+    height: 100%;
+    position: relative;
+
+    margin: 0px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Manjari';
+    font-size: 22px;
+}
+
+.cabecalho
+{
+    width: 1565px;
+    height: 150px;
+
+    margin-top: 15px;
+
+    border: solid 2px;
+    border-radius: 3px;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 25px;
+}
+
+#config
+{
+    position: absolute;
+    top: 2px;
+}
+.categoria
+{
+    display: flex;
+    flex-direction: row;
+    margin-top: 8px;
+}
+
+.info
+{
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+.espacinho
+{
+    height: 25px;
+    background: linear-gradient(180deg, rgba(217, 217, 217, 0) 44.79%, #D9D9D9 100%);
+
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-size: 15px;
+    font-weight: bolder;
+    font-family: 'Paprika';
+}
+
+.pe
+{
+    width: 615px;
+}
+
+.ori
+{
+    width: 432px;
+}
+
+.tri
+{
+    width: 350px;
+}
+
+.ele
+{
+    width: 397px;
+}
+
+.pat
+{
+    width: 425px;
+}
+
+.pm
+{
+    width: 162px;
+}
+
+.pericias
+{
+    margin-top: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-self: flex-start;
+    position: absolute;
+    top: 190px;
+    left: 5px;
+}
+
+
+#soma
+{
+    width: 20px;
+    height: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 13px;
+}
+
+.peri
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: -33px;
+    margin-bottom: -25px;
+    margin-right: 5px;
+}
+
+h4
+{
+    margin-top: 50px;
+    margin-right: 5px;
+}
+
+#simb
+{
+    width: 630px;
+    height: 500px;
+
+    align-self: center;
+}
+
+.dano
+{
+    width: 55px;
+    height: 40px;
+
+    background: #D9D9D9;
+    border-radius: 5px;
+    border: none;
+
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: 'Paprika';
+    display: flex;
+    text-align: center;
+    text-justify: auto;
+    color: black;
+}
+
+.dano_arma
+{
+    width: 55px;
+    height: 42px;
+
+    background: #D9D9D9;
+    border-radius: 5px;
+    border: none;
+
+    font-size: 10px;
+    word-wrap: break-word;
+    font-weight: bolder;
+    font-family: 'Paprika';
+    display: flex;
+    text-align: center;
+    text-justify: auto;
+    color: black;
+}
+
+.escrito
+{
+    height: 65px;
+    background: black;
+    color: white;
+
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+    text-align: center;
+    text-justify: auto;
+    font-size: 30px;
+}
+
+.espaco
+{
+    background: #D9D9D9;
+    border: none;
+    margin-bottom: 10px;
+
+    font-size: 15px;
+    font-family: 'Paprika';
+}
+
+.direita
+{
+    width: 440px;
+}
+
+.meio
+{
+    width: 650px;
+}
+
+.esquerda
+{
+    width: 455px;
+}
+
+.resistenciasadano
+{
+    position: absolute;
+    top: 700px;
+    left: 470px;
+}
+
+.ataques
+{
+    position: absolute;
+    top: 845px;
+    left: 470px;
+}
+
+.tipos
+{
+    display: flex;
+    flex-direction: row;
+}
+
+.valor
+{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    align-items: center;
+    text-justify: auto;
+    text-align: center;
+    font-size: 18.5px;
+}
+
+.valor_2
+{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    align-items: center;
+    text-justify: auto;
+    text-align: center;
+    font-size: 18px;
+}
+
+.ataques_e_defesas
+{
+    position: absolute;
+    top: 990px;
+    left: 470px;
+}
+
+.at
+{
+    height: 463px;
+}
+
+.proficiencias
+{
+    position: absolute;
+    top: 700px;
+    left: 1130px;
+}
+
+.prof
+{
+    height: 285px;
+}
+
+.rituais
+{
+    position: absolute;
+    top: 1532px;
+    left: 470px;
+}
+
+.historico
+{
+    position: absolute;
+    top: 1575px;
+    left: 1130px;
+}
+
+.his
+{
+    height: 420px;
+}
+
+.inventario
+{
+    position: absolute;
+    top: 1065px;
+    left: 1130px;
+}
+
+.inv
+{
+    height: 430px;
+}
+
+.habilidades
+{
+    left: 5px;
+    position: absolute;
+    top: 1625px;
+}
+
+.hab
+{
+    height: 370px;
+}
+
+
+.sa
+{
+    width: 370px;
+    margin-bottom: 10px;
+}
+
+.saude
+{
+    display: flex;
+    flex-direction:column;
+    width: 370px;
+}
+
+.conteudo
+{
+    display: flex;
+    flex-direction: row;
+    margin-right: 25px;
+    margin-top: -18px;
+    justify-content: flex-end;
+}
+
+.conteudo2
+{
+    display: flex;
+    flex-direction: row;
+    margin-right: 25px;
+    margin-top: -18px;
+    margin-bottom: -8px;
+    justify-content: flex-end;
+}
+
+#barra
+{
+    width: 30px;
+    height: 40px;
+    margin: 5px;
+    margin-top: 15px;
+}
+
+h1
+{
+    font-size: 40px;
+    margin: 10px;
+}
+
+h2
+{
+    font-size: 15px;
+    margin: 10px;
+    margin-top: -23px
+}
+
+h3
+{
+    font-size: 35px;
+    margin: 10px;
+    margin-top: 25px;
+}
+
+.dano2
+{
+    width: 55px;
+    height: 40px;
+
+    background: #D9D9D9;
+    border-radius: 5px;
+    border: none;
+    margin-top: 15px;
+
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: 'Paprika';
+    display: flex;
+    text-align: center;
+    text-justify: auto;
+    color: black;
+}
+
+.bloco
+{
+    width: 380px;
+    height: 437px;
+    padding: 5px;
+
+    border: solid;
+    border-radius: 7px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: absolute;
+    top: 205px;
+    left: 1175px;
+}
+
+.atri
+{
+    width: 70px;
+    height: 50px;
+    border: none;
+    font-size: 40px;
+    font-weight: bolder;
+    font-family: 'Paprika';
+    text-align: center;
+    background: transparent;
+}
+
+.atri2
+{
+    width: 75px;
+    height: 50px;
+    border: none;
+    font-size: 30px;
+    font-family: 'Paprika';
+    text-align: center;
+    background: transparent;
+}
+
+.forca
+{
+    position: absolute;
+    left: 50px;
+    top: 185px;
+}
+
+.presenca
+{
+    position: absolute;
+    left: 116px;
+    top: 365px;
+}
+
+.agilidade
+{
+    position: absolute;
+    left: 205px;
+    top: 75px;
+}
+
+.intelecto
+{
+    position: absolute;
+    left: 360px;
+    top: 185px;
+}
+
+.vigor
+{
+    position: absolute;
+    left: 300px;
+    top: 365px;
+}
+
+.nex
+{
+    position: absolute;
+    left: 482px;
+    top: 30px;
+    color: white;
+}
+
+.atributos
+{
+    align-self: center;
+    position: absolute;
+    top: 205px;
+    left: 500px;
+}
+
+.add_peri
+{
+    width: 430px;
+    height: 55px;
+    padding: 30px;
+    align-self: center;
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    border: solid 3px;
+    border-color: #D9D9D9;
+    border-radius: 5px;
+    background-color: transparent;
+    margin-top: 7px;
+}
+
+#mais
+{
+    width: 50px;
+    height: 40px;
+    position: absolute;
+    left: 350px;
+}
+
+.deslocamento
+{
+    width: 424px;
+    height: 55px;
+    align-self: center;
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    border: solid 3px;
+    border-color: black;
+    border-radius: 5px;
+    background-color: transparent;
+    margin-top: 5px;
+}
+
+.desl
+{
+    width: 150px;
+    height: 40px;
+
+    position: absolute;
+    left: 250px;
+
+    background: #D9D9D9;
+    border-radius: 5px;
+    border: none;
+
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: 'Paprika';
+    text-align: center;
+    text-justify: auto;
+    color: black;
+}
+
+#textdeslo
+{
+    font-family: 'manjari';
+    font-size: 20px;
+    position: absolute;
+    left: 30px;
+    top: 19px;
+}
+
+.salvar
+{
+    width: 80px;
+    height: 30px;
+    background-color: #399E37;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    position: absolute;
+    top: 5px;
+    left: 1495px;
+}
+
+#izinho
+{
+    width: 25px;
+    position: absolute;
+    top: 10px;
+    left: 1465px;
+}
+
+#criar
+{
+    position: absolute;
+    top: 5px;
+    left: 60px;
+}
+
+.criarqual
+{
+    width: 200px;
+    height: 30px;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    background: #D9D9D9;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+a
+{
+    text-decoration: none;
+}
+
+.principal
+{
+    width: 300px;
+    font-size: 25px;
+    font-weight: bold;
+
+    position: absolute;
+    left: 680px;
+    top: 12px;
+}
