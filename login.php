@@ -31,5 +31,4 @@
     {
         echo("Email ou Senha incorreto!");
     }
-
-?>
+?> 
