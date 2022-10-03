@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,12 +21,12 @@
 <body>
     <img src="img/logo.png" id="logo">
     
-    <input type="text" class="input" id="email" placeholder="E-MAIL" required>
-    <input type="password" class="input" id="senha" placeholder="SENHA" required>
+    <form action="login.php" method="POST" class="form">
+        <input type="text" class="input" name="email" placeholder="E-MAIL">
+        <input type="password" class="input" name="senha" placeholder="SENHA">
 
-    <div class="botao_login alinhado" onclick="Pesquisar();">
-        LOGIN
-    </div>  
+        <input type="submit" value="LOGIN" class="botao_login alinhado">
+    </form>
 
     <div class="logos"> 
         <img src="img/facebook.png">
@@ -35,42 +35,4 @@
     </div>
 
 </body>
-<script>
-    var db = openDatabase('APP','v1.0','Minha base',2*1024*1024)
-    db.transaction(function(tx)
-    {
-        tx.executeSql('CREATE TABLE IF NOT EXISTS users(email VARCHAR(50),senha VARCHAR(30))')
-    });
-
-    function Pesquisar()
-    {
-        db.transaction(function(tx)
-        {
-            var sql = 'SELECT * FROM users WHERE email=?';
-            tx.executeSql(sql,[email.value],function(tx,resultado)
-            {
-                var nr_linhas = resultado.rows.length;
-                if (nr_linhas>0){
-                for(i=0; i<nr_linhas; i++)
-                {
-                    if (email.value == resultado.rows.item(i).email && senha.value == resultado.rows.item(i).senha){
-                        location.href="tela4lista.html"
-                    }
-                    else{
-                        alert("Senha inválida.");
-                    }
-                }
-                }
-                else{
-                    alert("Usuário não existe.");
-                }
-
-                
-            });
-        });
-    }
-
-
-
-</script>
 </html>
