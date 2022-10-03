@@ -20,7 +20,7 @@
             $_SESSION['is_adm'] = $resultado['is_adm'];
             $_SESSION['loggedin'] = true;
 
-            header("location:ficha.html");
+            header("location:tela4lista.html");
         }
         else
         {
