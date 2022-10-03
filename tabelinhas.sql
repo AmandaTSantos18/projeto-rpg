@@ -4,109 +4,84 @@ use app;
 
 create table atributos(
 	id_atributos int (3) auto_increment primary key,
-	nome_atributo varchar (40),
-	valor int (2)
+	agilidade int (3),
+    intelecto int (3),
+    vigor int (3),
+    presença int (3),
+    forca int (3)
 );
-
-insert into atributos(nome_atributo) values
-	("agilidade"),
-	("intelecto"),
-	("vigor"),
-	("presença"),
-	("força");
 
 create table pericias(
 	id_pericias int (3) auto_increment primary key,
-	nome_pericia varchar (40),
-   valor int (2)
+	adestramento int (3),
+    atletismo int (3),
+    atuação int (3),
+    atualidades int (3),
+    ciência int (3),
+    condução int (3),
+    diplomacia int (3),
+    enganação int (3),
+    fortitude int (3),
+    furtividade int (3),
+    intimidação int (3),
+    intuicao int (3),
+    investigação int (3),
+    jogatina int (3),
+    luta int (3),
+    medicina int (3),
+    ocultismo int (3),
+    percepção int (3),
+    pilotagem int (3),
+    pontaria int (3),
+    prestidigitação int (3),
+    profissão int (3),
+    reflexos int (3),
+    religião int (3),
+    tática int (3),
+    tecnologia int (3),
+    vontade int (3)
 );
-	
-insert into pericias(nome_pericia) values
-	("adestramento"),
-	("atletismo"),
-	("atuação"),
-	("atualidades"),
-	("ciência"),
-	("condução"),
-	("diplomacia"),
-	("enganação"),
-	("fortitude"),
-	("furtividade"),
-	("intimidação"),
-	("intuicao"),
-	("investigação"),
-	("jogatina"),
-	("luta"),
-	("medicina"),
-	("ocultismo"),
-	("percepção"),
-	("pilotagem"),
-	("pontaria"),
-	("prestidigitação"),
-	("profissão"),
-	("reflexos"),
-	("religião"),
-	("tática"),
-	("tecnologia"),
-	("vontade");
 
 create table defesas(
 	id_defesas int (3) auto_increment primary key,
-	nome_defesa varchar (40),
-	valor int (2)
+	passiva int (3),
+    bloqueio int (3),
+    esquiva int (3)
 );
-
-insert into defesas(nome_defesa) values
-    ("passiva"),
-    ("bloqueio"),
-    ("esquiva");
-
 
 create table saude(
 	id_saude int (3) auto_increment primary key,
-	nome_saude varchar (40),
-	valor int (2)
+	vida int (3),
+    sanidade int (3),
+    esforco int (3)
 );
-
-insert into saude(nome_saude) values
-    ("vida"),
-    ("sanidade"),
-    ("esforço");
 
 create table resistencias_a_dano(
 	id_resistencias int (3) auto_increment primary key,
-	nome_resistencia varchar (40),
-	valor int (2)
+	física int (3),
+	balística int (3),
+	mental int (3),
+	sangue int (3),
+	morte int (3),
+	energia int (3),
+	conhecimento int (3)
 );
-
-insert into resistencias_a_dano(nome_resistencia) values
-	("física"),
-	("balística"),
-	("mental"),
-	("sangue"),
-	("morte"),
-	("energia"),
-	("conhecimento");
 
 create table ataques(
 	id_ataques int (3) auto_increment primary key,
-	nome_ataque varchar (4),
-   valor int (2)
+	arma int (3),
+	tipo int (3),
+	ataque int (3),
+	alcance int (3),
+	dano int (3),
+	crítico int (3),
+	recarga int (3),
+	especial int (3)
 );
-
-insert into ataques(nome_ataque) values
-	("arma"),
-	("tipo"),
-	("ataque"),
-	("alcance"),
-	("dano"),
-	("crítico"),
-	("recarga"),
-	("especial");
 
 create table classe(
 	id_classe int (3) auto_increment primary key,
-   nome_classe varchar (40)
+	nome_classe varchar (40)
 );
 
 insert into classe(nome_classe) values
