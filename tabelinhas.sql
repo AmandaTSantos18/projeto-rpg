@@ -73,11 +73,11 @@ create table resistencias_a_dano(
 
 create table atual
 (
-    id_atual int (3),
-    vida_atual int (3),
-    sanidade_atual int (3),
-    pontos_de_esforço_atual int (3),
-    municao_atual int (3)
+    id_atual int (3) auto_increment primary key,
+    vida_atual int (3) NOT NULL DEFAULT 0,
+    sanidade_atual int (3) NOT NULL DEFAULT 0,
+    pontos_de_esforço_atual int (3) NOT NULL DEFAULT 0,
+    municao_atual int (3) NOT NULL DEFAULT 0
 );
 
 create table classe(

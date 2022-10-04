@@ -267,3 +267,13 @@ a
 {
     width: 80%;
 }
+
+.line
+{
+    width: 3px;
+    height: 733px;
+    background-color: black;
+    position: absolute;
+    left: 1005px;
+    top: 50px;
+}
