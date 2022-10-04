@@ -4,17 +4,17 @@ use app;
 
 create table atributos(
 	id_atributos int (3) auto_increment primary key,
-	agilidade int (3),
-    intelecto int (3),
-    vigor int (3),
-    presença int (3),
-    forca int (3)
+	agilidade int (3) NOT NULL DEFAULT 0,
+    intelecto int (3) NOT NULL DEFAULT 0,
+    vigor int (3) NOT NULL DEFAULT 0,
+    presença int (3) NOT NULL DEFAULT 0,
+    forca int (3) NOT NULL DEFAULT 0
 );
 
 create table pericias(
 	id_pericias int (3) auto_increment primary key,
-    nome_pericia varchar (40),
-    valor int (2)
+    nome_pericia varchar (40) DEFAULT NULL,
+    valor int (2) NOT NULL DEFAULT 0
 );
 
 insert into pericias(nome_pericia) values
@@ -48,39 +48,36 @@ insert into pericias(nome_pericia) values
 
 create table defesas(
 	id_defesas int (3) auto_increment primary key,
-	passiva int (3),
-    bloqueio int (3),
-    esquiva int (3)
+	passiva int (3) NOT NULL DEFAULT 0,
+    bloqueio int (3) NOT NULL DEFAULT 0,
+    esquiva int (3) NOT NULL DEFAULT 0
 );
 
 create table saude(
 	id_saude int (3) auto_increment primary key,
-	vida int (3),
-    sanidade int (3),
-    esforco int (3)
+	vida int (3) NOT NULL DEFAULT 0,
+    sanidade int (3) NOT NULL DEFAULT 0,
+    esforco int (3) NOT NULL DEFAULT 0
 );
 
 create table resistencias_a_dano(
 	id_resistencias int (3) auto_increment primary key,
-	física int (3),
-	balística int (3),
-	mental int (3),
-	sangue int (3),
-	morte int (3),
-	energia int (3),
-	conhecimento int (3)
+	física int (3) NOT NULL DEFAULT 0,
+	balística int (3) NOT NULL DEFAULT 0,
+	mental int (3) NOT NULL DEFAULT 0,
+	sangue int (3) NOT NULL DEFAULT 0,
+	morte int (3) NOT NULL DEFAULT 0,
+	energia int (3) NOT NULL DEFAULT 0,
+	conhecimento int (3) NOT NULL DEFAULT 0
 );
 
-create table ataques(
-	id_ataques int (3) auto_increment primary key,
-	arma int (3),
-	tipo int (3),
-	ataque int (3),
-	alcance int (3),
-	dano int (3),
-	crítico int (3),
-	recarga int (3),
-	especial int (3)
+create table atual
+(
+    id_atual int (3),
+    vida_atual int (3),
+    sanidade_atual int (3),
+    pontos_de_esforço_atual int (3),
+    municao_atual int (3)
 );
 
 create table classe(

@@ -152,6 +152,26 @@ h4
     text-align: center;
     text-justify: auto;
     color: black;
+
+    margin-top: 10px;
+}
+
+.dano4
+{
+    width: 55px;
+    height: 40px;
+
+    background: #D9D9D9;
+    border-radius: 5px;
+    border: none;
+
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: 'Paprika';
+    display: flex;
+    text-align: center;
+    text-justify: auto;
+    color: black;
 }
 
 .dano_arma
@@ -171,6 +191,8 @@ h4
     text-align: center;
     text-justify: auto;
     color: black;
+
+    margin-top: 9px;
 }
 
 .escrito
@@ -253,18 +275,19 @@ h4
     text-justify: auto;
     text-align: center;
     font-size: 18px;
+    align-self: flex-end;
 }
 
 .ataques_e_defesas
 {
     position: absolute;
-    top: 990px;
+    top: 1000px;
     left: 470px;
 }
 
 .at
 {
-    height: 463px;
+    height: 457px;
 }
 
 .proficiencias
@@ -282,7 +305,7 @@ h4
 .rituais
 {
     position: absolute;
-    top: 1532px;
+    top: 1538px;
     left: 470px;
 }
 
@@ -400,6 +423,30 @@ h3
     text-align: center;
     text-justify: auto;
     color: black;
+}
+
+.dano3
+{
+    width: 100px;
+    height: 40px;
+
+    background: #D9D9D9;
+    border-radius: 5px;
+    border: none;
+    margin-top: 15px;
+
+    font-size: 25px;
+    font-weight: bolder;
+    font-family: 'Paprika';
+    display: flex;
+    text-align: center;
+    text-justify: auto;
+    color: black;
+}
+
+.menor
+{
+    font-size: 17px;
 }
 
 .bloco
