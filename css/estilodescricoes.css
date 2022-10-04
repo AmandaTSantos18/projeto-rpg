@@ -165,7 +165,7 @@ h3
 .trilhas
 {
     position: absolute;
-    top: 4330px;
+    top: 4400px;
     width: 100%;
 }
 
@@ -197,4 +197,73 @@ a
 {
     color: white;
     text-decoration: none;
+}
+
+.ori
+{
+    width: 65%;
+    position: absolute;
+    left: 500px;
+    top: 50px;
+}
+
+.ori2
+{
+    width: 65%;
+    position: absolute;
+    left: 1030px;
+    top: 50px;
+}
+
+.origem_qual{
+    font-weight: bold;
+    font-size: 30px;
+    margin-top: -5px;
+    margin-bottom: 0px;
+}
+
+.tori
+{
+    margin-top: -15px;
+    margin-bottom: 2px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.tri
+{
+    font-size: 30px;
+    text-decoration: underline;
+    font-family: 'Love Ya Like A Sister';
+    font-weight: bold;
+}
+
+.vermelho
+{
+    color: red;
+    font-family: 'Julee';
+    font-size: 23px;
+}
+
+#oap
+{
+    width: 1000px;
+    position: absolute;
+    left: 600px;
+    top: 700px;
+}
+
+.arrumar
+{
+    width: 92%;
+}
+
+.arrumar1
+{
+    width: 88%;
+}
+
+.arrumar2
+{
+    width: 80%;
 }

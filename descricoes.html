@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/estilodescricoes.css">
     <link href='https://fonts.googleapis.com/css?family=Manjari' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Paprika' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Julee' rel='stylesheet'>
     <link href='https://fonts.googleapis.com/css?family=Love Ya Like A Sister' rel='stylesheet'>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
@@ -114,10 +115,87 @@
         <div class="origens">
           <h3 id="item3" class="item2">ORIGENS</h3>
           <img src="img/origens.png" width="500px">
-          <p>Ao escolher uma origem, você recebe duas perícias treinadas e um poder da origem.</p>
+          <div class="texto ori">
+            <p>Ao escolher uma origem, você recebe duas perícias treinadas e um poder da origem.</p>
+
+            <h4 class="origem_qual">Acadêmico</h4>
+            <p>Você era um pesquisador ou professor universitário. De forma proposital ou não, seus estudos tocaram em assuntos misteriosos e chamaram a atenção da Ordo Realitas.</p>
+            <p class="tori">Perícias treinadas:</p>
+            <p>Ciências e Investigação.</p>
+            <p class="tori">Saber é Poder:</p>
+            <p>Quando faz um teste usando Intelecto, você pode gasta 2 PE para receber +5 nesse teste.</p>
+
+            <h4 class="origem_qual">Agente de Saúde</h4>
+            <p>Você era um profissional da saúde treinado no atendimento e cuidado de pessoas. Você pode ter sido surpreendido por um evento paranormal durante o trabalho ou mesmo cuidado de um agente da Ordem em uma emergência.</p>
+            <p class="tori">Perícias Treinadas</p>
+            <p>Intuição e Medicina.</p>
+            <p class="tori">Técnica Medicinal.</p>
+            <p>Sempre que cura um personagem, você adiciona seu Intelecto no total de PV curados.</p>
+
+            <h4 class="origem_qual">Amnésico</h4>
+            <p>Você perdeu a maior parte da memória. Sua amnésia pode ser resultado de um trauma paranormal ou mesmo de um ritual. Hoje a Ordem é a única família que conhece. Quem sabe, cumprindo missões, você descubra algo sobre seu passado.</p>
+            <p class="tori">Perícias Treinadas:</p>
+            <p>Duas à escolha do mestre.</p>
+            <p class="tori">Vislumbres do Passado:</p>
+            <p>Uma vez por missão, você pode fazer um teste de Intelecto (DT 10) para reconhecer pessoas ou lugares familiares, que tenha encontrado antes de perder a
+              memória. Se passar, recebe 1d4 PE temporários e, a critério do mestre, uma informação útil.</p>
+          </div>
+          <div class="ori2">
+            <h4 class="origem_qual">Artista</h4>
+            <p>Você era um ator, músico, escritor, dançarino, influenciador... Seu trabalho pode ter sido inspirado por uma experiência paranormal do passado e o que o público acha que é pura criatividade, a Ordem sabe que tem um lado mais sombrio.</p>
+            <p class="tori">Perícias Treinadas:</p>
+            <p>Artes e Enganação.</p>
+            <p class="tori">Magnum Opus:</p>
+            <p>Uma vez por missão, pode determinar que um personagem envolvido em uma cena de interação o reconheça. Você recebe +5 em testes de Presença e de perícias baseadas em Presença contra aquele personagem.</p>
+            
+            <h4 class="origem_qual">Atleta</h4>
+            <p>Você competia em um esporte individual ou por equipe. Seu alto desempenho pode ser fruto de alguma influência paranormal que nem mesmo você conhecia ou você pode ter se envolvido em algum evento paranormal em uma de suas competições.</p>
+            <p class="tori">Perícias Treinadas:</p>
+            <p>Acrobacia e Atletismo.</p>
+            <p class="tori">110%:</p>
+            <p>Quando faz um teste de perícia usando Força ou Agilidade (exceto Luta e Pontaria) você pode gastar 2 PE para receber +5 nesse teste.</p>
+
+            <h4 class="origem_qual">Chef</h4>
+            <p>Você é um cozinheiro amador ou profissional. Como sua comida fez com que você se envolvesse com o paranormal? Ninguém sabe.</p>
+            <p class="tori">Perícias Treinadas:</p>
+            <p>Fortitude e Profissão (cozinheiro).</p>
+            <p class="tori">Ingrediente Secreto:</p>
+            <p>Em cenas de interlúdio, você pode gastar uma ação para cozinhar um prato gostoso. Cada membro do grupo (incluindo você) que gastar uma ação para se alimentar recebe o benefício de dois pratos.</p>
+          </div>
+
+          <img src="img/image 1.png" id="oap">
+
+          <h4 class="origem_qual">Criminoso</h4>
+          <p>Você vivia uma vida fora da lei. Em algum momento, você se envolveu em um assunto da Ordem. A organização, por sua vez, achou melhor recrutar seus talentos do que ter você como um estorvo.</p>
+          <p class="tori">Perícias Treinadas:</p>
+          <p>Crime e Furtividade.</p>
+          <p class="tori">O Crime Compensa:</p>
+          <p class="arrumar">No final de uma missão, escolha um item encontrado na missão. Em sua próxima missão, você pode incluir esse item em seu inventário sem que ele conte em seu limite de itens por patente.</p>
+
+          <h4 class="origem_qual">Desgarrado</h4>
+          <p class="arrumar1">Você não vivia de acordo com as normas da sociedade. Podia ser um eremita, uma pessoa em situação de rua ou simplesmente alguém que descobriu o Paranormal e abandonou sua rotina. De qualquer forma, a vida sem os confortos modernos o deixou mais forte.</p>
+          <p class="tori">Perícias Treinadas:</p>
+          <p>Fortitude e Sobrevivência.</p>
+          <p class="tori">Calejado:</p>
+          <p>Você recebe +1 PV para cada 5% de NEX.</p>
+
+          <h4 class="origem_qual">Cultista Arrependido</h4>
+          <p class="arrumar2">Você fez parte de um culto paranormal. Algo abriu seus olhos e agora você luta pelo lado certo. Outros membros da Ordem podem desconfiar de sua conversão e você sabe que precisará se esforçar para conquistar a confiança de todos.</p>
+          <p class="tori">Perícias Treinadas:</p>
+          <p> Enganação e Ocultismo</p>
+          <p class="tori">Traços do Outro Lado:</p>
+          <p class="arrumar1">Você possui um poder paranormal à sua escolha. Porém, começa o jogo com metade da Sanidade normal para sua classe.</p>
+
+            <h4 class="origem_qual">Vítima</h4>
+            <p>Em algum momento de sua vida você encontrou o Paranormal e a experiência não foi nada boa. Em vez de se abater pelo trauma, você decidiu lutar para impedir que outros inocentes passem pelo mesmo. E, já tendo sofrido pelo Paranormal, hoje em dia já não se abala tão facilmente.</p>
+            <p class="tori">Perícias Treinadas:</p>
+            <p>Fortitude e Vontade.</p>
+            <p class="tori">Cicatrizes Psicológicas:</p>
+            <p>Você recebe +1 de Sanidade para cada 5% de NEX.</p>
+          
         </div>
 
-        <div class="classes">
+<!--         <div class="classes">
           <h3 id="item4" class="item2">CLASSES</h3>
 
                 <div class="combatente">
@@ -153,6 +231,9 @@
 
                     <p>Muitos estudiosos das Entidades se perdem em seus reinos obscuros em busca de poder, mas existem aqueles que visam compreender e dominar os mistérios para normais para usá-los para combater o próprio Outro Lado. Esse tipo de agente não é apenas um conhecedor do oculto, como também possui talento para se conectar com Elementos paranormais.</p>
                     <p>Ocultistas aplicam seu conhecimento acadêmico e suas capacidades de conjuração de rituais em missões para investigar e combater o Paranormal em todas as suas formas, principalmente quando munição convencional não é o suficiente para lidar com a tarefa.</p>
+
+                    <img src="img/caracocul.png">
+                    <img src="img/tabocul.png">
                   </div>
                 </div>
 
@@ -160,9 +241,24 @@
 
         <div class="trilhas">
           <h3 id="item5" class="item2">TRILHAS</h3>
-          <p></p>
+          <p class="tri">ANQUILADOR</p>
+          <p>Você é treinado para abater alvos com eficiência e velocidade. Suas armas são suas melhores amigas e você cuida tão bem delas quanto de seus companheiros de equipe.</p>
+          <p class="vermelho">NEX 10% - A Favorita</p>
+          <p>Escolha uma de suas armas para ser sua favorita. A categoria da arma escolhida é reduzida em I e ela ocupa 1 espaço a menos em seu inventário (mínimo de 0 espaço). Em NEX 40%, a categoria é reduzida em II, em 65% reduzida em III e em 99% reduzida em IV (mínimo de 0).</p>
+          <p class="vermelho">NEX 40% - Técnica Secreta</p>
+          <p>Quando faz um ataque com sua arma favorita, você pode gastar 2 PE para executar um dos efeitos abaixo como parte do ataque. Você pode adicionar mais efeitos gastando +2 PE por efeito adicional.</p>
+            <ul>
+              <li>
+                <p class="vermelho">Amplo</p>
+                <p>O ataque pode atingir um alvo adicional em seu alcance e adjacente ao original (use o mesmo teste de ataque para ambos).</p>
+              </li>
+              <li>
+                  <p class="vermelho">Destruidor</p>
+                  <p>Aumenta o multiplicador de crítico da arma em +1.</p>
+              </li>
+            </ul>
         </div>
-      </div>
+      </div> -->
 
 </body>
 </html>
