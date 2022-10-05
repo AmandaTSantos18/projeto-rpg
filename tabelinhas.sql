@@ -297,8 +297,8 @@ insert into equipamentos(nome_equipamento, fk_categoria, dano, critico, fk_alcan
 create table usuario(
 	id_usuario int (3) auto_increment primary key,
     is_adm bit (1) NOT NULL DEFAULT 0,
-    nome varchar (50),
-    email varchar (50),
+    nome varchar (50) NOT NULL,
+    email varchar (50) NOT NULL,
     senha varchar (30) NOT NULL
 );
 
