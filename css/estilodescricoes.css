@@ -215,6 +215,24 @@ a
     top: 50px;
 }
 
+.ori3
+{
+    margin-top: 23px;
+}
+
+.ori4
+{
+    width: 700px;
+    position: absolute;
+    left: 740px;
+    top: 1416px;
+}
+
+.ori5
+{
+    width: 700px;
+}
+
 .origem_qual{
     font-weight: bold;
     font-size: 30px;
@@ -276,4 +294,14 @@ a
     position: absolute;
     left: 1005px;
     top: 50px;
+}
+
+.line2
+{
+    width: 3px;
+    height: 2000px;
+    background-color: black;
+    position: absolute;
+    left: 50%;
+    top:2756px;
 }
