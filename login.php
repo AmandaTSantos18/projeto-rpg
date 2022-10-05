@@ -2,7 +2,7 @@
     include("conexao.php");
 
     $email = $_POST["email"];
-    $set_senha = MD5($_POST["senha"]);
+    $set_senha = password_hash( $_POST['senha'], PASSWORD_DEFAULT );
 
     $comando = $pdo->prepare("SELECT id_usuario, is_adm, senha FROM usuario WHERE email = :email");
 
@@ -13,7 +13,7 @@
     {
         $resultado = $comando->fetch();
 
-        if($resultado["senha"] == $set_senha)
+        if ( password_verify( $_POST['senha'], $set_senha ) )
         {
             session_start();
             $_SESSION['id_usuario'] = $resultado['id_usuario'];
