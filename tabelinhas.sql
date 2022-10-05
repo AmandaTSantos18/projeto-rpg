@@ -2,75 +2,6 @@ drop database if exists app;
 create database app;
 use app;
 
-create table atributos(
-	id_atributos int (3) auto_increment primary key,
-	agilidade int (3) NOT NULL DEFAULT 0,
-    intelecto int (3) NOT NULL DEFAULT 0,
-    vigor int (3) NOT NULL DEFAULT 0,
-    presença int (3) NOT NULL DEFAULT 0,
-    forca int (3) NOT NULL DEFAULT 0
-);
-
-create table pericias(
-	id_pericias int (3) auto_increment primary key,
-    nome_pericia varchar (40) DEFAULT NULL,
-    valor int (2) NOT NULL DEFAULT 0
-);
-
-insert into pericias(nome_pericia) values
-	("adestramento"),
-	("atletismo"),
-	("atuação"),
-	("atualidades"),
-	("ciência"),
-	("condução"),
-	("diplomacia"),
-	("enganação"),
-	("fortitude"),
-	("furtividade"),
-	("intimidação"),
-	("intuicao"),
-	("investigação"),
-	("jogatina"),
-	("luta"),
-	("medicina"),
-	("ocultismo"),
-	("percepção"),
-	("pilotagem"),
-	("pontaria"),
-	("prestidigitação"),
-	("profissão"),
-	("reflexos"),
-	("religião"),
-	("tática"),
-	("tecnologia"),
-	("vontade");
-
-create table defesas(
-	id_defesas int (3) auto_increment primary key,
-	passiva int (3) NOT NULL DEFAULT 0,
-    bloqueio int (3) NOT NULL DEFAULT 0,
-    esquiva int (3) NOT NULL DEFAULT 0
-);
-
-create table saude(
-	id_saude int (3) auto_increment primary key,
-	vida int (3) NOT NULL DEFAULT 0,
-    sanidade int (3) NOT NULL DEFAULT 0,
-    esforco int (3) NOT NULL DEFAULT 0
-);
-
-create table resistencias_a_dano(
-	id_resistencias int (3) auto_increment primary key,
-	física int (3) NOT NULL DEFAULT 0,
-	balística int (3) NOT NULL DEFAULT 0,
-	mental int (3) NOT NULL DEFAULT 0,
-	sangue int (3) NOT NULL DEFAULT 0,
-	morte int (3) NOT NULL DEFAULT 0,
-	energia int (3) NOT NULL DEFAULT 0,
-	conhecimento int (3) NOT NULL DEFAULT 0
-);
-
 create table atual
 (
     id_atual int (3) auto_increment primary key,
@@ -183,12 +114,12 @@ insert into tipo_texto(nome_tipo) values
     ("rituais conhecidos"),
     ("habilidade"),
     ("histórico");
-
+    
 create table textos(
 	id_textos int (3) auto_increment primary key,
     tipo_texto varchar (40),
-    escrito varchar (280),
-    fk_tipo int (3),
+    escrito longtext,
+	fk_tipo int (3),
     CONSTRAINT fk_textos_tipo FOREIGN KEY (fk_tipo) REFERENCES tipo_texto (id_tipo_texto)
 );
 
@@ -305,15 +236,10 @@ create table usuario(
 create table personagem(
 	id_personagem int (3) auto_increment primary key,
     nome varchar (50),
+    jogador varchar (50),
     is_padrao boolean NOT NULL DEFAULT 0,
-    idade int (3) NOT NULL DEFAULT 18,
     pm int(5) NOT NULL DEFAULT 0,
     xp int(5) NOT NULL DEFAULT 0,
-    fk_atributos int (3),
-    fk_pericias int (3),
-    fk_defesas int (3),
-    fk_saude int(3),
-    fk_resistencias int(3),
     fk_classe int(3),
     fk_trilha int(3),
     fk_elemento int(3),
@@ -321,11 +247,6 @@ create table personagem(
     fk_origem int(3),
     fk_equipamentos int (3),
     fk_usuario int (3),
-    CONSTRAINT fk_personagem_atributos FOREIGN KEY (fk_atributos) REFERENCES atributos (id_atributos),
-    CONSTRAINT fk_personagem_pericias FOREIGN KEY (fk_pericias) REFERENCES pericias (id_pericias),
-	CONSTRAINT fk_personagem_defesas FOREIGN KEY (fk_defesas) REFERENCES defesas (id_defesas),
-    CONSTRAINT fk_personagem_saude FOREIGN KEY (fk_saude) REFERENCES saude (id_saude),
-    CONSTRAINT fk_personagem_resistencias FOREIGN KEY (fk_resistencias) REFERENCES resistencias_a_dano (id_resistencias),
 	CONSTRAINT fk_personagem_classe FOREIGN KEY (fk_classe) REFERENCES classe (id_classe),
     CONSTRAINT fk_personagem_trilha FOREIGN KEY (fk_trilha) REFERENCES trilha (id_trilha),
     CONSTRAINT fk_personagem_elemento FOREIGN KEY (fk_elemento) REFERENCES elemento (id_elemento),
@@ -333,4 +254,83 @@ create table personagem(
     CONSTRAINT fk_personagem_origem FOREIGN KEY (fk_origem) REFERENCES origem (id_origem),
     CONSTRAINT fk_personagem_equipamentos FOREIGN KEY (fk_equipamentos) REFERENCES equipamentos (id_equipamentos),
     CONSTRAINT fk_personagem_usuario FOREIGN KEY (fk_usuario) REFERENCES usuario (id_usuario) 
+);
+
+create table atributos(
+	id_atributos int (3) auto_increment primary key,
+	agilidade int (3) NOT NULL DEFAULT 0,
+    intelecto int (3) NOT NULL DEFAULT 0,
+    vigor int (3) NOT NULL DEFAULT 0,
+    presença int (3) NOT NULL DEFAULT 0,
+    forca int (3) NOT NULL DEFAULT 0,
+    fk_personagem int(3),
+    CONSTRAINT fk_atributos_personagem FOREIGN KEY (fk_personagem) REFERENCES personagem (id_personagem)
+);
+
+create table pericias(
+	id_pericias int (3) auto_increment primary key,
+    nome_pericia varchar (40) DEFAULT NULL,
+    valor int (2) NOT NULL DEFAULT 0,
+	fk_personagem int(3),
+    CONSTRAINT fk_pericias_personagem FOREIGN KEY (fk_personagem) REFERENCES personagem (id_personagem)
+);
+
+insert into pericias(nome_pericia) values
+	("adestramento"),
+	("atletismo"),
+	("atuação"),
+	("atualidades"),
+	("ciência"),
+	("condução"),
+	("diplomacia"),
+	("enganação"),
+	("fortitude"),
+	("furtividade"),
+	("intimidação"),
+	("intuicao"),
+	("investigação"),
+	("jogatina"),
+	("luta"),
+	("medicina"),
+	("ocultismo"),
+	("percepção"),
+	("pilotagem"),
+	("pontaria"),
+	("prestidigitação"),
+	("profissão"),
+	("reflexos"),
+	("religião"),
+	("tática"),
+	("tecnologia"),
+	("vontade");
+
+create table defesas(
+	id_defesas int (3) auto_increment primary key,
+	passiva int (3) NOT NULL DEFAULT 0,
+    bloqueio int (3) NOT NULL DEFAULT 0,
+    esquiva int (3) NOT NULL DEFAULT 0,
+	fk_personagem int(3),
+    CONSTRAINT fk_defesas_personagem FOREIGN KEY (fk_personagem) REFERENCES personagem (id_personagem)
+);
+
+create table saude(
+	id_saude int (3) auto_increment primary key,
+	vida int (3) NOT NULL DEFAULT 0,
+    sanidade int (3) NOT NULL DEFAULT 0,
+    esforco int (3) NOT NULL DEFAULT 0,
+	fk_personagem int(3),
+    CONSTRAINT fk_saude_personagem FOREIGN KEY (fk_personagem) REFERENCES personagem (id_personagem)
+);
+
+create table resistencias_a_dano(
+	id_resistencias int (3) auto_increment primary key,
+	física int (3) NOT NULL DEFAULT 0,
+	balística int (3) NOT NULL DEFAULT 0,
+	mental int (3) NOT NULL DEFAULT 0,
+	sangue int (3) NOT NULL DEFAULT 0,
+	morte int (3) NOT NULL DEFAULT 0,
+	energia int (3) NOT NULL DEFAULT 0,
+	conhecimento int (3) NOT NULL DEFAULT 0,
+	fk_personagem int(3),
+    CONSTRAINT fk_resistencias_personagem FOREIGN KEY (fk_personagem) REFERENCES personagem (id_personagem)
 );
