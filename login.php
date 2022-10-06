@@ -26,7 +26,7 @@
             }
             else
             {
-                header("location: tela1inicio.html");
+                header("location: ficha.html");
             }
         }
         else
