@@ -26,7 +26,7 @@
             }
             else
             {
-                header("location: ficha.html");
+                header("location: tela4lista.html");
             }
         }
         else
