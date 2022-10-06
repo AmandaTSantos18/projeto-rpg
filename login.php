@@ -23,12 +23,11 @@
             //verifica se o usuario conectado é administrador para mostrar a mensagem.
             if ($resultado['is_adm'] == 1) {
             header("location: fichaadm.html");
+            }
             else
             {
                 header("location: tela1inicio.html");
             }
-        }
-
         }
         else
         {

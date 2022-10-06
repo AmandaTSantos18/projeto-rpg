@@ -1,6 +1,6 @@
 body
 {
-    width: 100%;
+    width: 100vh;
     height: 100%;
     font-family: 'Paprika';
 }
@@ -222,15 +222,15 @@ a
 
 .ori4
 {
-    width: 700px;
+    width: 725px;
     position: absolute;
-    left: 740px;
+    left: 800px;
     top: 1416px;
 }
 
 .ori5
 {
-    width: 700px;
+    width: 725px;
 }
 
 .origem_qual{
@@ -278,12 +278,12 @@ a
 
 .arrumar1
 {
-    width: 88%;
+    width: 83%;
 }
 
 .arrumar2
 {
-    width: 80%;
+    width: 85%;
 }
 
 .line
@@ -292,7 +292,7 @@ a
     height: 733px;
     background-color: black;
     position: absolute;
-    left: 1005px;
+    left: 1015px;
     top: 50px;
 }
 
