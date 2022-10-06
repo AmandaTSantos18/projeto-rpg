@@ -224,7 +224,7 @@ a
 {
     width: 725px;
     position: absolute;
-    left: 800px;
+    left: 780px;
     top: 1416px;
 }
 
@@ -265,10 +265,10 @@ a
 
 #oap
 {
-    width: 1000px;
+    width: 915px;
     position: absolute;
-    left: 600px;
-    top: 700px;
+    left: 630px;
+    top: 800px;
 }
 
 .arrumar
@@ -302,6 +302,6 @@ a
     height: 2000px;
     background-color: black;
     position: absolute;
-    left: 50%;
+    left: 780px;
     top:2756px;
 }
