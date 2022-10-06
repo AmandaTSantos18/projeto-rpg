@@ -2,7 +2,7 @@
     include("conexao.php");
 
     $email = $_POST["email"];
-    $set_senha = password_hash( $_POST['senha'], PASSWORD_DEFAULT );
+    $set_senha = $_POST["senha"];
 
     $comando = $pdo->prepare("SELECT id_usuario, is_adm, senha FROM usuario WHERE email = :email");
 
@@ -13,14 +13,22 @@
     {
         $resultado = $comando->fetch();
 
-        if ( password_verify( $_POST['senha'], $set_senha ) )
+        if ( $resultado['senha'] == md5($set_senha)) 
         {
             session_start();
             $_SESSION['id_usuario'] = $resultado['id_usuario'];
             $_SESSION['is_adm'] = $resultado['is_adm'];
             $_SESSION['loggedin'] = true;
 
-            header("location:tela4lista.html");
+            //verifica se o usuario conectado é administrador para mostrar a mensagem.
+            if ($resultado['is_adm'] == 1) {
+            header("location: fichaadm.html");
+            else
+            {
+                header("location: tela1inicio.html");
+            }
+        }
+
         }
         else
         {
