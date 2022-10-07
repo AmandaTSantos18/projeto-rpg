@@ -31,9 +31,7 @@
         }
         else
         {
-            echo("Email ou Senha incorreto:" . $set_senha);
-            echo("<br>");
-            echo($resultado['senha']);
+            echo("Email ou Senha incorreto!");
         }
     }
     else
