@@ -3,7 +3,7 @@
 
     $nome = $_POST["nome"];
     $email = $_POST["email"];
-    $senha = md5($_POST['senha']);
+    $senha = md5($_POST["senha"]);
     $comando = $pdo -> prepare("INSERT INTO usuario(nome, email, senha) VALUES(:nome,:email,:senha)");
     $comando->bindValue(":nome",$nome); 
     $comando->bindValue(":email",$email);                                     

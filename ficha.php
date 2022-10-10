@@ -58,7 +58,7 @@
 
             <div class="categoria">
                 <label class="info">CLASSE:</label>
-                <select class="espacinho ori" name="classe[]">
+                <select class="espacinho ori" name="classe">
                     <option value="1">Desconhecido</option>
                     <option value="2">Combatente</option>
                     <option value="3">Especialista</option>
@@ -84,6 +84,8 @@
                     <option value="13">Graduado</option>
                     <option value="14">Intuitivo</option>
                     <option value="15">Lâmina Paranormal</option>
+     
+
                 </select>
             </div>
 

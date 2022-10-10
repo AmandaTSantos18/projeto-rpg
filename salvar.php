@@ -10,14 +10,17 @@
     $patente = $_POST["patente"];
     $xp = $_POST["xp"];
     $pm = $_POST["pm"];
-    $comando = $pdo -> prepare("INSERT INTO personagem(nome, jogador, origem, classe, trilha, elemento, patente, pm, xp) VALUES(:personagem,:jogador,:origem,:classe,:trilha,:elemento,:patente,:pm,:xp)");
-    $comando->bindValue(":personagem",$personagem); 
+
+    $comando = $pdo -> prepare("INSERT INTO personagem(nome, jogador, fk_origem, fk_classe, fk_trilha, fk_elemento, fk_patente, pm, xp) 
+                                VALUES(:nome,:jogador,:fk_origem,:fk_classe,:fk_trilha,:fk_elemento,:fk_patente,:pm,:xp)");
+    
+    $comando->bindValue(":nome",$personagem); 
     $comando->bindValue(":jogador",$jogador);   
-    $comando->bindValue(":origem",$origem);                                     
-    $comando->bindValue(":classe",$classe);    
-    $comando->bindValue(":trilha",$trilha);  
-    $comando->bindValue(":elemento",$elemento);                                     
-    $comando->bindValue(":patente",$patente);                              
+    $comando->bindValue(":fk_origem",$origem);                                     
+    $comando->bindValue(":fk_classe",$classe);    
+    $comando->bindValue(":fk_trilha",$trilha);  
+    $comando->bindValue(":fk_elemento",$elemento);                                     
+    $comando->bindValue(":fk_patente",$patente);                              
     $comando->bindValue(":pm",$pm);    
     $comando->bindValue(":xp",$xp);    
     $comando->execute();                               
