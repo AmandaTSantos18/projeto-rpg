@@ -11,8 +11,10 @@
     $xp = $_POST["xp"];
     $pm = $_POST["pm"];
 
-    $comando = $pdo -> prepare("INSERT INTO personagem(nome, jogador, fk_origem, fk_classe, fk_trilha, fk_elemento, fk_patente, pm, xp) 
-                                VALUES(:nome,:jogador,:fk_origem,:fk_classe,:fk_trilha,:fk_elemento,:fk_patente,:pm,:xp)");
+    echo $personagem, $jogador, $origem, $classe, $trilha
+
+    $comando = $pdo -> prepare("INSERT INTO personagem(nome,jogador,is_padrao,fk_origem,fk_classe,fk_trilha,fk_elemento,fk_patente,pm,xp,fk_usuario) 
+                                                VALUES(:nome,:jogador,:is_padrao,:fk_origem,:fk_classe,:fk_trilha,:fk_elemento,:fk_patente,:pm,:xp,:fk_usuario)");
     
     $comando->bindValue(":nome",$personagem); 
     $comando->bindValue(":jogador",$jogador);   
@@ -22,7 +24,14 @@
     $comando->bindValue(":fk_elemento",$elemento);                                     
     $comando->bindValue(":fk_patente",$patente);                              
     $comando->bindValue(":pm",$pm);    
-    $comando->bindValue(":xp",$xp);    
+    $comando->bindValue(":xp",$xp); 
+    session_start();
+    $comando->bindValue(":fk_usuario",$_SESSION['id_usuario']);
+
+    if ($_SESSION['is_adm'] == 1) {
+        $comando->bindValue(":is_padrao", 1);
+    }
+
     $comando->execute();                               
 
     header("Location:tela4lista.html");
