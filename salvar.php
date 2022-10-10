@@ -11,7 +11,8 @@
     $xp = $_POST["xp"];
     $pm = $_POST["pm"];
 
-    echo $personagem, $jogador, $origem, $classe, $trilha
+    echo $personagem, $jogador, $origem, $classe, $trilha, $elemento, $patente, $xp, $pm;
+    die();
 
     $comando = $pdo -> prepare("INSERT INTO personagem(nome,jogador,is_padrao,fk_origem,fk_classe,fk_trilha,fk_elemento,fk_patente,pm,xp,fk_usuario) 
                                                 VALUES(:nome,:jogador,:is_padrao,:fk_origem,:fk_classe,:fk_trilha,:fk_elemento,:fk_patente,:pm,:xp,:fk_usuario)");
