@@ -28,10 +28,10 @@
 
     if ($_SESSION['is_adm'] == 1) {
         $comando->bindValue(":is_padrao", 1);
-    }
-    else{
+    }else{
         $comando->bindValue(":is_padrao", 0);
     }
+
 
     $comando->execute();                               
 
