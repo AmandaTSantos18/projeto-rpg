@@ -10,5 +10,5 @@
     $comando->bindValue(":senha",$senha);    
     $comando->execute();                               
 
-    header("Location:tela3login.html");
+    header("Location:tela3login.php");
 ?>

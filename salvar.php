@@ -27,11 +27,12 @@
     $comando->bindValue(":fk_usuario",$_SESSION['id_usuario']);
 
     if ($_SESSION['is_adm'] == 1) {
-        $comando->bindValue(":is_padrao", 1);
+        $tipo = "1";
+        $comando->bindValue(":is_padrao", $tipo);
     }else{
-        $comando->bindValue(":is_padrao", 0);
+        $tipo = "0";
+        $comando->bindValue(":is_padrao", $tipo);
     }
-
 
     $comando->execute();                               
 

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
-    <link rel="stylesheet" href="css/estilotela3login.css">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css/estilotela2cadastro.css">
     
     <style>
             body
@@ -19,13 +19,18 @@
         </style>
 </head>
 <body>
+    <?php
+        session_start();
+        $_SESSION['loggedin'] = false;
+    ?>
     <img src="img/logo.png" id="logo">
     
-    <form action="login.php" method="POST" class="form">
+    <form action="inserir.php" method="POST" class="form">
+        <input type="text" class="input" name="nome" placeholder="NOME" maxlength="50">
         <input type="text" class="input" name="email" placeholder="E-MAIL" maxlength="50">
         <input type="password" class="input" name="senha" placeholder="SENHA" maxlength="50">
 
-        <input type="submit" value="LOGIN" class="botao_login alinhado">
+        <input type="submit" value="CADASTRAR" class="botao_cadastro alinhado">
     </form>
 
     <div class="logos"> 

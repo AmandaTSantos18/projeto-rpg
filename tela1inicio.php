@@ -19,16 +19,20 @@
     </style>
 </head>
 <body>
-
+    <?php
+        session_abort();
+        session_start();
+        $_SESSION['loggedin'] = false;
+    ?>
     <img src="img/logo.png" id="logo">
 
-    <a href="tela2cadastro.html">
+    <a href="tela2cadastro.php">
     <div class="botao_cadastro alinhado">
         CADASTRAR
     </div>  
     </a>
     
-    <a href="tela3login.html">
+    <a href="tela3login.php">
     <div class="botao_login alinhado">
         LOGIN
     </div>
