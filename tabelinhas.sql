@@ -237,7 +237,7 @@ create table personagem(
 	id_personagem int not null auto_increment primary key,
     nome varchar (200) NOT NULL,
     jogador varchar (200) NOT NULL,
-    is_padrao bit (1) NOT NULL DEFAULT 0,
+    is_padrao varchar (1) NOT NULL,
     pm int NOT NULL DEFAULT 0,
     xp int NOT NULL DEFAULT 0,
     fk_classe int,

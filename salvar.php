@@ -23,19 +23,11 @@
     $comando->bindValue(":fk_patente",$patente);                              
     $comando->bindValue(":pm",$pm);    
     $comando->bindValue(":xp",$xp); 
+
     session_start();
     $comando->bindValue(":fk_usuario",$_SESSION['id_usuario']);
-
-    if ($_SESSION['is_adm'] >0) {
-        print_r($_SESSION['is_adm']);
-    }
-        $tipo = "1";
-        $comando->bindValue(":is_padrao", $tipo);
-    }else{
-        $tipo = "0";
-        $comando->bindValue(":is_padrao", $tipo);
-    } 
-
+    $comando->bindValue(":is_padrao", $_SESSION['is_adm'] );
+    
     $comando->execute();                               
 
     header("Location:tela4lista.html");
