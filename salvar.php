@@ -26,25 +26,8 @@
 
     session_start();
     $comando->bindValue(":fk_usuario",$_SESSION['id_usuario']);
+    $comando->bindValue(":is_padrao",$_SESSION['is_adm']);
 
-    $comando->bindValue(":fk_patente",$patente);                              
-    $comando->bindValue(":pm",$pm);    
-    $comando->bindValue(":xp",$xp); 
-
-    session_start();
-    $comando->bindValue(":fk_usuario",$_SESSION['id_usuario']);
-<<<<<<< HEAD
-
-    $teste = $_SESSION['is_adm'];
-
-    $comando->bindValue(":is_padrao", $teste);
-
-
-=======
-    $comando->bindValue(":is_padrao", $_SESSION['is_adm'] );
-    
->>>>>>> 79f28353c9a879522f141eda34d6f32d476eb565
     $comando->execute();                               
 
-    header("Location:tela4lista.html"); 
-?>
+    header("Location:tela3login.php");
