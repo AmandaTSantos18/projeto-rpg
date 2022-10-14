@@ -26,6 +26,13 @@
 
     session_start();
     $comando->bindValue(":fk_usuario",$_SESSION['id_usuario']);
+
+    $comando->bindValue(":fk_patente",$patente);                              
+    $comando->bindValue(":pm",$pm);    
+    $comando->bindValue(":xp",$xp); 
+
+    session_start();
+    $comando->bindValue(":fk_usuario",$_SESSION['id_usuario']);
 <<<<<<< HEAD
 
     $teste = $_SESSION['is_adm'];
