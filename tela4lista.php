@@ -34,14 +34,28 @@
         <option value="padrao">PERSONAGENS PADRÃO</option>
     </select>
 
-    <a href="ficha.php">
-        <div id="lista">
-            <div class="personagem"> 
-                
-            </div>
-           
-        </div>
-    </a>
+    <table>
+    <tbody>
+    <div id="lista">
+            <?php
+            include("listar.php");
+            
+            //verifica se a variável tem os valores da tabela.
+            if (!empty($lista_usuarios)) {
+                //seleciona linha por linha.
+                foreach ($lista_usuarios as $linha) { ?>
+                    <tr class="personagem">
+                        <td> <?php echo $linha['nome']; ?></td>
+                        <td> <?php echo $linha['jogador']; ?></td>
+                        <td> <img src="img/excluir.png" width="40px" height="40px"></td>
+                    </tr>
+            <?php }
+            }
+            ?>
+    </div>
+    </tbody>
+    </table>
+
 </body>
 <script>
 

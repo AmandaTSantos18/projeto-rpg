@@ -15,7 +15,7 @@
                                                 VALUES(:nome,:jogador,:is_padrao,:fk_origem,:fk_classe,:fk_trilha,:fk_elemento,:fk_patente,:pm,:xp,:fk_usuario)");
     
     $comando->bindValue(":nome",$personagem); 
-    $comando->bindValue(":jogador",$jogador);   
+    $comando->bindValue(":jogador",$jogador);
     $comando->bindValue(":fk_origem",$origem);                                     
     $comando->bindValue(":fk_classe",$classe);    
     $comando->bindValue(":fk_trilha",$trilha);  
@@ -28,6 +28,9 @@
     $comando->bindValue(":fk_usuario",$_SESSION['id_usuario']);
     $comando->bindValue(":is_padrao",$_SESSION['is_adm']);
 
-    $comando->execute();                               
+    $comando->execute();    
+    
+    unset($comando);
+    unset($pdo);
 
-    header("Location:tela3login.php");
+    header("Location:tela4lista.php");

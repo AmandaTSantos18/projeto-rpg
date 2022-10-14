@@ -26,7 +26,7 @@
             }
             else
             {
-                header("location: tela4lista.html");
+                header("location: tela4lista.php");
             }
         }
         else

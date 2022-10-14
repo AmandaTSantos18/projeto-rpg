@@ -62,8 +62,7 @@ body
     border-color:rgba(146, 0, 0, 1);
 
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     font-size: 15px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -86,3 +85,4 @@ a
     font-size: 15px;
     font-weight: bolder;
 }
+

@@ -10,5 +10,8 @@
     $comando->bindValue(":senha",$senha);    
     $comando->execute();                               
 
+    unset($comando);
+    unset($pdo);
+    
     header("Location:tela3login.php");
 ?>
