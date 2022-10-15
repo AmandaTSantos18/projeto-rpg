@@ -6,20 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Lista</title>
 
+    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link rel="stylesheet" href="css/estilotela4lista.css">
-    
-        <style>
-            body
-            {
-                background-repeat: no-repeat;
-                background-size: cover;
-                
-                background-image:url("img/fundo.png");
-    
-            }
-        </style> 
 </head>
 <body>
+    <img src="img/simbolosfundinho.png" id="fundinho">
     <img src="img/logo.png" id="logo">
 
     <a href="ficha.php">
@@ -45,9 +36,9 @@
                 //seleciona linha por linha.
                 foreach ($lista_usuarios as $linha) { ?>
                     <tr class="personagem">
-                        <td> <?php echo $linha['nome']; ?></td>
-                        <td> <?php echo $linha['jogador']; ?></td>
-                        <td> <img src="img/excluir.png" width="40px" height="40px"></td>
+                        <td class="nome"> <?php echo $linha['nome']; ?></td>
+                        <td class="jogador"> <?php echo $linha['jogador']; ?></td>
+                        <td class="delete"> <img src="img/excluir.png" width="40px" height="40px"></td>
                     </tr>
             <?php }
             }
