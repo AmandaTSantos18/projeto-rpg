@@ -31,11 +31,15 @@
         }
         else
         {
-            echo("Email ou Senha incorreto!");
+            echo('<script> alert("Email ou Senha incorreto!");
+            window.open("tela3login.php","_self");
+            </script>');
         }
     }
     else
     {
-        echo("Email ou Senha incorreto!");
+        echo('<script> alert("Email ou Senha incorreto!");
+        window.open("tela3login.php","_self");
+        </script>');
     }
 ?> 
