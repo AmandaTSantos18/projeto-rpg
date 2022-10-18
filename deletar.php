@@ -8,5 +8,5 @@
     $comando->bindValue(":codigo",$codigo); 
     $comando->execute();
 
-    header("Location: lista_clientes.php");
+    header("Location:tela4lista.php");
 ?>
