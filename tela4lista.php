@@ -36,10 +36,10 @@
                 if (!empty($lista_usuarios)) {
                     //seleciona linha por linha.
                     foreach ($lista_usuarios as $linha) { ?>
-                        <tr class="personagem" >
-                            <td class="nome"> <?php echo $linha['nome']; ?></td>
-                            <td class="jogador"> <?php echo $linha['jogador']; ?></td>
-                            <td class="delete"> <img src="img/excluir.png" width="40px" height="40px" onclick="Deletar(<?php echo $linha['nome']; ?>);"> </td>
+                        <tr class="personagem">
+                            <td class="nome" name="nome"> <?php echo $linha['nome']; ?></td>
+                            <td class="jogador" name="jogador"> <?php echo $linha['jogador']; ?></td>
+                            <td class="delete"> <img src="img/excluir.png" width="40px" height="40px" onclick="Deletar();"></td>
                         </tr>
                 <?php } 
                 }
@@ -50,12 +50,12 @@
     </div>
 </body>
 <script>
-        function Deletar(codigo)
+        function Deletar(nome)
         {
             var resposta = prompt("Deseja realmente excluir?", "N");
             if( resposta == "S" || resposta == "s")
             {
-                window.open("deletar.php?codigo=" + codigo,"_self");
+                window.open("deletar.php?nome=" + nome,"_self");
             }
             
         }
