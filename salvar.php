@@ -32,5 +32,10 @@
     
     unset($comando);
     unset($pdo);
-
-    header("Location:tela4lista.php");
+    
+    if($_SESSION['is_adm'] == 1)
+    {
+        header("location: listapersoadm.php");
+    }else{
+        header("location: tela4lista.php");
+    }

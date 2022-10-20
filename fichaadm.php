@@ -11,7 +11,7 @@
 </head>
 <body>
     <form action="salvar.php" method="post">
-        <a href="config.html"><img src="img/configuracoes.png" id="config"></a>
+        <a href="config.php"><img src="img/configuracoes.png" id="config"></a>
         <a href="criarequipamento.html" id="criar">
                 <button type="submit" class="criarqual"> EQUIPAMENTO </button>
         </a>
@@ -26,15 +26,10 @@
                 <label class="info">PERSONAGEM:</label>
                 <input type="text" class="espacinho pe" name="personagem">
             </div>
-            
-            <div class="categoria">
-                <label class="info">JOGADOR:</label>
-                <input type="text" class="espacinho pe" name="jogador">
-            </div>
 
             <div class="categoria">
                 <label class="info">ORIGEM:</label>
-                <select class="espacinho ori" name="origem">
+                    <select class="espacinho ori" name="origem">
                     <option value="desconhecido">Desconhecido</option>
                     <option value="academico">Acadêmico</option>
                     <option value="agente_de_saude">Agente de Saúde</option>

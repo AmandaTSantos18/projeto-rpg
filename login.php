@@ -22,7 +22,7 @@
 
             //verifica se o usuario conectado é administrador para mostrar a mensagem.
             if ($resultado['is_adm'] == 1) {
-            header("location: fichaadm.php");
+            header("location: listapersoadm.php");
             }
             else
             {

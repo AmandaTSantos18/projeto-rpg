@@ -12,7 +12,7 @@
     if($comando->rowCount() >= 1)
     {
         //o fetch() transforma o retorno em uma matriz (Use quando você para um registro ou mais, ou seja, uma ou múltiplas linhas da tabela).
-        $lista_usuarios = $comando->fetchAll();
+        $lista_personagens = $comando->fetchAll();
     }else{
         echo("Não há personagens criados.");
     }

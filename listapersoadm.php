@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/estilotela4lista.css">
 </head>
 <body>
-        <style>
+    <style>
             body
             {
                 background-repeat: no-repeat;
@@ -23,16 +23,16 @@
 
     <div class="conteudo">
     <img src="img/logo.png" id="logo">
-        <a href="ficha.php">
+        <a href="fichaadm.php">
             <div class="botao_criar alinhado">
                 <img src="img/maiszinho.png" id="maiszinho"> 
-                NOVO <br> PERSONAGEM
+                CRIAR
             </div>
         </a>
 
         <select class="epadrao" id="qual">
-            <option value="seu">SEUS PERSONAGENS</option>
-            <option value="padrao">PERSONAGENS PADRÃO</option>
+            <option value="seu">PERSONAGENS PADRÃO</option>
+            <option value="padrao">EQUIPAMENTOS</option>
         </select>
 
         <table>
@@ -47,7 +47,6 @@
                     foreach ($lista_personagens as $linha) { ?>
                         <tr class="personagem">
                             <td class="nome" name="nome"> <?php echo $linha['nome']; ?></td>
-                            <td class="jogador" name="jogador"> <?php echo $linha['jogador']; ?></td>
                             <td class="delete"> <img src="img/excluir.png" width="40px" height="40px"></td>
                         </tr>
                 <?php } 

@@ -11,7 +11,7 @@
 </head>
 <body>
     <form action="salvar.php" method="post">
-        <a href="config.html"><img src="img/configuracoes.png" id="config"></a>
+        <a href="config.php"><img src="img/configuracoes.png" id="config"></a>
         <a href="descricoes.html"><img src="img/izinho.png" id="izinho"></a>
         <input type="submit" class="salvar" value="SALVAR"> 
         <div class="cabecalho">
