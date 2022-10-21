@@ -10,16 +10,18 @@
     <link href='https://fonts.googleapis.com/css?family=Paprika' rel='stylesheet'>
 </head>
 <body>
-    <form action="salvar.php" method="post">
+    
         <a href="config.php"><img src="img/configuracoes.png" id="config"></a>
-        <a href="criarequipamento.html" id="criar">
-                <button type="submit" class="criarqual"> EQUIPAMENTO </button>
+
+        <a href="criarequipamento.php" id="criar">
+            <button type="submit" class="criarqual"> EQUIPAMENTO </button>
         </a>
 
         <label class="principal">CRIAR PERSONAGEM</label>
 
 
         <a href="descricoes.html"><img src="img/izinho.png" id="izinho"></a>
+    <form action="salvar.php" method="post">
         <button type="submit" class="salvar"> SALVAR </button>
         <div class="cabecalho">
             <div class="categoria">
