@@ -73,17 +73,23 @@ a
 
 .tudo
 {
+    position: absolute;
+    top: 25px;
+    margin-top: 15px;
     border:solid;
     border-color: black;
     border-width: 2px;
     border-radius: 3px;
-    width: 1565px;
-    height: 400px;
+    width: 1530px;
+    height: 380px;
+    padding: 20px;
 }
 
 .opcaonome
 {
-
+    display: flex;
+    flex-direction: column;
+    margin-left: 80px;
 }
 
 .nome
@@ -93,29 +99,32 @@ a
     background-color: #D9D9D9;
     border-radius: 10px;
     font-size: 30px;
+    border: solid 2px;
 }
 
 .valor
 {
     width: 120px;
-    height: 75px;
+    height: 60px;
     background-color: #D9D9D9;
     border-radius: 10px;
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
     margin-left: 50px;
+    border: solid 2px;
 }
 
 .selecao
 {
     width: 400px;
-    height: 65px;
+    height: 60px;
     background-color: #D9D9D9;
     border-radius: 10px;
-    font-size: 50px;
+    font-size: 30px;
     margin-left: 10px;
     margin-right: 10px;
     text-align: center;
+    border: solid 2px;
 }
 
 
@@ -126,10 +135,10 @@ a
     align-self: center;
     justify-self: center;
     width: 400px;
-    height: 300px;
+    height: 280px;
     justify-content: space-between;
     padding: 30px;
-    margin-top: 50px;
+
     flex-wrap: wrap;
 }
 
@@ -140,11 +149,13 @@ a
     align-self: center;
     justify-self: center;
     width: 900px;
-    height: 300px;
+    height:290px;
     justify-content: space-between;
     padding: 30px;
-    margin-top: 50px;
     flex-wrap: wrap;
+    position: absolute;
+    top: 115px;
+    left: 550px;
 }
 
 .info
@@ -163,6 +174,11 @@ a
     text-justify: center;
 }
 
+.num
+{
+    margin-left: 50px;
+}
+
 .equipamento
 {
     width: 1150px;
@@ -171,8 +187,7 @@ a
 
     background-color: transparent;
 
-    border-style: solid;
-    border-width: 3px;
+    border: solid 3px;
     border-color: rgb(150, 150, 150);
     position: relative;
 
@@ -310,5 +325,5 @@ a
 {
     position: absolute;
     left: 220px;
-    top: 500px;
+    top: 485px;
 }

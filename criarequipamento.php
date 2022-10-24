@@ -11,7 +11,7 @@
 </head>
 <body>
            
-            <a href="config.php"><img src="img/configuracoes.png" id="config"></a>
+            <a href="configadm.php"><img src="img/configuracoes.png" id="config"></a>
 
             <a href="fichaadm.php" id="criar">
                     <button type="submit" class="criarqual"> PERSONAGEM </button>
@@ -25,24 +25,24 @@
             <div class="opcaonome">
                 <label class="info">NOME DO EQUIPAMENTO</label>
                     <input type="text" class="nome">
-                </div>
+            </div>
 
                 <div class="opcoes">
                     <div class="um">
-                        <label class="info">ID</label>
+                        <label class="info num">ID</label>
                             <input type="number" class="valor">
                     </div>
 
                     <div class="um">
-                        <label class="info">DANO</label>
+                        <label class="info num">DANO</label>
                             <input type="text" class="valor">
                     </div>
                     <div class="um">
-                        <label class="info">CRÍTICO</label>
+                        <label class="info num">CRÍTICO</label>
                             <input type="text" class="valor">
                     </div>
                     <div class="um">
-                        <label class="info">ESPAÇO</label>
+                        <label class="info num">ESPAÇO</label>
                             <input type="number" class="valor">
                     </div>
                 </div>
@@ -86,10 +86,9 @@
                             <option value="5">FOGUETES</option>
                             <option value="6">COMBUSTÍVEL</option>
                         </select>     
-                    </div>               
-                </div>
+                    </div> 
+                </div>              
             </div>
-        </div>
         </form>
 
         <table class="lista">

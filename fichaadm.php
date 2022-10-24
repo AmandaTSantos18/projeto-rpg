@@ -11,7 +11,7 @@
 </head>
 <body>
     
-        <a href="config.php"><img src="img/configuracoes.png" id="config"></a>
+        <a href="configadm.php"><img src="img/configuracoes.png" id="config"></a>
 
         <a href="criarequipamento.php" id="criar">
             <button type="submit" class="criarqual"> EQUIPAMENTO </button>

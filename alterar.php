@@ -13,6 +13,13 @@
     $comando->bindValue(":senha",$senha);   
     $comando->bindValue(":id_usuario",$_SESSION['id_usuario']); 
     $comando->execute();
-    header("Location:ficha.php");
+
+    if ($_SESSION['is_adm'] == 1) {
+        header("location: fichaadm.php");
+        }
+        else
+        {
+            header("location: ficha.php");
+        }
 
 ?>
