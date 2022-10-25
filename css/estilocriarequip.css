@@ -210,7 +210,7 @@ a
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center
+    justify-content: center;
 }
 
 .nome_equip
@@ -222,7 +222,7 @@ a
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center
+    justify-content: center;
 }
 
 .dano
@@ -234,7 +234,7 @@ a
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center
+    justify-content: center;
 }
 
 .critico
@@ -246,7 +246,7 @@ a
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center
+    justify-content: center;
 }
 
 .tipo
@@ -258,7 +258,7 @@ a
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center
+    justify-content: center;
 }
 
 .categoria
@@ -270,7 +270,7 @@ a
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center
+    justify-content: center;
 }
 
 .alcance
@@ -282,7 +282,7 @@ a
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center
+    justify-content: center;
 }
 
 .municao
@@ -294,7 +294,7 @@ a
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center
+    justify-content: center;
 }
 
 .espaco
@@ -306,7 +306,7 @@ a
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center
+    justify-content: center;
 }
 
 .delete
@@ -318,7 +318,7 @@ a
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center
+    justify-content: center;
 }
 
 .lista

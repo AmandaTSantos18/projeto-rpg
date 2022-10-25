@@ -109,10 +109,11 @@
                             <td class="espaco" name="espaco"> <?php echo $linha['espaco']; ?></td>
 
                             <td class="delete"> 
-                                <a href="excluirequip.php">
+                                <a href="excluirequip.php?id_equipamentos=<?php echo($linha['id_equipamentos']);?>">
                                     <img src="img/excluir.png" width="40px" height="40px">
                                 </a>
                             </td>
+                           <!--  https://blog.betrybe.com/javascript/javascript-alert/ -->
                         </tr>
                 <?php } 
                 }
