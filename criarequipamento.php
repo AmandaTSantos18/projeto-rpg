@@ -108,7 +108,11 @@
                             <td class="municao" name="municao"> <?php echo $linha['fk_municao']; ?></td>
                             <td class="espaco" name="espaco"> <?php echo $linha['espaco']; ?></td>
 
-                            <td class="delete"> <img src="img/excluir.png" width="40px" height="40px"></td>
+                            <td class="delete"> 
+                                <a href="excluirequip.php">
+                                    <img src="img/excluir.png" width="40px" height="40px">
+                                </a>
+                            </td>
                         </tr>
                 <?php } 
                 }
