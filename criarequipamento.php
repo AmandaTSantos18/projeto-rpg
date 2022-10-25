@@ -24,32 +24,28 @@
         <div class="tudo">
             <div class="opcaonome">
                 <label class="info">NOME DO EQUIPAMENTO</label>
-                    <input type="text" class="nome">
+                    <input type="text" class="nome" name="nome">
             </div>
 
                 <div class="opcoes">
-                    <div class="um">
-                        <label class="info num">ID</label>
-                            <input type="number" class="valor">
-                    </div>
 
                     <div class="um">
                         <label class="info num">DANO</label>
-                            <input type="text" class="valor">
+                            <input type="text" class="valor" name="dano">
                     </div>
                     <div class="um">
                         <label class="info num">CRÍTICO</label>
-                            <input type="text" class="valor">
+                            <input type="text" class="valor" name="critico">
                     </div>
                     <div class="um">
                         <label class="info num">ESPAÇO</label>
-                            <input type="number" class="valor">
+                            <input type="number" class="valor" name="espaco">
                     </div>
                 </div>
                 <div class="opcoes2">
                     <div class="um">
                         <label class="info">TIPO</label>
-                        <select class="selecao">
+                        <select class="selecao" name="tipo">
                             <option value="1">CORTE</option>
                             <option value="2">IMPACTO</option>
                             <option value="3">PERFURAÇÃO</option>
@@ -59,7 +55,7 @@
                     </div>
                     <div class="um">
                         <label class="info">CATEGORIA</label>
-                        <select class="selecao">
+                        <select class="selecao" name="categoria">
                             <option value="1">0</option>
                             <option value="2">I</option>
                             <option value="3">II</option>
@@ -69,7 +65,7 @@
                     </div>
                     <div class="um">
                         <label class="info">ALCANCE</label>
-                        <select class="selecao">
+                        <select class="selecao" name="alcance">
                             <option value="1">CURTO</option>
                             <option value="2">MÉDIO</option>
                             <option value="3">LONGO</option>
@@ -78,7 +74,7 @@
                     </div>
                     <div class="um">
                         <label class="info">MUNIÇÃO</label>
-                        <select class="selecao">
+                        <select class="selecao" name="municao">
                             <option value="1">FLECHAS</option>
                             <option value="2">BALAS LEVES</option>
                             <option value="3">BALAS PESADAS</option>
@@ -120,5 +116,6 @@
         </div>
         </tbody>
         </table>
+    </form>
 </body>
 </html>
