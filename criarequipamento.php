@@ -16,9 +16,11 @@
             <a href="fichaadm.php" id="criar">
                     <button type="submit" class="criarqual"> PERSONAGEM </button>
             </a>
+
         <form action="salvarequip.php" method="post"> 
             <label class="principal">CRIAR EQUIPAMENTO</label>
 
+            <button type="submit" class="alterar"> ALTERAR </button>
             <button type="submit" class="salvar"> SALVAR </button>
 
         <div class="tudo">
@@ -28,7 +30,10 @@
             </div>
 
                 <div class="opcoes">
-
+                    <div class="um">
+                        <label class="info num">ID</label>
+                            <input type="number" class="valor" name="id">
+                    </div>
                     <div class="um">
                         <label class="info num">DANO</label>
                             <input type="text" class="valor" name="dano">
@@ -109,7 +114,7 @@
                             <td class="espaco" name="espaco"> <?php echo $linha['espaco']; ?></td>
 
                             <td class="delete"> 
-                                <a href="excluirequip.php?id_equipamentos=<?php echo($linha['id_equipamentos']);?>">
+                                <a href="excluirequip.php?id=<?php echo($linha['id_equipamentos']);?>">
                                     <img src="img/excluir.png" width="40px" height="40px">
                                 </a>
                             </td>
@@ -118,7 +123,7 @@
                 <?php } 
                 }
                 ?>
-        </div>
+            </div>
         </tbody>
         </table>
     </form>

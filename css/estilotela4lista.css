@@ -98,10 +98,19 @@ a
     font-weight: bolder;
 }
 
-.nome
+.id
 {
     position: absolute;
     left: 20px;
+    top: 13px;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.nome
+{
+    position: absolute;
+    left: 50px;
     top: 8px;
     font-size: 25px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

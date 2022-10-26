@@ -1,11 +1,10 @@
 <?php
-include("conexao.php");
+    include("conexao.php");
 
-$id=$_GET["id_equipamentos"];
+    $id = $_GET["id"];
 
-$comando=$pdo->prepare("DELETE FROM equipamentos WHERE id_equipamentos=:id");
-$comando->bindValue(":id",$id); 
-$comando->execute();
+    $comando = $pdo -> prepare("DELETE FROM equipamentos WHERE id_equipamentos = $id;");
+    $comando -> execute();
 
-header("Location:criarequipamento.php");
+    header("location:criarequipamento.php")
 ?>

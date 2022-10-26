@@ -236,7 +236,7 @@ create table usuario(
 create table personagem(
 	id_personagem int not null auto_increment primary key,
     nome varchar (200) NOT NULL,
-    jogador varchar (200) NOT NULL,
+    jogador varchar (200) NULL,
     is_padrao varchar (1) NOT NULL,
     pm int NOT NULL DEFAULT 0,
     xp int NOT NULL DEFAULT 0,

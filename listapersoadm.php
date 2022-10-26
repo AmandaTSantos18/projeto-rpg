@@ -30,11 +30,6 @@
             </div>
         </a>
 
-        <select class="epadrao" id="qual">
-            <option value="seu">PERSONAGENS PADRÃO</option>
-            <option value="padrao">EQUIPAMENTOS</option>
-        </select>
-
         <table>
         <tbody>
         <div id="lista">
@@ -46,8 +41,14 @@
                     //seleciona linha por linha.
                     foreach ($lista_personagens as $linha) { ?>
                         <tr class="personagem">
+                            <td class="id" name="id"> <?php echo $linha['id_personagem']; ?></td>
                             <td class="nome" name="nome"> <?php echo $linha['nome']; ?></td>
-                            <td class="delete"> <img src="img/excluir.png" width="40px" height="40px"></td>
+                            
+                            <td class="delete"> 
+                                <a href="deletar.php?id=<?php echo($linha['id_personagem']);?>">
+                                    <img src="img/excluir.png" width="40px" height="40px">
+                                </a>
+                            </td>
                         </tr>
                 <?php } 
                 }

@@ -1,17 +1,17 @@
 <?php
-    include("conexao.php");
+    include("conexao.php");
 
-    $nome= $_GET['nome'];
-    $jogador=$_GET['jogador'];
+    $id = $_GET["id"];
 
-    //comando sql.
+    $comando = $pdo -> prepare("DELETE FROM personagem WHERE id_personagem = $id;");
+    $comando->execute();
+
     session_start();
-
-    $comando = $pdo->prepare("DELETE FROM personagem WHERE nome = :nome AND jogador = :jogador AND fk_usuario = :fk_usuario;");
-    $comando->bindValue(":nome",$nome); 
-    $comando->bindValue(":jogador",$jogador); 
-    $comando->bindValue(":fk_usuario",$_SESSION['id_usuario']); 
-    $comando->execute();
-
-    header("Location:tela4lista.php");
+    if($_SESSION['id_usuario'] == 1)
+    {
+        header("location:listapersoadm.php");
+    }else
+    {
+        header("location:tela4lista.php");
+    }
 ?>

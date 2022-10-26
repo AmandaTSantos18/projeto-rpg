@@ -4,7 +4,7 @@
     session_start();
     //comando sql.
     $id = $_SESSION['id_usuario'];
-    $comando = $pdo->prepare("SELECT nome, jogador FROM personagem WHERE fk_usuario=$id;");
+    $comando = $pdo->prepare("SELECT id_personagem, nome, jogador FROM personagem WHERE fk_usuario=$id;");
     //executa a consulta no banco de dados.
     $comando->execute();
 
