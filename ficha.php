@@ -124,11 +124,10 @@
         </div>
 
         <div class="pericias">
-            <label class="escrito direita">PERÍCIAS</label>
-
-        
-                <div class="peri">
-                    <h4>ADESTRAMENTO</h4>
+        <form>
+        <label class="escrito direita">PERÍCIAS</label>
+        <div class="peri">
+                    <input type="text" name="nome_pericia"> 
                     <input type="number" class="dano2">
                     <img src="img/soma.png" id="soma">
                     <input type="number" class="dano2">
@@ -146,8 +145,15 @@
                     <label id="textdeslo">DESLOCAMENTO</label>
                     <input type="number" min="0" max="100" class="desl">
                 </div>
-
+        </form>
         </div>
+<!--         <form class="pericias">
+            <label class="escrito direita">PERÍCIAS</label>
+
+        
+               
+
+        </form> -->
 
         <div class="atributos">
             <img src="img/simbolo.png" id="simb">

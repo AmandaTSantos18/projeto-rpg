@@ -91,14 +91,11 @@ body
 
 .pericias
 {
-    margin-top: 15px;
-
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    align-self: flex-start;
     position: absolute;
-    top: 190px;
+    top: 207px;
     left: 5px;
 }
 
