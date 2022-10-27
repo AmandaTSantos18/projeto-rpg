@@ -261,7 +261,7 @@ create table atributos(
 	agilidade int NOT NULL DEFAULT 0,
     intelecto int NOT NULL DEFAULT 0,
     vigor int NOT NULL DEFAULT 0,
-    presença int NOT NULL DEFAULT 0,
+    presenca int NOT NULL DEFAULT 0,
     forca int NOT NULL DEFAULT 0,
     fk_personagem int,
     CONSTRAINT fk_atributos_personagem FOREIGN KEY (fk_personagem) REFERENCES personagem (id_personagem)
@@ -270,7 +270,9 @@ create table atributos(
 create table pericias(
 	id_pericias int not null auto_increment primary key,
     nome_pericia varchar (200) DEFAULT NULL,
-    valor int NOT NULL DEFAULT 0,
+    valor1 int NOT NULL DEFAULT 0,
+    valor2 int NOT NULL DEFAULT 0,
+    soma int NOT NULL DEFAULT 0,
 	fk_personagem int,
     CONSTRAINT fk_pericias_personagem FOREIGN KEY (fk_personagem) REFERENCES personagem (id_personagem)
 );

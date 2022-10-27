@@ -124,18 +124,17 @@
         </div>
 
         <div class="pericias">
-        <form>
         <label class="escrito direita">PERÍCIAS</label>
-        <div class="peri">
-                    <input type="text" name="nome_pericia"> 
-                    <input type="number" class="dano2">
+                <div class="peri">
+                    <input type="text" class="nome_pericia" name="nome_pericia"> 
+                    <input type="number" class="dano2" name="valor1">
                     <img src="img/soma.png" id="soma">
-                    <input type="number" class="dano2">
+                    <input type="number" class="dano2" name="valor2">
                     <img src="img/igual.png" id="soma">
-                    <input type="number" class="dano2">
+                    <textarea class="dano2" name="soma" value="soma"> </textarea> 
                 </div>
 
-
+<!-- 
                 <button type="button" class="add_peri">
                     <label id="textdeslo">ADICIONAR PERÍCIA</label>
                     <img src="img/mais3.png" id="mais">
@@ -144,24 +143,16 @@
                 <div class="deslocamento">
                     <label id="textdeslo">DESLOCAMENTO</label>
                     <input type="number" min="0" max="100" class="desl">
-                </div>
-        </form>
+                </div> -->
         </div>
-<!--         <form class="pericias">
-            <label class="escrito direita">PERÍCIAS</label>
-
-        
-               
-
-        </form> -->
 
         <div class="atributos">
             <img src="img/simbolo.png" id="simb">
-            <input type="number" class="atri forca">
-            <input type="number" class="atri presenca">
-            <input type="number" class="atri agilidade">
-            <input type="number" class="atri intelecto">
-            <input type="number" class="atri vigor">
+            <input type="number" class="atri forca" name="forca">
+            <input type="number" class="atri presenca" name="presenca">
+            <input type="number" class="atri agilidade" name="agilidade">
+            <input type="number" class="atri intelecto" name="intelecto">
+            <input type="number" class="atri vigor" name="vigor">
 
             <input type="number" min="0" max="100" class="atri2 nex">
         </div>
@@ -333,7 +324,7 @@
 
         <div class="habilidades">
                 <label class="escrito">HABILIDADES</label>
-                <textarea cols="30" rows="5" class="espaco esquerda hab"></textarea>
+                <textarea cols="30" rows="5" class="espaco esquerda hab" name="habilidades"></textarea>
         </div>
 
         <div class="rituais">

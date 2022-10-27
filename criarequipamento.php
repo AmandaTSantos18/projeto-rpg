@@ -20,7 +20,9 @@
         <form action="salvarequip.php" method="post"> 
             <label class="principal">CRIAR EQUIPAMENTO</label>
 
-            <button type="submit" class="alterar"> ALTERAR </button>
+        <a href="alterarequip.php">
+            <button type="submit" class="alterar">ALTERAR </button> 
+        </a>
             <button type="submit" class="salvar"> SALVAR </button>
 
         <div class="tudo">

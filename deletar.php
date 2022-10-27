@@ -7,7 +7,7 @@
     $comando->execute();
 
     session_start();
-    if($_SESSION['id_usuario'] == 1)
+    if($_SESSION['id_adm'] == 1)
     {
         header("location:listapersoadm.php");
     }else

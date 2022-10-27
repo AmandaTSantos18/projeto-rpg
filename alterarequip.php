@@ -1,15 +1,15 @@
 <?php
     include("conexao.php");
 
-    $id = $_POST['id'];
-    $nome = $_POST["nome"];
-    $dano = $_POST["dano"];
-    $critico = $_POST["critico"];
-    $espaco = $_POST["espaco"];
-    $fk_tipo = $_POST["tipo"];
-    $fk_categoria = $_POST["categoria"];
-    $fk_alcance = $_POST["alcance"];
-    $fk_municao = $_POST["municao"];
+    $id = $_GET["id"];
+    $nome = $_GET["nome"];
+    $dano = $_GET["dano"];
+    $critico = $_GET["critico"];
+    $espaco = $_GET["espaco"];
+    $fk_tipo = $_GET["tipo"];
+    $fk_categoria = $_GET["categoria"];
+    $fk_alcance = $_GET["alcance"];
+    $fk_municao = $_GET["municao"];
 
     print_r($critico);
     die();
