@@ -38,7 +38,6 @@
     $comando->bindValue(":fk_usuario",$_SESSION['id_usuario']);
     $comando->execute();
     $resultado = $comando->fetch();
-    $fk_personagem = $resultado['id_personagem'];
 
     unset($comando);
     unset($pdo);
@@ -50,8 +49,6 @@
     $presenca = $_POST["presenca"];
     $forca = $_POST["forca"];
     
-    echo("$fk_personagem, $agilidade, $intelecto, $vigor, $presenca, $forca");
-    die();
     $comando = $pdo -> prepare("INSERT INTO atributos(agilidade,intelecto,vigor,presenca,forca,fk_personagem)
                                 VALUES(:agilidade,:intelecto,:vigor,:presenca,:forca,:fk_personagem)");
     $comando->bindValue(":agilidade",$agilidade);    
@@ -59,7 +56,7 @@
     $comando->bindValue(":vigor",$vigor);    
     $comando->bindValue(":presenca",$presenca); 
     $comando->bindValue(":forca",$forca);    
-    $comando->bindValue(":fk_personagem",$fk_personagem); 
+    $comando->bindValue(":fk_personagem",$resultado['id_personagem']); 
     $comando->execute();
     unset($comando);
     unset($pdo);
