@@ -20,7 +20,7 @@
     if($comando->rowCount() > 0)
     {
         echo('<script> alert("Você já criou um personagem com esse nome e jogador.");
-        window.open("_self");
+        window.open("ficha.php","_self");
         </script>');
 
     }else{
