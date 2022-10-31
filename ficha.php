@@ -154,7 +154,7 @@
             <input type="number" class="atri intelecto" name="intelecto">
             <input type="number" class="atri vigor" name="vigor">
 
-            <input type="number" min="0" max="100" class="atri2 nex">
+            <input type="number" min="0" max="100" class="atri2 nex" name="nex">
         </div>
 
         <div class="bloco">
@@ -162,40 +162,40 @@
                 <div class="escrito sa">SAÚDE</div>
                     <div class="conteudo">
                         <label class="saude_texto"><h1>PV</h1><h2>PONTOS DE VIDA</h2></label>
-                        <input type="number" class="dano2">
+                        <input type="number" class="dano2" name="vida_atual">
                         <img src="img/barra.png" id="barra">
-                        <input type="number" class="dano2">
+                        <input type="number" class="dano2" name="vida">
                     </div>
 
                     <div class="conteudo">
                         <label class="saude_texto"><h1>SAN</h1><h2>SANIDADE</h2></label>
-                        <input type="number" class="dano2">
+                        <input type="number" class="dano2" name="sanidade_atual">
                         <img src="img/barra.png" id="barra">
-                        <input type="number" class="dano2">
+                        <input type="number" class="dano2" name="sanidade">
                     </div>
 
                     <div class="conteudo">
                         <label class="saude_texto"><h1>PE</h1><h2>PONTOS DE ESFORÇO</h2></label>
-                        <input type="number" class="dano2">
+                        <input type="number" class="dano2" name="esforco_atual">
                         <img src="img/barra.png" id="barra">
-                        <input type="number" class="dano2">
+                        <input type="number" class="dano2" name="esforco">
                     </div>
             </div>
             <div class="saude">
                 <label class="escrito sa">DESFESAS</label>
                     <div class="conteudo2">
                         <div class="saude_texto"><h3>PASSIVA</h3></div>
-                        <input type="number" class="dano3">
+                        <input type="number" class="dano3" name="passiva">
                     </div>
 
                     <div class="conteudo2">
                         <label class="saude_texto"><h3>BLOQUEIO</h3></label>
-                        <input type="number" class="dano3">
+                        <input type="number" class="dano3" name="bloqueio">
                     </div>
 
                     <div class="conteudo2">
                         <label class="saude_texto"><h3>ESQUIVA</h3></label>
-                        <input type="number" class="dano3">
+                        <input type="number" class="dano3" name="esquiva">
                     </div>
             </div>
         </div>
@@ -297,7 +297,7 @@
                         </div>
                         <div class="valor_2">
                             <label class="menor">MUNIÇÃO ATUAL</label>
-                            <input type="number" min="0" max="100" class="dano4">
+                            <input type="number" min="0" max="100" class="dano4" name="municao_atual">
                         </div>
                         <div class="valor_2">
                             <label class="menor">MUNIÇÃO TOTAL</label>

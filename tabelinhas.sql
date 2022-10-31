@@ -2,15 +2,6 @@ drop database if exists app;
 create database app;
 use app;
 
-create table atual
-(
-    id_atual int not null auto_increment primary key,
-    vida_atual int NOT NULL DEFAULT 0,
-    sanidade_atual int NOT NULL DEFAULT 0,
-    pontos_de_esforço_atual int NOT NULL DEFAULT 0,
-    municao_atual int NOT NULL DEFAULT 0
-);
-
 create table classe(
 	id_classe int not null auto_increment primary key,
 	nome_classe varchar (200)
@@ -263,6 +254,7 @@ create table atributos(
     vigor int NOT NULL DEFAULT 0,
     presenca int NOT NULL DEFAULT 0,
     forca int NOT NULL DEFAULT 0,
+    nex int NOT NULL DEFAULT 0,
     fk_personagem int,
     CONSTRAINT fk_atributos_personagem FOREIGN KEY (fk_personagem) REFERENCES personagem (id_personagem)
 );
@@ -335,4 +327,15 @@ create table resistencias_a_dano(
 	conhecimento int NOT NULL DEFAULT 0,
 	fk_personagem int,
     CONSTRAINT fk_resistencias_personagem FOREIGN KEY (fk_personagem) REFERENCES personagem (id_personagem)
+);
+
+create table atual
+(
+    id_atual int not null auto_increment primary key,
+    vida_atual int NOT NULL DEFAULT 0,
+    sanidade_atual int NOT NULL DEFAULT 0,
+    esforco_atual int NOT NULL DEFAULT 0,
+    municao_atual int NOT NULL DEFAULT 0,
+    fk_personagem int,
+    CONSTRAINT fk_atual_personagem FOREIGN KEY (fk_personagem) REFERENCES personagem (id_personagem)
 );
