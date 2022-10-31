@@ -205,31 +205,31 @@
                 <div class="tipos">
                     <div class="valor">
                         FÍSICA
-                        <input type="number" class="dano">
+                        <input type="number" class="dano" name="resistencia_fisica">
                     </div>
                     <div class="valor">
                         BALÍSTICA
-                        <input type="number" class="dano">
+                        <input type="number" class="dano" name="resistencia_balistica">
                     </div>
                     <div class="valor">
                         MENTAL
-                        <input type="number" class="dano">
+                        <input type="number" class="dano" name="resistencia_mental">
                     </div>
                     <div class="valor">
                         SANGUE
-                        <input type="number" class="dano">
+                        <input type="number" class="dano" name="resistencia_sangue">
                     </div>
                     <div class="valor">
                         MORTE
-                        <input type="number" class="dano">
+                        <input type="number" class="dano" name="resistencia_morte">
                     </div>
                     <div class="valor">
                         ENERGIA
-                        <input type="number" class="dano">
+                        <input type="number" class="dano" name="resistencia_energia">
                     </div>
                     <div class="valor">
                         CONHECIMENTO
-                        <input type="number" class="dano">
+                        <input type="number" class="dano" name="resistencia_conhecimento">
                     </div>
                 </div>
         </div>
@@ -309,17 +309,17 @@
 
         <div class="proficiencias">
             <label class="escrito">PROFICIÊNCIAS</label>
-            <textarea cols="30" rows="5" class="espaco direita prof"></textarea>
+            <textarea cols="30" rows="5" class="espaco direita prof" name="proficiencias"></textarea>
         </div>
 
         <div class="ataques_e_defesas">
                 <label class="escrito">ATAQUES E DEFESAS DETALHADOS</label>
-                <textarea cols="30" rows="5" class="espaco meio at"></textarea>
+                <textarea cols="30" rows="5" class="espaco meio at" name="ataquesedefesas"></textarea>
         </div>
 
         <div class="inventario">
                 <label class="escrito">INVENTÁRIO</label>
-                <textarea cols="30" rows="5" class="espaco direita inv"></textarea>
+                <textarea cols="30" rows="5" class="espaco direita inv" name="inventario"></textarea>
         </div>
 
         <div class="habilidades">
@@ -329,12 +329,12 @@
 
         <div class="rituais">
                 <label class="escrito">RITUAIS CONHECIDOS</label>
-                <textarea cols="30" rows="5" class="espaco meio at"></textarea>
+                <textarea cols="30" rows="5" class="espaco meio at" name="rituais"></textarea>
         </div>
 
         <div class="historico">
                 <label class="escrito">HISTÓRICO</label>
-                <textarea cols="30" rows="5" class="espaco direita his"></textarea>
+                <textarea cols="30" rows="5" class="espaco direita his" name="historico"></textarea>
         </div>
     </form>
 </body>

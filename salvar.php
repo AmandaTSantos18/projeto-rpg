@@ -12,6 +12,21 @@
     $xp = $_POST["xp"];
     $pm = $_POST["pm"];
 
+    $comando = $pdo -> prepare("SELECT id_personagem FROM personagem WHERE nome = :personagem AND jogador = :jogador;");
+    $comando->bindValue(":personagem", $personagem);
+    $comando->bindValue(":jogador", $jogador);
+    $comando->execute();   
+
+    if($comando->rowCount() > 0)
+    {
+        echo('<script> alert("Você já criou um personagem com esse nome e jogador.");
+        window.open("_self");
+        </script>');
+
+    }else{
+    unset($comando);
+    unset($pdo);
+    include("conexao.php");
     $comando = $pdo -> prepare("INSERT INTO personagem(nome,jogador,is_padrao,fk_origem,fk_classe,fk_trilha,fk_elemento,fk_patente,pm,xp,fk_usuario) 
                                                 VALUES(:nome,:jogador,:is_padrao,:fk_origem,:fk_classe,:fk_trilha,:fk_elemento,:fk_patente,:pm,:xp,:fk_usuario)");
     $comando->bindValue(":nome",$personagem); 
@@ -104,7 +119,7 @@
     unset($comando);
     unset($pdo);
 
-    /* INSERIR ATUAL -------------------------------------------------- */
+    /* INSERIR DEFESAS -------------------------------------------------- */
     include("conexao.php");
 
     $passiva = $_POST["passiva"];
@@ -121,9 +136,104 @@
     unset($comando);
     unset($pdo);
 
+    /* INSERIR TEXTOS -------------------------------------------------- */
+    include("conexao.php");
+    $proficiencias = $_POST["proficiencias"];
+    $ataquesedefesas = $_POST["ataquesedefesas"];
+    $inventario = $_POST["inventario"];
+    $habilidades = $_POST["habilidades"];
+    $rituais = $_POST["rituais"];
+    $historico = $_POST["historico"];
+
+            /* INVENTÁRIO -------------------------------------------------- */
+            $comando = $pdo -> prepare("INSERT INTO textos(escrito,fk_tipo,fk_personagem)
+                                        VALUES (:escrito,:fk_tipo,:fk_personagem)");
+            $comando->bindValue(":escrito",$inventario);
+            $comando->bindValue(":fk_tipo", 1);
+            $comando->bindValue(":fk_personagem",$resultado['id_personagem']); 
+            $comando->execute();
+            unset($comando);
+            unset($pdo);
+            /* PROFICIÊNCIAS -------------------------------------------------- */
+            include("conexao.php");
+            $comando = $pdo -> prepare("INSERT INTO textos(escrito,fk_tipo,fk_personagem)
+                                        VALUES (:escrito,:fk_tipo,:fk_personagem)");
+            $comando->bindValue(":escrito",$proficiencias);
+            $comando->bindValue(":fk_tipo", 2);
+            $comando->bindValue(":fk_personagem",$resultado['id_personagem']); 
+            $comando->execute();
+            unset($comando);
+            unset($pdo);
+            /* ATAQUES E DEFESAS DETALHADOS -------------------------------------------------- */
+            include("conexao.php");
+            $comando = $pdo -> prepare("INSERT INTO textos(escrito,fk_tipo,fk_personagem)
+                                        VALUES (:escrito,:fk_tipo,:fk_personagem)");
+            $comando->bindValue(":escrito",$ataquesedefesas);
+            $comando->bindValue(":fk_tipo", 3);
+            $comando->bindValue(":fk_personagem",$resultado['id_personagem']); 
+            $comando->execute();
+            unset($comando);
+            unset($pdo);
+            /* RITUAIS CONHECIDOS -------------------------------------------------- */
+            include("conexao.php");
+            $comando = $pdo -> prepare("INSERT INTO textos(escrito,fk_tipo,fk_personagem)
+                                        VALUES (:escrito,:fk_tipo,:fk_personagem)");
+            $comando->bindValue(":escrito",$rituais);
+            $comando->bindValue(":fk_tipo", 4);
+            $comando->bindValue(":fk_personagem",$resultado['id_personagem']); 
+            $comando->execute();
+            unset($comando);
+            unset($pdo);
+            /* HABILIDADES -------------------------------------------------- */
+            include("conexao.php");
+            $comando = $pdo -> prepare("INSERT INTO textos(escrito,fk_tipo,fk_personagem)
+                                        VALUES (:escrito,:fk_tipo,:fk_personagem)");
+            $comando->bindValue(":escrito",$habilidades);
+            $comando->bindValue(":fk_tipo", 5);
+            $comando->bindValue(":fk_personagem",$resultado['id_personagem']); 
+            $comando->execute();
+            unset($comando);
+            unset($pdo);
+            /* HISTÓRICO -------------------------------------------------- */
+            include("conexao.php");
+            $comando = $pdo -> prepare("INSERT INTO textos(escrito,fk_tipo,fk_personagem)
+                                        VALUES (:escrito,:fk_tipo,:fk_personagem)");
+            $comando->bindValue(":escrito",$historico);
+            $comando->bindValue(":fk_tipo", 6);
+            $comando->bindValue(":fk_personagem",$resultado['id_personagem']); 
+            $comando->execute();
+            unset($comando);
+            unset($pdo);
+    
+    /* INSERIR RESISTENCIAS A DANO -------------------------------------------------- */
+    include("conexao.php");
+
+    $resistencia_fisica = $_POST["resistencia_fisica"];
+    $resistencia_balistica = $_POST["resistencia_balistica"];
+    $resistencia_mental = $_POST["resistencia_mental"];
+    $resistencia_morte = $_POST["resistencia_morte"];
+    $resistencia_sangue = $_POST["resistencia_sangue"];
+    $resistencia_conhecimento = $_POST["resistencia_conhecimento"];
+    $resistencia_energia = $_POST["resistencia_energia"];
+
+    $comando = $pdo -> prepare("INSERT INTO resistencias_a_dano(fisica,balistica,mental,sangue,morte,energia,conhecimento,fk_personagem)
+                                VALUES (:fisica,:balistica,:mental,:sangue,:morte,:energia,:conhecimento,:fk_personagem)");
+    $comando->bindValue(":fisica",$resistencia_fisica);
+    $comando->bindValue(":balistica",$resistencia_balistica);
+    $comando->bindValue(":mental",$resistencia_mental);
+    $comando->bindValue(":sangue",$resistencia_sangue);
+    $comando->bindValue(":morte",$resistencia_morte);
+    $comando->bindValue(":energia",$resistencia_energia);
+    $comando->bindValue(":conhecimento",$resistencia_conhecimento);
+    $comando->bindValue(":fk_personagem",$resultado['id_personagem']); 
+    $comando->execute();
+    unset($comando);
+    unset($pdo);
+
      if($_SESSION['is_adm'] == 1)
     {
         header("location: listapersoadm.php");
     }else{
         header("location: tela4lista.php");
     }
+}

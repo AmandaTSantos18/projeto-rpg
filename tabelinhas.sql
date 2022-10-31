@@ -106,14 +106,6 @@ insert into tipo_texto(nome_tipo) values
     ("habilidade"),
     ("histórico");
 
-create table textos(
-	id_textos int not null auto_increment primary key,
-    tipo_texto varchar (200),
-    escrito longtext,
-	fk_tipo int,
-    CONSTRAINT fk_textos_tipo FOREIGN KEY (fk_tipo) REFERENCES tipo_texto (id_tipo_texto)
-);
-
 create table categorias(
 	id_categorias int not null auto_increment primary key,
     nome_categoria varchar (200)
@@ -318,8 +310,8 @@ create table saude(
 
 create table resistencias_a_dano(
 	id_resistencias int not null auto_increment primary key,
-	física int NOT NULL DEFAULT 0,
-	balística int NOT NULL DEFAULT 0,
+	fisica int NOT NULL DEFAULT 0,
+	balistica int NOT NULL DEFAULT 0,
 	mental int NOT NULL DEFAULT 0,
 	sangue int NOT NULL DEFAULT 0,
 	morte int NOT NULL DEFAULT 0,
@@ -338,4 +330,13 @@ create table atual
     municao_atual int NOT NULL DEFAULT 0,
     fk_personagem int,
     CONSTRAINT fk_atual_personagem FOREIGN KEY (fk_personagem) REFERENCES personagem (id_personagem)
+);
+
+create table textos(
+	id_textos int not null auto_increment primary key,
+    escrito longtext,
+	fk_tipo int,
+    fk_personagem int,
+    CONSTRAINT fk_textos_tipo FOREIGN KEY (fk_tipo) REFERENCES tipo_texto (id_tipo_texto),
+    CONSTRAINT fk_tipo_personagem FOREIGN KEY (fk_personagem) REFERENCES personagem (id_personagem)
 );
