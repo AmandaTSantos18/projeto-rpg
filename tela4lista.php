@@ -8,9 +8,7 @@
 
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
     <link rel="stylesheet" href="css/estilotela4lista.css">
-</head>
-<body>
-        <style>
+    <style>
             body
             {
                 background-repeat: no-repeat;
@@ -20,10 +18,17 @@
     
             }
         </style>
+</head>
+<body>
+
+    <?php
+        $_SESSION['id_personagem'] = null;
+        $_SESSION['selected'] = false;
+    ?>
 
     <div class="conteudo">
     <img src="img/logo.png" id="logo">
-        <a href="ficha.php">
+        <a href="criar.php">
             <div class="botao_criar alinhado">
                 <img src="img/maiszinho.png" id="maiszinho"> 
                 NOVO <br> PERSONAGEM
@@ -45,6 +50,7 @@
                 if (!empty($lista_personagens)) {
                     //seleciona linha por linha.
                     foreach ($lista_personagens as $linha) { ?>
+                        
                         <tr class="personagem">
                             <td class="id" name="id"> <?php echo $linha['id_personagem']; ?></td>
                             <td class="nome" name="nome"> <?php echo $linha['nome']; ?></td>

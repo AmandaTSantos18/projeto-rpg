@@ -15,6 +15,7 @@
 
         if ( $resultado['senha'] == md5($set_senha)) 
         {
+            session_name();
             session_start();
             $_SESSION['id_usuario'] = $resultado['id_usuario'];
             $_SESSION['is_adm'] = $resultado['is_adm'];

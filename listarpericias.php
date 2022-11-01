@@ -1,19 +1,28 @@
 <?php
     include("conexao.php");
 
+    $comando = $pdo -> prepare("SELECT nome_pericia, valor1, valor2, soma FROM pericias WHERE fk_personagem = :fk_personagem");
     session_start();
-    //comando sql.
-    $id = $_SESSION['id_personagem'];
-    $comando = $pdo->prepare("SELECT nome_pericia, valor FROM pericias WHERE fk_personagem=$id;");
-    //executa a consulta no banco de dados.
-    $comando->execute();
+    $comando->bindValue(":fk_personagem", $_SESSION['id_personagem']);
 
-    //Verifica se existe pelo menos um registro na tabela.
     if($comando->rowCount() >= 1)
     {
-        //o fetch() transforma o retorno em uma matriz (Use quando você para um registro ou mais, ou seja, uma ou múltiplas linhas da tabela).
         $lista_pericias = $comando->fetchAll();
+        unset($comando);
+        unset($pdo);
+    }else{
+        unset($comando);
+        unset($pdo);
+        include("conexao.php");
+
+        $comando = $pdo->prepare("SELECT nome_pericia, valor1, valor2, soma FROM pericias WHERE fk_personagem = null;");
+        $comando->execute();
+        if($comando->rowCount() >= 1)
+        {
+            $lista_pericias = $comando->fetchAll();
+        }
     }
+
     unset($comando);
     unset($pdo);
 ?>

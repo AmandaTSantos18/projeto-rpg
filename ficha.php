@@ -13,7 +13,7 @@
         <a href="config.php"><img src="img/configuracoes.png" id="config"></a>
         <a href="descricoes.html"><img src="img/izinho.png" id="izinho"></a>
 
-        <form action="salvar.php" method="post">
+        <form action="salvar.php" method="post" target="_blank">
         <input type="submit" class="salvar" value="SALVAR"> 
         <div class="cabecalho">
             <div class="categoria">
@@ -125,6 +125,30 @@
 
         <div class="pericias">
         <label class="escrito direita">PERÍCIAS</label>
+        <table>
+        <tbody>
+        <div id="lista">
+              <?php
+                include("listarpericias.php");
+                
+                //verifica se a variável tem os valores da tabela.
+                if (!empty($lista_pericias)) {
+                    //seleciona linha por linha.
+                    foreach ($lista_pericias as $linha) { ?>
+                        <tr class="peri">
+                            <td class="nome_pericia" name="id"> <?php echo $linha['nome_pericia']; ?></td>
+                            <td class="dano2" name="nome"> <?php echo $linha['valor1']; ?></td>
+                            <td><img src="img/soma.png" id="soma"></td>
+                            <td class="dano2" name="jogador"> <?php echo $linha['valor2']; ?></td>
+                            <td><img src="img/igual.png" id="soma"></td>
+                            <td class="dano2" name="soma"><?php echo $linha['soma']; ?> </td>
+                        </tr>
+                <?php } 
+                }
+                ?>
+        </div>
+        </tbody>
+        </table><!-- 
                 <div class="peri">
                     <input type="text" class="nome_pericia" name="nome_pericia"> 
                     <input type="number" class="dano2" name="valor1">
@@ -133,7 +157,7 @@
                     <img src="img/igual.png" id="soma">
                     <textarea class="dano2" name="soma" value="soma"> </textarea> 
                 </div>
-
+ -->
 <!-- 
                 <button type="button" class="add_peri">
                     <label id="textdeslo">ADICIONAR PERÍCIA</label>
