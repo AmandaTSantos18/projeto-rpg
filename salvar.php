@@ -2,12 +2,13 @@
     include("conexao.php");
     
     $personagem = $_POST["personagem"];
-    $jogador = $_POST["jogador"];
 
     $comando = $pdo->prepare("SELECT id_personagem FROM personagem WHERE nome = :nome AND fk_usuario = :fk_usuario;");
     $comando->bindValue(":nome", $personagem);
-    $comando->bindValue(":jogador", $jogador);
+    session_start();
+    $comando->bindValue(":fk_usuario", $_SESSION['id_usuario']);
     $comando->execute();
+
     if($comando->rowCount() > 0)
     {
         echo('<script> alert("Você já criou um personagem com esse nome.");
@@ -22,7 +23,6 @@
     include("conexao.php");
     
     session_start();
-    $personagem = $_POST["personagem"];
     $jogador = $_POST["jogador"];
     $origem = $_POST["origem"];
     $classe = $_POST["classe"];
@@ -32,18 +32,9 @@
     $xp = $_POST["xp"];
     $pm = $_POST["pm"];
 
-    $comando = $pdo -> prepare("UPDATE personagem SET nome=:nome, jogador=:jogador WHERE id_personagem=:id_personagem");
-    $comando->bindValue(":nome", $personagem);
-    $comando->bindValue(":jogador", $jogador);
-
-    $comando->bindValue(":id_personagem", $_SESSION['id_personagem']);
-    $comando->execute();   
-
-    unset($comando);
-    unset($pdo);
-    include("conexao.php");
-    $comando = $pdo -> prepare("INSERT INTO personagem(nome,jogador,is_padrao,fk_origem,fk_classe,fk_trilha,fk_elemento,fk_patente,pm,xp,fk_usuario) 
-                                                VALUES(:nome,:jogador,:is_padrao,:fk_origem,:fk_classe,:fk_trilha,:fk_elemento,:fk_patente,:pm,:xp,:fk_usuario)");
+    $comando = $pdo -> prepare("UPDATE personagem SET nome =:nome, jogador =:jogador, is_padrao = :is_padrao, fk_classe = :fk_classe,
+                                fk_trilha = :fk_trilha, fk_elemento = :fk_elemento, fk_patente = :fk_patente, pm = :pm, xp = :xp, fk_usuario = :fk_usuario
+                                WHERE id_personagem = :id_personagem");
     $comando->bindValue(":nome",$personagem); 
     $comando->bindValue(":jogador",$jogador);
     $comando->bindValue(":fk_origem",$origem);                                     
@@ -54,10 +45,11 @@
     $comando->bindValue(":pm",$pm);    
     $comando->bindValue(":xp",$xp); 
 
-    session_start();
     $comando->bindValue(":fk_usuario",$_SESSION['id_usuario']);
     $comando->bindValue(":is_padrao",$_SESSION['is_adm']);
-    $comando->execute();
+
+    $comando->bindValue(":id_personagem", $_SESSION['id_personagem']);
+    $comando->execute();   
 
     unset($comando);
     unset($pdo);
