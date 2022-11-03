@@ -30,9 +30,10 @@
         unset($pdo);
     /* SE NÃO HOUVER PERSONAGEM SEM NOME, VAI SER INSERIDO UM */
         include("conexao.php");
-        $comando = $pdo->prepare("INSERT INTO personagem(nome, jogador, fk_usuario) VALUES(:nome,:jogador,:fk_usuario)");
+        $comando = $pdo->prepare("INSERT INTO personagem(nome, jogador, is_padrao, fk_usuario) VALUES(:nome,:jogador, :is_padrao,:fk_usuario)");
         $comando->bindValue(":nome", $teste);
         $comando->bindValue(":jogador", $teste);
+        $comando->bindValue(":is_padrao",$_SESSION['is_adm']);
         $comando->bindValue(":fk_usuario",$_SESSION['id_usuario']); 
         $comando->execute();
     

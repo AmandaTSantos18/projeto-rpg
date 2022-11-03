@@ -1,4 +1,5 @@
 <?php
+    /* CONFERINDO SE JÁ EXISTE PERSONAGEM COM ESSE NOME */
     include("conexao.php");
     
     $personagem = $_POST["personagem"];
@@ -22,7 +23,7 @@
     /* INSERIR PERSONAGEM -------------------------------------------------- */
     include("conexao.php");
     
-    session_start();
+    $personagem = $_POST["personagem"];
     $jogador = $_POST["jogador"];
     $origem = $_POST["origem"];
     $classe = $_POST["classe"];
@@ -32,24 +33,19 @@
     $xp = $_POST["xp"];
     $pm = $_POST["pm"];
 
-    $comando = $pdo -> prepare("UPDATE personagem SET nome =:nome, jogador =:jogador, is_padrao = :is_padrao, fk_classe = :fk_classe,
-                                fk_trilha = :fk_trilha, fk_elemento = :fk_elemento, fk_patente = :fk_patente, pm = :pm, xp = :xp, fk_usuario = :fk_usuario
-                                WHERE id_personagem = :id_personagem");
-    $comando->bindValue(":nome",$personagem); 
+    $comando = $pdo -> prepare("UPDATE usuario SET nome=:nome, jogador=:jogador, fk_origem=:origem, fk_classe=:classe, fk_trilha=:trilha, fk_elemento=elemento, fk_patente=:patente, xp=:xp, pm=:pm WHERE id_personagem=:id");
+    $comando->bindValue(":nome",$personagem);
     $comando->bindValue(":jogador",$jogador);
-    $comando->bindValue(":fk_origem",$origem);                                     
-    $comando->bindValue(":fk_classe",$classe);    
-    $comando->bindValue(":fk_trilha",$trilha);  
-    $comando->bindValue(":fk_elemento",$elemento);                                     
-    $comando->bindValue(":fk_patente",$patente);                              
-    $comando->bindValue(":pm",$pm);    
-    $comando->bindValue(":xp",$xp); 
+    $comando->bindValue(":origem",$origem);
+    $comando->bindValue(":classe",$classe);
+    $comando->bindValue(":trilha",$trilha);
+    $comando->bindValue(":elemento",$elemento);
+    $comando->bindValue(":patente",$patente);
+    $comando->bindValue(":xp",$xp);
+    $comando->bindValue(":pm",$pm);
 
-    $comando->bindValue(":fk_usuario",$_SESSION['id_usuario']);
-    $comando->bindValue(":is_padrao",$_SESSION['is_adm']);
-
-    $comando->bindValue(":id_personagem", $_SESSION['id_personagem']);
-    $comando->execute();   
+    $comando->bindValue(":id",$_SESSION['id_personagem']);
+    $comando->execute();
 
     unset($comando);
     unset($pdo);
@@ -72,7 +68,6 @@
     $comando->bindValue(":presenca",$presenca); 
     $comando->bindValue(":forca",$forca); 
     $comando->bindValue(":nex",$nex);   
-    session_start();
     $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
     $comando->execute();
     unset($comando);
@@ -90,7 +85,6 @@
     $comando->bindValue(":vida",$vida);
     $comando->bindValue(":sanidade",$sanidade);
     $comando->bindValue(":esforco",$esforco);
-    session_start();
     $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
     $comando->execute();
     unset($comando);
@@ -110,7 +104,6 @@
     $comando->bindValue(":sanidade_atual",$sanidade_atual);
     $comando->bindValue(":esforco_atual",$esforco_atual);
     $comando->bindValue(":municao_atual",$municao_atual);
-    session_start();
     $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
     $comando->execute();
     unset($comando);
@@ -128,7 +121,6 @@
     $comando->bindValue(":passiva",$passiva);
     $comando->bindValue(":bloqueio",$bloqueio);
     $comando->bindValue(":esquiva",$esquiva);
-    session_start();
     $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
     $comando->execute();
     unset($comando);
@@ -148,7 +140,6 @@
                                     VALUES (:escrito,:fk_tipo,:fk_personagem)");
         $comando->bindValue(":escrito",$inventario);
         $comando->bindValue(":fk_tipo", 1);
-        session_start();
         $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
         $comando->execute();
         unset($comando);
@@ -159,7 +150,6 @@
                                     VALUES (:escrito,:fk_tipo,:fk_personagem)");
         $comando->bindValue(":escrito",$proficiencias);
         $comando->bindValue(":fk_tipo", 2);
-        session_start();
         $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
         $comando->execute();
         unset($comando);
@@ -170,7 +160,6 @@
                                     VALUES (:escrito,:fk_tipo,:fk_personagem)");
         $comando->bindValue(":escrito",$ataquesedefesas);
         $comando->bindValue(":fk_tipo", 3);
-        session_start();
         $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
         $comando->execute();
         unset($comando);
@@ -181,7 +170,6 @@
                                     VALUES (:escrito,:fk_tipo,:fk_personagem)");
         $comando->bindValue(":escrito",$rituais);
         $comando->bindValue(":fk_tipo", 4);
-        session_start();
         $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
         $comando->execute();
         unset($comando);
@@ -192,7 +180,6 @@
                                     VALUES (:escrito,:fk_tipo,:fk_personagem)");
         $comando->bindValue(":escrito",$habilidades);
         $comando->bindValue(":fk_tipo", 5);
-        session_start();
         $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
         $comando->execute();
         unset($comando);
@@ -203,7 +190,6 @@
                                     VALUES (:escrito,:fk_tipo,:fk_personagem)");
         $comando->bindValue(":escrito",$historico);
         $comando->bindValue(":fk_tipo", 6);
-        session_start();
         $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
         $comando->execute();
         unset($comando);
@@ -229,7 +215,6 @@
     $comando->bindValue(":morte",$resistencia_morte);
     $comando->bindValue(":energia",$resistencia_energia);
     $comando->bindValue(":conhecimento",$resistencia_conhecimento);
-    session_start();
     $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
     $comando->execute();
     unset($comando);
@@ -237,11 +222,9 @@
 
     if($_SESSION['is_adm'] == 1)
     {
-        session_start();
         $_SESSION['selected'] = false;
         header("location: listapersoadm.php");
     }else{
-        session_start();
         $_SESSION['selected'] = false;
         header("location: tela4lista.php");
     }
