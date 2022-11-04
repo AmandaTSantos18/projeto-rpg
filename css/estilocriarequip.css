@@ -66,9 +66,6 @@ a
     border: none;
     border-radius: 5px;
     color: white;
-    position: absolute;
-    top: 5px;
-    left: 1395px;
 }
 
 .salvar
@@ -201,6 +198,7 @@ a
     background-color: transparent;
 
     border: solid 3px;
+    border-radius: 5px;
     border-color: rgb(150, 150, 150);
     position: relative;
 
@@ -216,10 +214,9 @@ a
 
 .id
 {
-    border: solid;
     width: 30px;
     height: 37px;
-    border-color: rgb(150, 150, 150);
+    margin-top: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -228,10 +225,9 @@ a
 
 .nome_equip
 {
-    border: solid;
     width: 200px;
     height: 37px;
-    border-color: rgb(150, 150, 150);
+    margin-top: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -240,10 +236,9 @@ a
 
 .dano
 {
-    border: solid;
     width: 100px;
     height: 37px;
-    border-color: rgb(150, 150, 150);
+    margin-top: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -252,10 +247,9 @@ a
 
 .critico
 {
-    border: solid;
     width: 80px;
     height: 37px;
-    border-color: rgb(150, 150, 150);
+    margin-top: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -264,10 +258,9 @@ a
 
 .tipo
 {
-    border: solid;
     width: 150px;
     height: 37px;
-    border-color: rgb(150, 150, 150);
+    margin-top: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -276,10 +269,9 @@ a
 
 .categoria
 {
-    border: solid;
     width: 80px;
     height: 37px;
-    border-color: rgb(150, 150, 150);
+    margin-top: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -288,10 +280,9 @@ a
 
 .alcance
 {
-    border: solid;
     width: 120px;
     height: 37px;
-    border-color: rgb(150, 150, 150);
+    margin-top: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -300,10 +291,9 @@ a
 
 .municao
 {
-    border: solid;
     width: 250px;
     height: 37px;
-    border-color: rgb(150, 150, 150);
+    margin-top: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -312,10 +302,9 @@ a
 
 .espaco
 {
-    border: solid;
     width: 40px;
     height: 37px;
-    border-color: rgb(150, 150, 150);
+    margin-top: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -324,10 +313,9 @@ a
 
 .delete
 {
-    border: solid;
     width: 40px;
     height: 37px;
-    border-color: rgb(150, 150, 150);
+    margin-top: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -339,4 +327,9 @@ a
     position: absolute;
     left: 220px;
     top: 485px;
+}
+
+.btalt
+{
+    border: none;
 }

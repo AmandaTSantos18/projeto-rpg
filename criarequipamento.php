@@ -20,9 +20,6 @@
         <form action="salvarequip.php" method="post"> 
             <label class="principal">CRIAR EQUIPAMENTO</label>
 
-        <a href="alterarequip.php">
-            <button type="submit" class="alterar">ALTERAR </button> 
-        </a>
             <button type="submit" class="salvar"> SALVAR </button>
 
         <div class="tudo">
@@ -105,16 +102,21 @@
                     //seleciona linha por linha.
                     foreach ($lista_equipamentos as $linha) { ?>
                         <tr class="equipamento">
-                            <td class="id" name="id"> <?php echo $linha['id_equipamentos']; ?></td>
-                            <td class="nome_equip" name="nome_equip"> <?php echo $linha['nome_equipamento']; ?></td>
-                            <td class="dano" name="dano"> <?php echo $linha['dano']; ?></td>
-                            <td class="critico" name="critico"> <?php echo $linha['critico']; ?></td>
-                            <td class="tipo" name="tipo"> <?php echo $linha['fk_tipo']; ?></td>
-                            <td class="categoria" name="categoria"> <?php echo $linha['fk_categoria']; ?></td>
-                            <td class="alcance" name="alcance"> <?php echo $linha['fk_alcance']; ?></td>
-                            <td class="municao" name="municao"> <?php echo $linha['fk_municao']; ?></td>
-                            <td class="espaco" name="espaco"> <?php echo $linha['espaco']; ?></td>
+                            <td class="id"> <?php echo $linha['id_equipamentos']; ?></td>
+                            <td class="nome_equip"> <?php echo $linha['nome_equipamento']; ?></td>
+                            <td class="dano"> <?php echo $linha['dano']; ?></td>
+                            <td class="critico"> <?php echo $linha['critico']; ?></td>
+                            <td class="tipo"> <?php echo $linha['fk_tipo']; ?></td>
+                            <td class="categoria"> <?php echo $linha['fk_categoria']; ?></td>
+                            <td class="alcance"> <?php echo $linha['fk_alcance']; ?></td>
+                            <td class="municao"> <?php echo $linha['fk_municao']; ?></td>
+                            <td class="espaco"> <?php echo $linha['espaco']; ?></td>
 
+                            <td class="btalt">
+                                <a href="alterarequip.php?id=<?php echo($linha['id_equipamentos']);?>">
+                                    <input type="button" class="alterar" value="ALTERAR">
+                                </a>
+                            </td>
                             <td class="delete"> 
                                 <a href="excluirequip.php?id=<?php echo($linha['id_equipamentos']);?>">
                                     <img src="img/excluir.png" width="40px" height="40px">
