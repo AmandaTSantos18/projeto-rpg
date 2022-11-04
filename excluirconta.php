@@ -8,6 +8,8 @@
 
     
     $comando->execute();
+    unset($comando);
+    unset($pdo);
     header("Location:index.php");
 
 ?>

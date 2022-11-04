@@ -33,18 +33,18 @@
     $xp = $_POST["xp"];
     $pm = $_POST["pm"];
 
-    $comando = $pdo -> prepare("UPDATE usuario SET nome=:nome, jogador=:jogador, fk_origem=:origem, fk_classe=:classe, fk_trilha=:trilha, fk_elemento=elemento, fk_patente=:patente, xp=:xp, pm=:pm WHERE id_personagem=:id");
+    $comando = $pdo -> prepare("UPDATE personagem SET nome=:nome, jogador=:jogador, fk_origem=:fk_origem, fk_classe=:fk_classe, fk_trilha=:fk_trilha, fk_elemento=:fk_elemento, fk_patente=:fk_patente, xp=:xp, pm=:pm WHERE id_personagem=:id_personagem");
     $comando->bindValue(":nome",$personagem);
     $comando->bindValue(":jogador",$jogador);
-    $comando->bindValue(":origem",$origem);
-    $comando->bindValue(":classe",$classe);
-    $comando->bindValue(":trilha",$trilha);
-    $comando->bindValue(":elemento",$elemento);
-    $comando->bindValue(":patente",$patente);
+    $comando->bindValue(":fk_origem",$origem);
+    $comando->bindValue(":fk_classe",$classe);
+    $comando->bindValue(":fk_trilha",$trilha);
+    $comando->bindValue(":fk_elemento",$elemento);
+    $comando->bindValue(":fk_patente",$patente);
     $comando->bindValue(":xp",$xp);
     $comando->bindValue(":pm",$pm);
 
-    $comando->bindValue(":id",$_SESSION['id_personagem']);
+    $comando->bindValue(":id_personagem",$_SESSION['id_personagem']);
     $comando->execute();
 
     unset($comando);

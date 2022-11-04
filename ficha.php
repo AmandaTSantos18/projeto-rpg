@@ -262,7 +262,7 @@
                     <div class="tipos">
                         <div class="valor_2">
                             <label>ARMA</label>
-                            <select class="dano_arma">
+                            <select class="dano_arma" onchange="Mudar();">
                                     <option value="nenhuma">-</option>
                                     <option value="faca">Faca</option>
                                     <option value="martelo">Martelo</option>
