@@ -5,23 +5,6 @@
     session_start();
     if($_SESSION['selected'] = true)
     {
-        $personagem = $_POST["personagem"];
-
-        $comando = $pdo->prepare("SELECT id_personagem FROM personagem WHERE nome = :nome AND fk_usuario = :fk_usuario;");
-        $comando->bindValue(":nome", $personagem);
-        $comando->bindValue(":fk_usuario", $_SESSION['id_usuario']);
-        $comando->execute();
-
-        if($comando->rowCount() > 0)
-        {
-            echo('<script> alert("Você já criou um personagem com esse nome.");
-            window.close();
-            </script>');
-
-        }else{
-        unset($comando);
-        unset($pdo);
-
         /* INSERIR PERSONAGEM -------------------------------------------------- */
         include("conexao.php");
         $personagem = $_POST["personagem"];
@@ -61,8 +44,7 @@
         $forca = $_POST["forca"];
         $nex = $_POST["nex"];
         
-        $comando = $pdo -> prepare("INSERT INTO atributos(agilidade,intelecto,vigor,presenca,forca,nex,fk_personagem)
-                                    VALUES(:agilidade,:intelecto,:vigor,:presenca,:forca,:nex,:fk_personagem)");
+        $comando = $pdo -> prepare("UPDATE atributos SET agilidade=:agilidade, intelecto=:intelecto, vigor=:vigor, presenca=:presenca, forca=:forca, nex=:nex WHERE fk_personagem=:fk_personagem");
         $comando->bindValue(":agilidade",$agilidade);    
         $comando->bindValue(":intelecto",$intelecto); 
         $comando->bindValue(":vigor",$vigor);    
@@ -73,7 +55,7 @@
         $comando->execute();
         unset($comando);
         unset($pdo);
-
+        
         /* INSERIR SAUDE -------------------------------------------------- */
         include("conexao.php");
 
@@ -81,8 +63,7 @@
         $sanidade = $_POST["sanidade"];
         $esforco = $_POST["esforco"];
 
-        $comando = $pdo -> prepare("INSERT INTO saude(vida,sanidade,esforco,fk_personagem)
-                                    VALUES (:vida,:sanidade,:esforco,:fk_personagem)");
+        $comando = $pdo -> prepare("UPDATE saude SET vida=:vida, sanidade=:sanidade, esforco=:esforco WHERE fk_personagem=:fk_personagem");
         $comando->bindValue(":vida",$vida);
         $comando->bindValue(":sanidade",$sanidade);
         $comando->bindValue(":esforco",$esforco);
@@ -99,8 +80,7 @@
         $esforco_atual = $_POST["esforco_atual"];
         $municao_atual = $_POST["municao_atual"];
 
-        $comando = $pdo -> prepare("INSERT INTO atual(vida_atual,sanidade_atual,esforco_atual,municao_atual,fk_personagem)
-                                    VALUES (:vida_atual,:sanidade_atual,:esforco_atual,:municao_atual,:fk_personagem)");
+        $comando = $pdo -> prepare("UPDATE atual SET vida_atual=:vida_atual, sanidade_atual=:sanidade_atual, esforco_atual=:esforco_atual, municao_atual=:municao_atual WHERE fk_personagem=:fk_personagem");
         $comando->bindValue(":vida_atual",$vida_atual);
         $comando->bindValue(":sanidade_atual",$sanidade_atual);
         $comando->bindValue(":esforco_atual",$esforco_atual);
@@ -117,8 +97,7 @@
         $bloqueio = $_POST["bloqueio"];
         $esquiva = $_POST["esquiva"];
 
-        $comando = $pdo -> prepare("INSERT INTO defesas(passiva,bloqueio,esquiva,fk_personagem)
-                                    VALUES (:passiva,:bloqueio,:esquiva,:fk_personagem)");
+        $comando = $pdo -> prepare("UPDATE defesas SET passiva=:passiva, bloqueio=:bloqueio, esquiva=:esquiva WHERE fk_personagem=:fk_personagem");
         $comando->bindValue(":passiva",$passiva);
         $comando->bindValue(":bloqueio",$bloqueio);
         $comando->bindValue(":esquiva",$esquiva);
@@ -137,8 +116,7 @@
         $historico = $_POST["historico"];
 
             /* INVENTÁRIO -------------------------------------------------- */
-            $comando = $pdo -> prepare("INSERT INTO textos(escrito,fk_tipo,fk_personagem)
-                                        VALUES (:escrito,:fk_tipo,:fk_personagem)");
+            $comando = $pdo -> prepare("UPDATE textos SET escrito=:escrito, fk_tipo=:fk_tipo WHERE fk_personagem=:fk_personagem");
             $comando->bindValue(":escrito",$inventario);
             $comando->bindValue(":fk_tipo", 1);
             $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
@@ -147,8 +125,7 @@
             unset($pdo);
             /* PROFICIÊNCIAS -------------------------------------------------- */
             include("conexao.php");
-            $comando = $pdo -> prepare("INSERT INTO textos(escrito,fk_tipo,fk_personagem)
-                                        VALUES (:escrito,:fk_tipo,:fk_personagem)");
+            $comando = $pdo -> prepare("UPDATE textos SET escrito=:escrito, fk_tipo=:fk_tipo WHERE fk_personagem=:fk_personagem");
             $comando->bindValue(":escrito",$proficiencias);
             $comando->bindValue(":fk_tipo", 2);
             $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
@@ -157,8 +134,7 @@
             unset($pdo);
             /* ATAQUES E DEFESAS DETALHADOS -------------------------------------------------- */
             include("conexao.php");
-            $comando = $pdo -> prepare("INSERT INTO textos(escrito,fk_tipo,fk_personagem)
-                                        VALUES (:escrito,:fk_tipo,:fk_personagem)");
+            $comando = $pdo -> prepare("UPDATE textos SET escrito=:escrito, fk_tipo=:fk_tipo WHERE fk_personagem=:fk_personagem");
             $comando->bindValue(":escrito",$ataquesedefesas);
             $comando->bindValue(":fk_tipo", 3);
             $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
@@ -167,8 +143,7 @@
             unset($pdo);
             /* RITUAIS CONHECIDOS -------------------------------------------------- */
             include("conexao.php");
-            $comando = $pdo -> prepare("INSERT INTO textos(escrito,fk_tipo,fk_personagem)
-                                        VALUES (:escrito,:fk_tipo,:fk_personagem)");
+            $comando = $pdo -> prepare("UPDATE textos SET escrito=:escrito, fk_tipo=:fk_tipo WHERE fk_personagem=:fk_personagem");
             $comando->bindValue(":escrito",$rituais);
             $comando->bindValue(":fk_tipo", 4);
             $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
@@ -177,8 +152,7 @@
             unset($pdo);
             /* HABILIDADES -------------------------------------------------- */
             include("conexao.php");
-            $comando = $pdo -> prepare("INSERT INTO textos(escrito,fk_tipo,fk_personagem)
-                                        VALUES (:escrito,:fk_tipo,:fk_personagem)");
+            $comando = $pdo -> prepare("UPDATE textos SET escrito=:escrito, fk_tipo=:fk_tipo WHERE fk_personagem=:fk_personagem");
             $comando->bindValue(":escrito",$habilidades);
             $comando->bindValue(":fk_tipo", 5);
             $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
@@ -187,8 +161,7 @@
             unset($pdo);
             /* HISTÓRICO -------------------------------------------------- */
             include("conexao.php");
-            $comando = $pdo -> prepare("INSERT INTO textos(escrito,fk_tipo,fk_personagem)
-                                        VALUES (:escrito,:fk_tipo,:fk_personagem)");
+            $comando = $pdo -> prepare("UPDATE textos SET escrito=:escrito, fk_tipo=:fk_tipo WHERE fk_personagem=:fk_personagem");
             $comando->bindValue(":escrito",$historico);
             $comando->bindValue(":fk_tipo", 6);
             $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
@@ -207,8 +180,7 @@
         $resistencia_conhecimento = $_POST["resistencia_conhecimento"];
         $resistencia_energia = $_POST["resistencia_energia"];
 
-        $comando = $pdo -> prepare("INSERT INTO resistencias_a_dano(fisica,balistica,mental,sangue,morte,energia,conhecimento,fk_personagem)
-                                    VALUES (:fisica,:balistica,:mental,:sangue,:morte,:energia,:conhecimento,:fk_personagem)");
+        $comando = $pdo -> prepare("UPDATE resistencias_a_dano SET fisica=:fisica, balistica=:balistica, mental=:mental, sangue=:sangue, morte=:morte, energia=:energia, conhecimento=:conhecimento WHERE fk_personagem=:fk_personagem");
         $comando->bindValue(":fisica",$resistencia_fisica);
         $comando->bindValue(":balistica",$resistencia_balistica);
         $comando->bindValue(":mental",$resistencia_mental);
@@ -230,5 +202,4 @@
             header("location: tela4lista.php");
         }
 
-    }
     }

@@ -15,20 +15,28 @@
 
         <form action="salvar.php" method="post" target="_blank">
         <input type="submit" class="salvar" value="SALVAR"> 
+
         <div class="cabecalho">
             <div class="categoria">
                 <label class="info">PERSONAGEM:</label>
-                <input type="text" class="espacinho pe" name="personagem">
+                
+        <?php 
+        include("qualperso.php");
+            if(!empty($qual_perso)) {
+                foreach ($qual_perso as $qual) {
+        ?>
+                <input type="text" class="espacinho pe" name="personagem" value="<?php echo $qual['nome']; ?>">
             </div>
+    
             
             <div class="categoria">
                 <label class="info">JOGADOR:</label>
-                <input type="text" class="espacinho pe" name="jogador">
+                <input type="text" class="espacinho pe" name="jogador" value="<?php echo $qual['jogador']; ?>">
             </div>
 
             <div class="categoria">
                 <label class="info">ORIGEM:</label>
-                <select class="espacinho ori" name="origem">
+                <select class="espacinho ori" name="origem" value="<?php echo $qual['fk_origem']; ?>">
                     <option value="1">Desconhecido</option>
                     <option value="2">Acadêmico</option>
                     <option value="3">Agente de Saúde</option>
@@ -59,7 +67,7 @@
 
             <div class="categoria">
                 <label class="info">CLASSE:</label>
-                <select class="espacinho ori" name="classe">
+                <select class="espacinho ori" name="classe" value="<?php echo $qual['fk_classe']; ?>">
                     <option value="1">Desconhecido</option>
                     <option value="2">Combatente</option>
                     <option value="3">Especialista</option>
@@ -69,7 +77,7 @@
 
             <div class="categoria">
                 <label class="info">TRILHA:</label>
-                <select class="espacinho tri" name="trilha">
+                <select class="espacinho tri" name="trilha" value="<?php echo $qual['fk_trilha']; ?>">
                     <option value="1">Nenhuma</option>
                     <option value="2">Comandante</option>
                     <option value="3">Guerreiro</option>
@@ -92,7 +100,7 @@
 
             <div class="categoria">
                 <label class="info">ELEMENTO:</label>
-                <select class="espacinho ele" name="elemento">
+                <select class="espacinho ele" name="elemento" value="<?php echo $qual['fk_elemento']; ?>">
                         <option value="1"> Nenhum </option>
                         <option value="2"> Sangue </option>
                         <option value="3"> Morte </option>
@@ -103,7 +111,7 @@
 
             <div class="categoria">
                 <label class="info">PATENTE:</label>
-                    <select class="espacinho pat" name="patente">
+                    <select class="espacinho pat" name="patente" value="<?php echo $qual['fk_patente']; ?>">
                             <option value="1">Recruta</option>
                             <option value="2">Operador</option>
                             <option value="3">Agente Especial</option>
@@ -114,12 +122,12 @@
 
             <div class="categoria">
                 <label class="info">XP:</label>
-                <input type="number" class="espacinho pm" name="xp">
+                <input type="number" class="espacinho pm" name="xp" value="<?php echo $qual['xp']; ?>">
             </div>
 
             <div class="categoria">
                 <label class="info">PM:</label>
-                <input type="number" class="espacinho pm" name="pm">
+                <input type="number" class="espacinho pm" name="pm" value="<?php echo $qual['pm']; ?>">
             </div>
         </div>
 
@@ -169,94 +177,161 @@
                     <input type="number" min="0" max="100" class="desl">
                 </div> -->
         </div>
-
+        <?php
+                }
+            }
+        ?>
+        <?php
+            if(!empty($qual_atri)) {
+                foreach ($qual_atri as $qual) {
+        ?>
         <div class="atributos">
             <img src="img/simbolo.png" id="simb">
-            <input type="number" class="atri forca" name="forca">
-            <input type="number" class="atri presenca" name="presenca">
-            <input type="number" class="atri agilidade" name="agilidade">
-            <input type="number" class="atri intelecto" name="intelecto">
-            <input type="number" class="atri vigor" name="vigor">
+            <input type="number" class="atri forca" name="forca" value="<?php echo $qual['forca']; ?>">
+            <input type="number" class="atri presenca" name="presenca" value="<?php echo $qual['presenca']; ?>">
+            <input type="number" class="atri agilidade" name="agilidade" value="<?php echo $qual['agilidade']; ?>">
+            <input type="number" class="atri intelecto" name="intelecto" value="<?php echo $qual['intelecto']; ?>">
+            <input type="number" class="atri vigor" name="vigor" value="<?php echo $qual['vigor']; ?>">
 
-            <input type="number" min="0" max="100" class="atri2 nex" name="nex">
+            <input type="number" min="0" max="100" class="atri2 nex" name="nex" value="<?php echo $qual['nex']; ?>">
         </div>
+        <?php
+                }
+            }
+        ?>
 
         <div class="bloco">
             <div class="saude">
                 <div class="escrito sa">SAÚDE</div>
                     <div class="conteudo">
                         <label class="saude_texto"><h1>PV</h1><h2>PONTOS DE VIDA</h2></label>
-                        <input type="number" class="dano2" name="vida_atual">
+                        <?php
+                        if(!empty($qual_atual)) {
+                            foreach ($qual_atual as $qual) {
+                        ?>
+                        <input type="number" class="dano2" name="vida_atual" value="<?php echo $qual['vida_atual']; ?>">
+                        <?php
+                            }}
+                        ?>
                         <img src="img/barra.png" id="barra">
-                        <input type="number" class="dano2" name="vida">
+                        <?php
+                            if(!empty($qual_saude)) {
+                                foreach ($qual_saude as $qual) {
+                        ?>
+                        <input type="number" class="dano2" name="vida" value="<?php echo $qual['vida']; ?>">
+                        <?php
+                            }}
+                        ?>
                     </div>
 
                     <div class="conteudo">
                         <label class="saude_texto"><h1>SAN</h1><h2>SANIDADE</h2></label>
-                        <input type="number" class="dano2" name="sanidade_atual">
+                        <?php
+                        if(!empty($qual_atual)) {
+                            foreach ($qual_atual as $qual) {
+                        ?>
+                        <input type="number" class="dano2" name="sanidade_atual" value="<?php echo $qual['sanidade_atual']; ?>">
+                        <?php
+                            }}
+                        ?>
                         <img src="img/barra.png" id="barra">
-                        <input type="number" class="dano2" name="sanidade">
+                        <?php
+                            if(!empty($qual_saude)) {
+                                foreach ($qual_saude as $qual) {
+                        ?>
+                        <input type="number" class="dano2" name="sanidade" value="<?php echo $qual['sanidade']; ?>">
+                        <?php
+                            }}
+                        ?>
                     </div>
 
                     <div class="conteudo">
                         <label class="saude_texto"><h1>PE</h1><h2>PONTOS DE ESFORÇO</h2></label>
-                        <input type="number" class="dano2" name="esforco_atual">
+                        <?php
+                        if(!empty($qual_atual)) {
+                            foreach ($qual_atual as $qual) {
+                        ?>
+                        <input type="number" class="dano2" name="esforco_atual" value="<?php echo $qual['esforco_atual']; ?>">
+                        <?php
+                            }}
+                        ?>
                         <img src="img/barra.png" id="barra">
-                        <input type="number" class="dano2" name="esforco">
+                        <?php
+                            if(!empty($qual_saude)) {
+                                foreach ($qual_saude as $qual) {
+                        ?>
+                        <input type="number" class="dano2" name="esforco" value="<?php echo $qual['esforco']; ?>">
+                        <?php
+                            }}
+                        ?>
                     </div>
             </div>
+            <?php
+            if(!empty($qual_def)) {
+                foreach ($qual_def as $qual) {
+            ?>
             <div class="saude">
                 <label class="escrito sa">DESFESAS</label>
                     <div class="conteudo2">
                         <div class="saude_texto"><h3>PASSIVA</h3></div>
-                        <input type="number" class="dano3" name="passiva">
+                        <input type="number" class="dano3" name="passiva" value="<?php echo $qual['passiva']; ?>">
                     </div>
 
                     <div class="conteudo2">
                         <label class="saude_texto"><h3>BLOQUEIO</h3></label>
-                        <input type="number" class="dano3" name="bloqueio">
+                        <input type="number" class="dano3" name="bloqueio" value="<?php echo $qual['bloqueio']; ?>">
                     </div>
 
                     <div class="conteudo2">
                         <label class="saude_texto"><h3>ESQUIVA</h3></label>
-                        <input type="number" class="dano3" name="esquiva">
+                        <input type="number" class="dano3" name="esquiva" value="<?php echo $qual['esquiva']; ?>">
                     </div>
             </div>
+            <?php
+                }}
+            ?>
         </div>
 
+        <?php
+            if(!empty($qual_resis)) {
+                foreach ($qual_resis as $qual) {
+        ?>
         <div class="resistenciasadano">
             <label class="escrito rd">RESISTÊNCIAS A DANO</label>
                 <div class="tipos">
                     <div class="valor">
                         FÍSICA
-                        <input type="number" class="dano" name="resistencia_fisica">
+                        <input type="number" class="dano" name="resistencia_fisica" value="<?php echo $qual['fisica']; ?>">
                     </div>
                     <div class="valor">
                         BALÍSTICA
-                        <input type="number" class="dano" name="resistencia_balistica">
+                        <input type="number" class="dano" name="resistencia_balistica" value="<?php echo $qual['balistica']; ?>">
                     </div>
                     <div class="valor">
                         MENTAL
-                        <input type="number" class="dano" name="resistencia_mental">
+                        <input type="number" class="dano" name="resistencia_mental" value="<?php echo $qual['mental']; ?>">
                     </div>
                     <div class="valor">
                         SANGUE
-                        <input type="number" class="dano" name="resistencia_sangue">
+                        <input type="number" class="dano" name="resistencia_sangue" value="<?php echo $qual['sangue']; ?>">
                     </div>
                     <div class="valor">
                         MORTE
-                        <input type="number" class="dano" name="resistencia_morte">
+                        <input type="number" class="dano" name="resistencia_morte" value="<?php echo $qual['morte']; ?>">
                     </div>
                     <div class="valor">
                         ENERGIA
-                        <input type="number" class="dano" name="resistencia_energia">
+                        <input type="number" class="dano" name="resistencia_energia" value="<?php echo $qual['energia']; ?>">
                     </div>
                     <div class="valor">
                         CONHECIMENTO
-                        <input type="number" class="dano" name="resistencia_conhecimento">
+                        <input type="number" class="dano" name="resistencia_conhecimento" value="<?php echo $qual['conhecimento']; ?>">
                     </div>
                 </div>
         </div>
+        <?php
+            }}
+        ?>
         <div class="ataques">
                 <div class="escrito rd">ATAQUES</div>
                     <div class="tipos">
@@ -321,7 +396,15 @@
                         </div>
                         <div class="valor_2">
                             <label class="menor">MUNIÇÃO ATUAL</label>
-                            <input type="number" min="0" max="100" class="dano4" name="municao_atual">
+                            <?php
+                                if(!empty($qual_atual)) {
+                                    foreach ($qual_atual as $qual) {
+                            ?>
+                            <input type="number" min="0" max="100" class="dano4" name="municao_atual" value="<?php echo $qual['municao_atual']; ?>">
+                            <?php
+                                    }
+                                }
+                            ?>
                         </div>
                         <div class="valor_2">
                             <label class="menor">MUNIÇÃO TOTAL</label>
@@ -360,6 +443,7 @@
                 <label class="escrito">HISTÓRICO</label>
                 <textarea cols="30" rows="5" class="espaco direita his" name="historico"></textarea>
         </div>
+
     </form>
 </body>
 </html>
