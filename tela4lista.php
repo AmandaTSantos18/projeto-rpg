@@ -61,6 +61,11 @@
                                     <img src="img/excluir.png" width="40px" height="40px">
                                 </a>
                             </td>
+                            <td class="btalt">
+                                <a href="ficha.php?id=<?php echo($linha['id_personagem']);?>">
+                                    <input type="button" class="alterar" value="ALTERAR">
+                                </a>
+                            </td>
                         </tr>
                 <?php } 
                 }

@@ -10,7 +10,11 @@
     <link href='https://fonts.googleapis.com/css?family=Paprika' rel='stylesheet'>
 </head>
 <body>
-    
+    <?php
+    session_start();
+    $_SESSION['id_personagem'] = $_GET["id"];
+    $_SESSION['selected'] = true;
+    ?>
         <a href="configadm.php"><img src="img/configuracoes.png" id="config"></a>
 
         <a href="criarequipamento.php" id="criar">
@@ -154,11 +158,11 @@
 
         <div class="atributos">
             <img src="img/simbolo.png" id="simb">
-            <input type="number" class="atri forca">
-            <input type="number" class="atri presenca">
-            <input type="number" class="atri agilidade">
-            <input type="number" class="atri intelecto">
-            <input type="number" class="atri vigor">
+            <input type="number" class="atri forca" name="forca">
+            <input type="number" class="atri presenca" name="presenca">
+            <input type="number" class="atri agilidade" name="agilidade">
+            <input type="number" class="atri intelecto" name="intelecto">
+            <input type="number" class="atri vigor" name="vigor">
 
             <input type="number" min="0" max="100" class="atri2 nex">
         </div>
@@ -168,40 +172,40 @@
                 <div class="escrito sa">SAÚDE</div>
                     <div class="conteudo">
                         <label class="saude_texto"><h1>PV</h1><h2>PONTOS DE VIDA</h2></label>
-                        <input type="number" class="dano2">
+                        <input type="number" class="dano2" name="vida_atual">
                         <img src="img/barra.png" id="barra">
-                        <input type="number" class="dano2">
+                        <input type="number" class="dano2" name="vida">
                     </div>
 
                     <div class="conteudo">
                         <label class="saude_texto"><h1>SAN</h1><h2>SANIDADE</h2></label>
-                        <input type="number" class="dano2">
+                        <input type="number" class="dano2" name="sanidade_atual">
                         <img src="img/barra.png" id="barra">
-                        <input type="number" class="dano2">
+                        <input type="number" class="dano2" name="sanidade">
                     </div>
 
                     <div class="conteudo">
                         <label class="saude_texto"><h1>PE</h1><h2>PONTOS DE ESFORÇO</h2></label>
-                        <input type="number" class="dano2">
+                        <input type="number" class="dano2" name="esforco_atual">
                         <img src="img/barra.png" id="barra">
-                        <input type="number" class="dano2">
+                        <input type="number" class="dano2" name="esforco">
                     </div>
             </div>
             <div class="saude">
                 <label class="escrito sa">DESFESAS</label>
                     <div class="conteudo2">
                         <div class="saude_texto"><h3>PASSIVA</h3></div>
-                        <input type="number" class="dano3">
+                        <input type="number" class="dano3" name="passiva">
                     </div>
 
                     <div class="conteudo2">
                         <label class="saude_texto"><h3>BLOQUEIO</h3></label>
-                        <input type="number" class="dano3">
+                        <input type="number" class="dano3" name="bloqueio">
                     </div>
 
                     <div class="conteudo2">
                         <label class="saude_texto"><h3>ESQUIVA</h3></label>
-                        <input type="number" class="dano3">
+                        <input type="number" class="dano3" name="esquiva">
                     </div>
             </div>
         </div>
@@ -211,31 +215,31 @@
                 <div class="tipos">
                     <div class="valor">
                         FÍSICA
-                        <input type="number" class="dano">
+                        <input type="number" class="dano" name="resistencia_fisica">
                     </div>
                     <div class="valor">
                         BALÍSTICA
-                        <input type="number" class="dano">
+                        <input type="number" class="dano" name="resistencia_balistica">
                     </div>
                     <div class="valor">
                         MENTAL
-                        <input type="number" class="dano">
+                        <input type="number" class="dano" name="resistencia_mental">
                     </div>
                     <div class="valor">
                         SANGUE
-                        <input type="number" class="dano">
+                        <input type="number" class="dano" name="resistencia_sangue">
                     </div>
                     <div class="valor">
                         MORTE
-                        <input type="number" class="dano">
+                        <input type="number" class="dano" name="resistencia_morte">
                     </div>
                     <div class="valor">
                         ENERGIA
-                        <input type="number" class="dano">
+                        <input type="number" class="dano" name="resistencia_energia">
                     </div>
                     <div class="valor">
                         CONHECIMENTO
-                        <input type="number" class="dano">
+                        <input type="number" class="dano" name="resistencia_conhecimento">
                     </div>
                 </div>
         </div>
@@ -244,7 +248,7 @@
                     <div class="tipos">
                         <div class="valor_2">
                             <label>ARMA</label>
-                            <select class="dano_arma">
+                            <select class="dano_arma" onchange="Mudar();">
                                     <option value="nenhuma">-</option>
                                     <option value="faca">Faca</option>
                                     <option value="martelo">Martelo</option>
@@ -286,7 +290,7 @@
                             <input type="number" min="0" max="100" class="dano">
                         </div>
                         <div class="valor_2">
-                            <label>ATAQUE</label>
+                            <label class="menor">CATEGORIA</label>
                             <input type="number" min="0" max="100" class="dano">
                         </div>
                         <div class="valor_2">
@@ -302,12 +306,12 @@
                             <input type="number" min="0" max="100" class="dano">
                         </div>
                         <div class="valor_2">
-                            <label>RECARGA</label>
-                            <input type="number" min="0" max="100" class="dano">
+                            <label class="menor">MUNIÇÃO ATUAL</label>
+                            <input type="number" min="0" max="100" class="dano4" name="municao_atual">
                         </div>
                         <div class="valor_2">
-                            <label>ESPECIAL</label>
-                            <input type="number" min="0" max="100" class="dano">
+                            <label class="menor">MUNIÇÃO TOTAL</label>
+                            <input type="number" min="0" max="100" class="dano4">
                         </div>
                     </div>
             </div>
@@ -315,32 +319,32 @@
 
         <div class="proficiencias">
             <label class="escrito">PROFICIÊNCIAS</label>
-            <textarea cols="30" rows="5" class="espaco direita prof"></textarea>
+            <textarea cols="30" rows="5" class="espaco direita prof" name="proficiencias"></textarea>
         </div>
 
         <div class="ataques_e_defesas">
                 <label class="escrito">ATAQUES E DEFESAS DETALHADOS</label>
-                <textarea cols="30" rows="5" class="espaco meio at"></textarea>
+                <textarea cols="30" rows="5" class="espaco meio at" name="ataquesedefesas"></textarea>
         </div>
 
         <div class="inventario">
                 <label class="escrito">INVENTÁRIO</label>
-                <textarea cols="30" rows="5" class="espaco direita inv"></textarea>
+                <textarea cols="30" rows="5" class="espaco direita inv" name="inventario"></textarea>
         </div>
 
         <div class="habilidades">
                 <label class="escrito">HABILIDADES</label>
-                <textarea cols="30" rows="5" class="espaco esquerda hab"></textarea>
+                <textarea cols="30" rows="5" class="espaco esquerda hab" name="habilidades"></textarea>
         </div>
 
         <div class="rituais">
                 <label class="escrito">RITUAIS CONHECIDOS</label>
-                <textarea cols="30" rows="5" class="espaco meio at"></textarea>
+                <textarea cols="30" rows="5" class="espaco meio at" name="rituais"></textarea>
         </div>
 
         <div class="historico">
                 <label class="escrito">HISTÓRICO</label>
-                <textarea cols="30" rows="5" class="espaco direita his"></textarea>
+                <textarea cols="30" rows="5" class="espaco direita his" name="historico"></textarea>
         </div>
     </form>
 </body>
