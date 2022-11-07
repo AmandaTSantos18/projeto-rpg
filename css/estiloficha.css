@@ -435,6 +435,9 @@ h3
     font-size: 25px;
     font-weight: bolder;
     font-family: 'Paprika';
+
+    text-align: center;
+    text-justify: auto;
     display: flex;
     flex-direction: row;
     color: black;

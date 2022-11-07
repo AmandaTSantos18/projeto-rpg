@@ -81,15 +81,81 @@
     unset($comando);
     unset($pdo);
 
-    /* PROCURANDO TEXTOS */
+    /* PROCURANDO TEXTOS --- INVENTÁRIO */
     include("conexao.php");
-    $comando = $pdo -> prepare("SELECT escrito FROM textos WHERE fk_personagem = :fk_personagem");
+    $comando = $pdo -> prepare("SELECT escrito FROM textos WHERE fk_personagem = :fk_personagem AND fk_tipo = :fk_tipo");
     $comando->bindValue(":fk_personagem", $id);
+    $comando->bindValue(":fk_tipo", 1);
     $comando -> execute();
 
     if($comando->rowCount() >= 1)
     {
-        $qual_resis = $comando->fetchAll();
+        $qual_inv = $comando->fetchAll();
+    }
+    unset($comando);
+    unset($pdo);
+     /* PROCURANDO TEXTOS --- PROFICIÊNCIAS */
+     include("conexao.php");
+     $comando = $pdo -> prepare("SELECT escrito FROM textos WHERE fk_personagem = :fk_personagem AND fk_tipo = :fk_tipo");
+     $comando->bindValue(":fk_personagem", $id);
+     $comando->bindValue(":fk_tipo", 2);
+     $comando -> execute();
+ 
+     if($comando->rowCount() >= 1)
+     {
+         $qual_prof = $comando->fetchAll();
+     }
+     unset($comando);
+     unset($pdo);
+      /* PROCURANDO TEXTOS --- ATAQUES E DEFESAS DETALHADOS */
+    include("conexao.php");
+    $comando = $pdo -> prepare("SELECT escrito FROM textos WHERE fk_personagem = :fk_personagem AND fk_tipo = :fk_tipo");
+    $comando->bindValue(":fk_personagem", $id);
+    $comando->bindValue(":fk_tipo", 3);
+    $comando -> execute();
+
+    if($comando->rowCount() >= 1)
+    {
+        $qual_ataqedef = $comando->fetchAll();
+    }
+    unset($comando);
+    unset($pdo);
+     /* PROCURANDO TEXTOS --- RITUAIS CONHECIDOS */
+     include("conexao.php");
+     $comando = $pdo -> prepare("SELECT escrito FROM textos WHERE fk_personagem = :fk_personagem AND fk_tipo = :fk_tipo");
+     $comando->bindValue(":fk_personagem", $id);
+     $comando->bindValue(":fk_tipo", 4);
+     $comando -> execute();
+ 
+     if($comando->rowCount() >= 1)
+     {
+         $qual_ritconh = $comando->fetchAll();
+     }
+     unset($comando);
+     unset($pdo);
+      /* PROCURANDO TEXTOS --- HABILIDADES */
+    include("conexao.php");
+    $comando = $pdo -> prepare("SELECT escrito FROM textos WHERE fk_personagem = :fk_personagem AND fk_tipo = :fk_tipo");
+    $comando->bindValue(":fk_personagem", $id);
+    $comando->bindValue(":fk_tipo", 5);
+    $comando -> execute();
+
+    if($comando->rowCount() >= 1)
+    {
+        $qual_habil = $comando->fetchAll();
+    }
+    unset($comando);
+    unset($pdo);
+    /* PROCURANDO TEXTOS --- HISTÓRICO */
+    include("conexao.php");
+    $comando = $pdo -> prepare("SELECT escrito FROM textos WHERE fk_personagem = :fk_personagem AND fk_tipo = :fk_tipo");
+    $comando->bindValue(":fk_personagem", $id);
+    $comando->bindValue(":fk_tipo", 6);
+    $comando -> execute();
+
+    if($comando->rowCount() >= 1)
+    {
+        $qual_hist = $comando->fetchAll();
     }
     unset($comando);
     unset($pdo);

@@ -135,7 +135,7 @@
         <label class="escrito direita">PERÍCIAS</label>
         <table>
         <tbody>
-        <div id="lista">
+            <div id="lista">
               <?php
                 include("listarpericias.php");
                 
@@ -154,7 +154,7 @@
                 <?php } 
                 }
                 ?>
-        </div>
+            </div^>
         </tbody>
         </table><!-- 
                 <div class="peri">
@@ -376,23 +376,23 @@
                         </div>
                         <div class="valor_2">
                             <label>TIPO</label>
-                            <input type="number" min="0" max="100" class="dano">
+                            <textarea type="number" min="0" max="100" class="dano"></textarea>
                         </div>
                         <div class="valor_2">
                             <label class="menor">CATEGORIA</label>
-                            <input type="number" min="0" max="100" class="dano">
+                            <textarea type="number" min="0" max="100" class="dano"></textarea>
                         </div>
                         <div class="valor_2">
                             <label>ALCANCE</label>
-                            <input type="number" min="0" max="100" class="dano">
+                            <textarea type="number" min="0" max="100" class="dano"></textarea>
                         </div>
                         <div class="valor_2">
                             <label>DANO</label>
-                            <input type="number" min="0" max="100" class="dano">
+                            <textarea type="number" min="0" max="100" class="dano"></textarea>
                         </div>
                         <div class="valor_2">
                             <label>CRÍTICO</label>
-                            <input type="number" min="0" max="100" class="dano">
+                            <textarea type="number" min="0" max="100" class="dano"></textarea>
                         </div>
                         <div class="valor_2">
                             <label class="menor">MUNIÇÃO ATUAL</label>
@@ -408,42 +408,84 @@
                         </div>
                         <div class="valor_2">
                             <label class="menor">MUNIÇÃO TOTAL</label>
-                            <input type="number" min="0" max="100" class="dano4">
+                            <textarea type="number" min="0" max="100" class="dano"></textarea>
                         </div>
                     </div>
             </div>
 
 
+        <?php
+            if(!empty($qual_prof)) {
+                foreach ($qual_prof as $qual) {
+        ?>
         <div class="proficiencias">
             <label class="escrito">PROFICIÊNCIAS</label>
-            <textarea cols="30" rows="5" class="espaco direita prof" name="proficiencias"></textarea>
+            <textarea cols="30" rows="5" class="espaco direita prof" name="proficiencias"><?php echo $qual['escrito']; ?></textarea>
         </div>
-
+        <?php
+                }
+            }
+        ?>
+        <?php
+            if(!empty($qual_ataqedef)) {
+                foreach ($qual_ataqedef as $qual) {
+        ?>
         <div class="ataques_e_defesas">
                 <label class="escrito">ATAQUES E DEFESAS DETALHADOS</label>
-                <textarea cols="30" rows="5" class="espaco meio at" name="ataquesedefesas"></textarea>
+                <textarea cols="30" rows="5" class="espaco meio at" name="ataquesedefesas" ><?php echo $qual['escrito']; ?></textarea>
         </div>
-
+        <?php
+                }
+            }
+        ?>
+        <?php
+            if(!empty($qual_inv)) {
+                foreach ($qual_inv as $qual) {
+        ?>
         <div class="inventario">
                 <label class="escrito">INVENTÁRIO</label>
-                <textarea cols="30" rows="5" class="espaco direita inv" name="inventario"></textarea>
+                <textarea cols="30" rows="5" class="espaco direita inv" name="inventario"><?php echo $qual['escrito']; ?></textarea>
         </div>
-
+        <?php
+                }
+            }
+        ?>
+        <?php
+            if(!empty($qual_habil)) {
+                foreach ($qual_habil as $qual) {
+        ?>
         <div class="habilidades">
                 <label class="escrito">HABILIDADES</label>
-                <textarea cols="30" rows="5" class="espaco esquerda hab" name="habilidades"></textarea>
+                <textarea cols="30" rows="5" class="espaco esquerda hab" name="habilidades"><?php echo $qual['escrito']; ?></textarea>
         </div>
-
+        <?php
+                }
+            }
+        ?>
+        <?php
+            if(!empty($qual_ritconh)) {
+                foreach ($qual_ritconh as $qual) {
+        ?>
         <div class="rituais">
                 <label class="escrito">RITUAIS CONHECIDOS</label>
-                <textarea cols="30" rows="5" class="espaco meio at" name="rituais"></textarea>
+                <textarea cols="30" rows="5" class="espaco meio at" name="rituais"><?php echo $qual['escrito']; ?></textarea>
         </div>
-
+        <?php
+                }
+            }
+        ?>
+        <?php
+            if(!empty($qual_hist)) {
+                foreach ($qual_hist as $qual) {
+        ?>
         <div class="historico">
                 <label class="escrito">HISTÓRICO</label>
-                <textarea cols="30" rows="5" class="espaco direita his" name="historico"></textarea>
+                <textarea cols="30" rows="5" class="espaco direita his" name="historico"><?php echo $qual['escrito']; ?></textarea>
         </div>
-
+        <?php
+                }
+            }
+        ?>
     </form>
 </body>
 </html>

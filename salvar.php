@@ -116,7 +116,7 @@
         $historico = $_POST["historico"];
 
             /* INVENTÁRIO -------------------------------------------------- */
-            $comando = $pdo -> prepare("UPDATE textos SET escrito=:escrito, fk_tipo=:fk_tipo WHERE fk_personagem=:fk_personagem");
+            $comando = $pdo -> prepare("UPDATE textos SET escrito=:escrito WHERE fk_tipo=:fk_tipo AND fk_personagem=:fk_personagem");
             $comando->bindValue(":escrito",$inventario);
             $comando->bindValue(":fk_tipo", 1);
             $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
@@ -125,7 +125,7 @@
             unset($pdo);
             /* PROFICIÊNCIAS -------------------------------------------------- */
             include("conexao.php");
-            $comando = $pdo -> prepare("UPDATE textos SET escrito=:escrito, fk_tipo=:fk_tipo WHERE fk_personagem=:fk_personagem");
+            $comando = $pdo -> prepare("UPDATE textos SET escrito=:escrito WHERE fk_tipo=:fk_tipo AND fk_personagem=:fk_personagem");
             $comando->bindValue(":escrito",$proficiencias);
             $comando->bindValue(":fk_tipo", 2);
             $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
@@ -134,7 +134,7 @@
             unset($pdo);
             /* ATAQUES E DEFESAS DETALHADOS -------------------------------------------------- */
             include("conexao.php");
-            $comando = $pdo -> prepare("UPDATE textos SET escrito=:escrito, fk_tipo=:fk_tipo WHERE fk_personagem=:fk_personagem");
+            $comando = $pdo -> prepare("UPDATE textos SET escrito=:escrito WHERE fk_tipo=:fk_tipo AND fk_personagem=:fk_personagem");
             $comando->bindValue(":escrito",$ataquesedefesas);
             $comando->bindValue(":fk_tipo", 3);
             $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
@@ -143,7 +143,7 @@
             unset($pdo);
             /* RITUAIS CONHECIDOS -------------------------------------------------- */
             include("conexao.php");
-            $comando = $pdo -> prepare("UPDATE textos SET escrito=:escrito, fk_tipo=:fk_tipo WHERE fk_personagem=:fk_personagem");
+            $comando = $pdo -> prepare("UPDATE textos SET escrito=:escrito WHERE fk_tipo=:fk_tipo AND fk_personagem=:fk_personagem");
             $comando->bindValue(":escrito",$rituais);
             $comando->bindValue(":fk_tipo", 4);
             $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
@@ -152,7 +152,7 @@
             unset($pdo);
             /* HABILIDADES -------------------------------------------------- */
             include("conexao.php");
-            $comando = $pdo -> prepare("UPDATE textos SET escrito=:escrito, fk_tipo=:fk_tipo WHERE fk_personagem=:fk_personagem");
+            $comando = $pdo -> prepare("UPDATE textos SET escrito=:escrito WHERE fk_tipo=:fk_tipo AND fk_personagem=:fk_personagem");
             $comando->bindValue(":escrito",$habilidades);
             $comando->bindValue(":fk_tipo", 5);
             $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
@@ -161,7 +161,7 @@
             unset($pdo);
             /* HISTÓRICO -------------------------------------------------- */
             include("conexao.php");
-            $comando = $pdo -> prepare("UPDATE textos SET escrito=:escrito, fk_tipo=:fk_tipo WHERE fk_personagem=:fk_personagem");
+            $comando = $pdo -> prepare("UPDATE textos SET escrito=:escrito WHERE fk_tipo=:fk_tipo AND fk_personagem=:fk_personagem");
             $comando->bindValue(":escrito",$historico);
             $comando->bindValue(":fk_tipo", 6);
             $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
