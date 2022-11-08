@@ -26,10 +26,17 @@
         <h1>CONFIGURAÇÕES DE CONTA</h1>
 
                     <form action="alterar.php" method="POST" class="form">
-                    <input type="text" class="input" name="nome" placeholder="NOME">
-                    <input type="text" class="input" name="email" placeholder="E-MAIL">
+                    <?php
+                        include("qualusua.php");
+                        if(!empty($qual_usua)) {
+                        foreach ($qual_usua as $qual) {
+                    ?>
+                    <input type="text" class="input" name="nome" placeholder="NOME" value="<?php echo $qual['nome']; ?>">
+                    <input type="text" class="input" name="email" placeholder="E-MAIL" value="<?php echo $qual['email']; ?>">
                     <input type="password" class="input" name="senha" placeholder="SENHA">
-
+                    <?php
+                        }}
+                    ?>
             <input type="submit" value="ALTERAR" class="botao alterar">
         </form>
         <form action="excluirconta.php" method="POST" class="form">

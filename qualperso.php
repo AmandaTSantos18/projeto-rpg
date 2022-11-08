@@ -70,9 +70,9 @@
 
     /* PROCURANDO RESISTÊNCIAS */
     include("conexao.php");
-    $comando = $pdo -> prepare("SELECT fisica, balistica, mental, sangue, morte, energia, conhecimento FROM resistencias_a_dano WHERE fk_personagem = :fk_personagem");
+    $comando=$pdo->prepare("SELECT fisica, balistica, mental, sangue, morte, energia, conhecimento FROM resistencias_a_dano WHERE fk_personagem = :fk_personagem");
     $comando->bindValue(":fk_personagem", $id);
-    $comando -> execute();
+    $comando->execute();
 
     if($comando->rowCount() >= 1)
     {

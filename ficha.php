@@ -33,68 +33,56 @@
                 <label class="info">JOGADOR:</label>
                 <input type="text" class="espacinho pe" name="jogador" value="<?php echo $qual['jogador']; ?>">
             </div>
+        <?php
+            }
+        }
+        ?>
 
             <div class="categoria">
                 <label class="info">ORIGEM:</label>
-                <select class="espacinho ori" name="origem" value="<?php echo $qual['fk_origem']; ?>">
-                    <option value="1">Desconhecido</option>
-                    <option value="2">Acadêmico</option>
-                    <option value="3">Agente de Saúde</option>
-                    <option value="4">Amnésico</option>
-                    <option value="5">Artista</option>
-                    <option value="6">Atleta</option>
-                    <option value="7">Chef</option>
-                    <option value="8">Criminoso</option>
-                    <option value="9">Cultista Arrependido</option>
-                    <option value="10">Desgarrado</option>
-                    <option value="11">Engenheiro</option>
-                    <option value="12">Executivo</option>
-                    <option value="13">Investigador</option>
-                    <option value="14">Lutador</option>
-                    <option value="15">Magnata</option>
-                    <option value="16">Mercenário</option>
-                    <option value="17">Militar</option>
-                    <option value="18">Operário</option>
-                    <option value="19">Policial</option>
-                    <option value="20">Religioso</option>
-                    <option value="21">Servidor Público</option>
-                    <option value="22">Teórico da Conspiração</option>
-                    <option value="23">Trambiqueiro</option>
-                    <option value="24">Universitário</option>
-                    <option value="25">Vítima</option>
+                <select class="espacinho ori" name="origem">
+                <?php 
+                include("filtro.php");
+                    if(!empty($origens)) {
+                        foreach ($origens as $qual) {
+                ?>
+                    <option value="<?php echo $qual['id_origem']; ?>"> <?php echo $qual['nome_origem']; ?></option>
+                <?php
+                        }
+                    }
+                ?>
                 </select>
             </div>
 
             <div class="categoria">
                 <label class="info">CLASSE:</label>
-                <select class="espacinho ori" name="classe" value="<?php echo $qual['fk_classe']; ?>">
-                    <option value="1">Desconhecido</option>
-                    <option value="2">Combatente</option>
-                    <option value="3">Especialista</option>
-                    <option value="4">Ocultista</option>
+                <select class="espacinho ori" name="classe">
+                <?php 
+                include("filtro.php");
+                    if(!empty($classes)) {
+                        foreach ($classes as $qual) {
+                ?>
+                    <option value="<?php echo $qual['id_classe']; ?>"> <?php echo $qual['nome_classe']; ?></option>
+                <?php
+                        }
+                    }
+                ?>
                 </select>
             </div>
 
             <div class="categoria">
                 <label class="info">TRILHA:</label>
-                <select class="espacinho tri" name="trilha" value="<?php echo $qual['fk_trilha']; ?>">
-                    <option value="1">Nenhuma</option>
-                    <option value="2">Comandante</option>
-                    <option value="3">Guerreiro</option>
-                    <option value="4">Operações Especiais</option>
-                    <option value="5">Tropa de Choque</option>
-                    <option value="6">Atirador de Elite</option>
-                    <option value="7">Infiltrador</option>
-                    <option value="8">Médico de Campo</option>
-                    <option value="9">Negociador</option>
-                    <option value="10">Técnico</option>
-                    <option value="11">Conduíte</option>
-                    <option value="12">Flagelador</option>
-                    <option value="13">Graduado</option>
-                    <option value="14">Intuitivo</option>
-                    <option value="15">Lâmina Paranormal</option>
-     
-
+                <select class="espacinho tri" name="trilha">
+                    <?php 
+                    include("filtro.php");
+                        if(!empty($trilhas)) {
+                            foreach ($trilhas as $qual) {
+                    ?>
+                    <option value="<?php echo $qual['id_trilha']; ?>"><?php echo $qual['nome_trilha']; ?></option>
+                    <?php
+                            }
+                        }
+                    ?>
                 </select>
             </div>
 
@@ -138,10 +126,7 @@
             <div id="lista">
               <?php
                 include("listarpericias.php");
-                
-                //verifica se a variável tem os valores da tabela.
                 if (!empty($lista_pericias)) {
-                    //seleciona linha por linha.
                     foreach ($lista_pericias as $linha) { ?>
                         <tr class="peri">
                             <td class="nome_pericia" name="id"> <?php echo $linha['nome_pericia']; ?></td>
@@ -154,33 +139,11 @@
                 <?php } 
                 }
                 ?>
-            </div^>
+            </div>
         </tbody>
-        </table><!-- 
-                <div class="peri">
-                    <input type="text" class="nome_pericia" name="nome_pericia"> 
-                    <input type="number" class="dano2" name="valor1">
-                    <img src="img/soma.png" id="soma">
-                    <input type="number" class="dano2" name="valor2">
-                    <img src="img/igual.png" id="soma">
-                    <textarea class="dano2" name="soma" value="soma"> </textarea> 
-                </div>
- -->
-<!-- 
-                <button type="button" class="add_peri">
-                    <label id="textdeslo">ADICIONAR PERÍCIA</label>
-                    <img src="img/mais3.png" id="mais">
-                </button>
-                
-                <div class="deslocamento">
-                    <label id="textdeslo">DESLOCAMENTO</label>
-                    <input type="number" min="0" max="100" class="desl">
-                </div> -->
+        </table>
         </div>
-        <?php
-                }
-            }
-        ?>
+
         <?php
             if(!empty($qual_atri)) {
                 foreach ($qual_atri as $qual) {

@@ -109,6 +109,11 @@ a
 
 .nome
 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    white-space: nowrap; 
+    width: 380px; 
     position: absolute;
     left: 50px;
     top: 8px;
@@ -118,6 +123,11 @@ a
 
 .jogador
 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    white-space: nowrap; 
+    width: 370px; 
     position: absolute;
     left: 460px;
     top: 14px;
