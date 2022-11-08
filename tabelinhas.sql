@@ -8,10 +8,10 @@ create table classe(
 );
 
 insert into classe(nome_classe) values
-	("desconhecido"),
-    ("combatente"),
-    ("especialista"),
-    ("ocultista");
+	("Desconhecido"),
+    ("Combatente"),
+    ("Especialista"),
+    ("Ocultista");
 
 create table trilha(
 	id_trilha int not null auto_increment primary key,
@@ -21,21 +21,21 @@ create table trilha(
 );
 
  insert into trilha(nome_trilha, fk_classe)values
-    ("aniquilador", 2),
-    ("comandante de campo", 2),
-    ("guerreiro", 2),
-    ("operações especiais", 2),
-    ("tropa de choque", 2),
-    ("atirador de elite", 3),
-    ("infiltrador", 3),
-    ("médico de campo", 3),
-    ("negociador", 3),
-    ("técnico", 3),
-    ("conduíte", 4),
-    ("flagelador", 4),
-    ("graduado", 4),
-    ("intuitivo", 4),
-    ("lâmina paranormal", 4);
+    ("Aniquilador", 2),
+    ("Comandante de campo", 2),
+    ("Guerreiro", 2),
+    ("Operações especiais", 2),
+    ("Tropa de choque", 2),
+    ("Atirador de elite", 3),
+    ("Infiltrador", 3),
+    ("Médico de campo", 3),
+    ("Negociador", 3),
+    ("Técnico", 3),
+    ("Conduíte", 4),
+    ("Flagelador", 4),
+    ("Graduado", 4),
+    ("Intuitivo", 4),
+    ("Lâmina paranormal", 4);
 
 create table elemento(
 	id_elemento int not null auto_increment primary key,
@@ -55,11 +55,11 @@ create table patente(
 );
 
 insert into patente(nome_patente) values
-    ("recruta"),
-    ("operador"),
-    ("agente especial"),
-    ("oficial de operações"),
-    ("agente de elite");
+    ("Recruta"),
+    ("Operador"),
+    ("Agente especial"),
+    ("Oficial de operações"),
+    ("Agente de elite");
 
 create table origem(
 	id_origem int not null auto_increment primary key,
@@ -67,31 +67,31 @@ create table origem(
 );
 
 insert into origem(nome_origem) values
-	("desconhecido"),
-	("acadêmico"),
-	("agente de saúde"),
-	("amnésico"),
-	("artista"), 
-	("atleta"),
-	("chef"),
-	("criminoso"),
-	("cultista arrependido"),
-	("desgarrado"),
-	("engenheiro"),
-	("executivo"),
-	("investigador"),
-	("lutador"),
-	("magnata"),
-	("mercenário"),
-	("militar"),
-	("operário"),
-	("policial"),
-	("religioso"),
-	("servidor público"),
-	("teórico da conspiração"),
-	("trambiqueiro"),
-	("universitário"),
-	("vítima");
+	("Desconhecido"),
+	("Acadêmico"),
+	("Agente de saúde"),
+	("Amnésico"),
+	("Artista"), 
+	("Atleta"),
+	("Chef"),
+	("Criminoso"),
+	("Cultista arrependido"),
+	("Desgarrado"),
+	("Engenheiro"),
+	("Executivo"),
+	("Investigador"),
+	("Lutador"),
+	("Magnata"),
+	("Mercenário"),
+	("Militar"),
+	("Operário"),
+	("Policial"),
+	("Religioso"),
+	("Servidor público"),
+	("Teórico da conspiração"),
+	("Trambiqueiro"),
+	("Universitário"),
+	("Vítima");
 
 create table tipo_texto(
 	id_tipo_texto int not null auto_increment primary key,
@@ -174,6 +174,7 @@ create table equipamentos(
 );
 
 insert into equipamentos(nome_equipamento, fk_categoria, dano, critico, fk_alcance, fk_tipo, espaco, fk_municao) values
+    ("Nenhum", null, "0", "0", null, null, "0", null),
 	("Faca", 1, "1d4", "19", 1, 1, "1", null),
 	("Martelo", 1, "1d6", "x2", null, 2, "1", null),
 	("Punhal", 1, "1d4", "x3", null, 3, "1", null),
@@ -262,33 +263,33 @@ create table pericias(
 );
 
 insert into pericias(nome_pericia) values
-	("adestramento"),
-	("atletismo"),
-	("atuação"),
-	("atualidades"),
-	("ciência"),
-	("condução"),
-	("diplomacia"),
-	("enganação"),
-	("fortitude"),
-	("furtividade"),
-	("intimidação"),
-	("intuicao"),
-	("investigação"),
-	("jogatina"),
-	("luta"),
-	("medicina"),
-	("ocultismo"),
-	("percepção"),
-	("pilotagem"),
-	("pontaria"),
-	("prestidigitação"),
-	("profissão"),
-	("reflexos"),
-	("religião"),
-	("tática"),
-	("tecnologia"),
-	("vontade");
+	("Adestramento"),
+	("Atletismo"),
+	("Atuação"),
+	("Atualidades"),
+	("Ciência"),
+	("Condução"),
+	("Diplomacia"),
+	("Enganação"),
+	("Fortitude"),
+	("Furtividade"),
+	("Intimidação"),
+	("Intuicao"),
+	("Investigação"),
+	("Jogatina"),
+	("Luta"),
+	("Medicina"),
+	("Ocultismo"),
+	("Percepção"),
+	("Pilotagem"),
+	("Pontaria"),
+	("Prestidigitação"),
+	("Profissão"),
+	("Reflexos"),
+	("Religião"),
+	("Tática"),
+	("Tecnologia"),
+	("Vontade");
 
 create table defesas(
 	id_defesas int not null auto_increment primary key,

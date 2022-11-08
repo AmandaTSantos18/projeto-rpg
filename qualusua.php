@@ -7,8 +7,6 @@
     $comando->bindValue(":id_usuario", $_SESSION['id_usuario']);
     $comando->execute();
 
-    print_r($comando);
-    die();
     if($comando->rowCount() >= 1)
     {
         $qual_usua = $comando->fetchAll();

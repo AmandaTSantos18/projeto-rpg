@@ -95,7 +95,7 @@ body
     flex-direction: column;
     align-items: flex-end;
     position: absolute;
-    top: 207px;
+    top: 206px;
     left: 5px;
 }
 
@@ -115,12 +115,14 @@ body
     flex-direction: row;
     align-items: center;
     margin-right: 5px;
+    margin-top: -30px;
 }
 
 #lista
 {
     display: flex;
     flex-direction: column;
+    margin-top: 10px;
 }
 
 h4
@@ -282,7 +284,7 @@ h4
 .ataques_e_defesas
 {
     position: absolute;
-    top: 1000px;
+    top: 1005px;
     left: 470px;
 }
 
@@ -411,13 +413,15 @@ h3
 {
     background-color: transparent;
     border: none;
-    width: 180px;
+    width: 130px;
     height: 40px;
     font-size: 20px;
     font-weight: bolder;
     margin-right: 10px;
-    margin-top: 10px;
+    margin-top: 25px;
     padding: 10px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
     text-align: center;
     font-family: 'Manjari'
 }
@@ -425,7 +429,7 @@ h3
 .dano2
 {
     width: 50px;
-    height: 45px;
+    height: 40px;
 
     background: #D9D9D9;
     border-radius: 5px;
@@ -437,9 +441,8 @@ h3
     font-family: 'Paprika';
 
     text-align: center;
-    text-justify: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     color: black;
 }
 

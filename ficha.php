@@ -56,7 +56,7 @@
 
             <div class="categoria">
                 <label class="info">CLASSE:</label>
-                <select class="espacinho ori" name="classe">
+                <select class="espacinho ori" name="classe" onchange="Selecionado(<?php echo $qual['id_classe']; ?>);">
                 <?php 
                 include("filtro.php");
                     if(!empty($classes)) {
@@ -89,22 +89,32 @@
             <div class="categoria">
                 <label class="info">ELEMENTO:</label>
                 <select class="espacinho ele" name="elemento" value="<?php echo $qual['fk_elemento']; ?>">
-                        <option value="1"> Nenhum </option>
-                        <option value="2"> Sangue </option>
-                        <option value="3"> Morte </option>
-                        <option value="4"> Energia </option>
-                        <option value="5"> Conhecimento</option>
+                <?php 
+                include("filtro.php");
+                    if(!empty($elemento)) {
+                        foreach ($elemento as $qual) {
+                ?>
+                <option value="<?php echo $qual['id_elemento']; ?>"><?php echo $qual['nome_elemento']; ?></option>
+                <?php
+                        }
+                    }
+                ?>
                 </select>
             </div>
 
             <div class="categoria">
                 <label class="info">PATENTE:</label>
                     <select class="espacinho pat" name="patente" value="<?php echo $qual['fk_patente']; ?>">
-                            <option value="1">Recruta</option>
-                            <option value="2">Operador</option>
-                            <option value="3">Agente Especial</option>
-                            <option value="4">Oficial de Operações</option>
-                            <option value="5">Agente de Elite</option>
+                    <?php 
+                    include("filtro.php");
+                        if(!empty($patente)) {
+                            foreach ($patente as $qual) {
+                    ?>
+                    <option value="<?php echo $qual['id_patente']; ?>"><?php echo $qual['nome_patente']; ?></option>
+                    <?php
+                            }
+                        }
+                    ?>
                     </select>
             </div>
 
@@ -301,40 +311,14 @@
                         <div class="valor_2">
                             <label>ARMA</label>
                             <select class="dano_arma" onchange="Mudar();">
-                                    <option value="nenhuma">-</option>
-                                    <option value="faca">Faca</option>
-                                    <option value="martelo">Martelo</option>
-                                    <option value="punhal">Punhal</option>
-                                    <option value="bastao">Bastão</option>
-                                    <option value="machete">Machete</option>
-                                    <option value="lanca">Lança</option>
-                                    <option value="cajado">Cajado</option>
-                                    <option value="arco">Arco</option>
-                                    <option value="besta">Besta</option>
-                                    <option value="pistola">Pistola</option>
-                                    <option value="revolver">Revólver</option>
-                                    <option value="fuzil_de_caca">Fuzil de caça</option>
-                                    <option value="machadinha">Machadinha</option>
-                                    <option value="nunchaku">Nunchaku</option>
-                                    <option value="corrente">Corrente</option>
-                                    <option value="espada">Espada</option>
-                                    <option value="florete">Florete</option>
-                                    <option value="machado">Machado</option>
-                                    <option value="marreta">Marreta</option>
-                                    <option value="acha">Acha</option>
-                                    <option value="gadanho">Gadanho</option>
-                                    <option value="katana">Katana</option>
-                                    <option value="montante">Montante</option>
-                                    <option value="moto_serra">Moto-serra</option>
-                                    <option value="arco_composto">Arco composto</option>
-                                    <option value="balestra">Balestra</option>
-                                    <option value="submetralhadora">Submetralhadora</option>
-                                    <option value="espingarda">Espingarda</option>
-                                    <option value="fuzil_de_assalto">Fuzil de assalto</option>
-                                    <option value="fuzil_de_precisão">Fuzil de precisão</option>
-                                    <option value="bazuca">Bazuca</option>
-                                    <option value="lanca_chamas">Lança-chamas</option>
-                                    <option value="metralhadora">Metralhadora</option>
+                            <?php
+                                if(!empty($arma)) {
+                                    foreach ($arma as $qual) {
+                            ?>
+                            <option value="<?php echo $qual['id_equipamentos']; ?>"><?php echo $qual['nome_equipamento']; ?></option>
+                            <?php
+                                }}
+                            ?>
                             </select>
                         </div>
                         <div class="valor_2">
@@ -451,4 +435,10 @@
         ?>
     </form>
 </body>
+<script>
+    function Selecionado(codigo)
+    {
+        window.open("filtro.php?codigo=" + codigo,"_self");
+    }
+</script>
 </html>

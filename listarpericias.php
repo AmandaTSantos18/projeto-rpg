@@ -4,8 +4,6 @@
     $comando->bindValue(":fk_personagem", $_SESSION['id_personagem']);
     $comando->execute();
 
-    print_r($comando);
-    die();
 
     if($comando->rowCount() >= 1)
     {
@@ -19,7 +17,7 @@
         unset($pdo);
         include("conexao.php");
 
-        $comando = $pdo->prepare("SELECT nome_pericia, valor1, valor2, soma FROM pericias WHERE fk_personagem = null");
+        $comando = $pdo->prepare("SELECT nome_pericia, valor1, valor2, soma FROM pericias WHERE fk_personagem is null");
         $comando->execute();
         if($comando->rowCount() >= 1)
         {
