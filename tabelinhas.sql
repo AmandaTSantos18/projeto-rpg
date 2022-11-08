@@ -274,7 +274,7 @@ insert into pericias(nome_pericia) values
 	("Fortitude"),
 	("Furtividade"),
 	("Intimidação"),
-	("Intuicao"),
+	("Intuição"),
 	("Investigação"),
 	("Jogatina"),
 	("Luta"),

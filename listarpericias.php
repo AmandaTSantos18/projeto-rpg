@@ -17,7 +17,7 @@
         unset($pdo);
         include("conexao.php");
 
-        $comando = $pdo->prepare("SELECT nome_pericia, valor1, valor2, soma FROM pericias WHERE fk_personagem is null");
+        $comando = $pdo->prepare("SELECT id_pericias, nome_pericia, valor1, valor2, soma FROM pericias WHERE fk_personagem is null");
         $comando->execute();
         if($comando->rowCount() >= 1)
         {

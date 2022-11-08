@@ -138,20 +138,24 @@
                 include("listarpericias.php");
                 if (!empty($lista_pericias)) {
                     foreach ($lista_pericias as $linha) { ?>
-                        <tr class="peri">
-                            <td class="nome_pericia" name="id"> <?php echo $linha['nome_pericia']; ?></td>
-                            <td class="dano2" name="nome"> <?php echo $linha['valor1']; ?></td>
-                            <td><img src="img/soma.png" id="soma"></td>
-                            <td class="dano2" name="jogador"> <?php echo $linha['valor2']; ?></td>
-                            <td><img src="img/igual.png" id="soma"></td>
-                            <td class="dano2" name="soma"><?php echo $linha['soma']; ?> </td>
-                        </tr>
+                        <div class="peri">
+                            <label class="nome_pericia" name="id"><?php echo $linha['nome_pericia']; ?></label>
+                            <input class="dano2" name="nome" value="<?php echo $linha['valor1']; ?>">
+                            <img src="img/soma.png" id="soma">
+                            <input class="dano2" name="jogador" value="<?php echo $linha['valor2']; ?>">
+                            <img src="img/igual.png" id="soma">
+                            <input class="dano2" name="soma" value="<?php echo $linha['soma']; ?>">
+                    </div>
                 <?php } 
                 }
                 ?>
             </div>
         </tbody>
         </table>
+                <div class="deslocamento">
+                    <label id="textdeslo">DESLOCAMENTO</label>
+                    <input type="number" min="0" max="100" class="desl">
+                </div>
         </div>
 
         <?php
@@ -347,7 +351,7 @@
                                 if(!empty($qual_atual)) {
                                     foreach ($qual_atual as $qual) {
                             ?>
-                            <input type="number" min="0" max="100" class="dano4" name="municao_atual" value="<?php echo $qual['municao_atual']; ?>">
+                            <textarea type="number" min="0" max="100" class="dano" name="municao_atual"><?php echo $qual['municao_atual']; ?></textarea>
                             <?php
                                     }
                                 }
