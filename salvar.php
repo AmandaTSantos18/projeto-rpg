@@ -17,22 +17,42 @@
         $xp = $_POST["xp"];
         $pm = $_POST["pm"];
 
-        $comando = $pdo -> prepare("UPDATE personagem SET nome=:nome, jogador=:jogador, fk_origem=:fk_origem, fk_classe=:fk_classe, fk_trilha=:fk_trilha, fk_elemento=:fk_elemento, fk_patente=:fk_patente, xp=:xp, pm=:pm WHERE id_personagem=:id_personagem");
-        $comando->bindValue(":nome",$personagem);
-        $comando->bindValue(":jogador",$jogador);
-        $comando->bindValue(":fk_origem",$origem);
-        $comando->bindValue(":fk_classe",$classe);
-        $comando->bindValue(":fk_trilha",$trilha);
-        $comando->bindValue(":fk_elemento",$elemento);
-        $comando->bindValue(":fk_patente",$patente);
-        $comando->bindValue(":xp",$xp);
-        $comando->bindValue(":pm",$pm);
+        if($_SESSION['is_adm'] > 0)
+        {
+            $comando = $pdo -> prepare("UPDATE personagem SET nome=:nome, fk_origem=:fk_origem, fk_classe=:fk_classe, fk_trilha=:fk_trilha, fk_elemento=:fk_elemento, fk_patente=:fk_patente, xp=:xp, pm=:pm WHERE id_personagem=:id_personagem");
+            $comando->bindValue(":nome",$personagem);
+            $comando->bindValue(":fk_origem",$origem);
+            $comando->bindValue(":fk_classe",$classe);
+            $comando->bindValue(":fk_trilha",$trilha);
+            $comando->bindValue(":fk_elemento",$elemento);
+            $comando->bindValue(":fk_patente",$patente);
+            $comando->bindValue(":xp",$xp);
+            $comando->bindValue(":pm",$pm);
 
-        $comando->bindValue(":id_personagem",$_SESSION['id_personagem']);
-        $comando->execute();
+            $comando->bindValue(":id_personagem",$_SESSION['id_personagem']);
+            $comando->execute();
 
-        unset($comando);
-        unset($pdo);
+            unset($comando);
+            unset($pdo);
+        }else
+        {
+            $comando = $pdo -> prepare("UPDATE personagem SET nome=:nome, jogador=:jogador, fk_origem=:fk_origem, fk_classe=:fk_classe, fk_trilha=:fk_trilha, fk_elemento=:fk_elemento, fk_patente=:fk_patente, xp=:xp, pm=:pm WHERE id_personagem=:id_personagem");
+            $comando->bindValue(":nome",$personagem);
+            $comando->bindValue(":jogador",$jogador);
+            $comando->bindValue(":fk_origem",$origem);
+            $comando->bindValue(":fk_classe",$classe);
+            $comando->bindValue(":fk_trilha",$trilha);
+            $comando->bindValue(":fk_elemento",$elemento);
+            $comando->bindValue(":fk_patente",$patente);
+            $comando->bindValue(":xp",$xp);
+            $comando->bindValue(":pm",$pm);
+
+            $comando->bindValue(":id_personagem",$_SESSION['id_personagem']);
+            $comando->execute();
+
+            unset($comando);
+            unset($pdo);
+        }
 
         /* INSERIR ATRIBUTOS -------------------------------------------------- */
         include("conexao.php");
@@ -79,12 +99,14 @@
         $sanidade_atual = $_POST["sanidade_atual"];
         $esforco_atual = $_POST["esforco_atual"];
         $municao_atual = $_POST["municao_atual"];
+        $deslocamento = $_POST["deslocamento"];
 
-        $comando = $pdo -> prepare("UPDATE atual SET vida_atual=:vida_atual, sanidade_atual=:sanidade_atual, esforco_atual=:esforco_atual, municao_atual=:municao_atual WHERE fk_personagem=:fk_personagem");
+        $comando = $pdo -> prepare("UPDATE atual SET vida_atual=:vida_atual, sanidade_atual=:sanidade_atual, esforco_atual=:esforco_atual, municao_atual=:municao_atual ,deslocamento=:deslocamento WHERE fk_personagem=:fk_personagem");
         $comando->bindValue(":vida_atual",$vida_atual);
         $comando->bindValue(":sanidade_atual",$sanidade_atual);
         $comando->bindValue(":esforco_atual",$esforco_atual);
         $comando->bindValue(":municao_atual",$municao_atual);
+        $comando->bindValue(":deslocamento",$deslocamento);
         $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
         $comando->execute();
         unset($comando);
@@ -192,6 +214,8 @@
         $comando->execute();
         unset($comando);
         unset($pdo);
+
+
 
         if($_SESSION['is_adm'] == 1)
         {

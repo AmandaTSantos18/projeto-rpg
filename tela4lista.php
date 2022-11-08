@@ -7,6 +7,8 @@
     <title>Lista</title>
 
     <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
+    <script src='jquery-2.1.4.min.js'></script>
+    <script src='javascript.js'></script>
     <link rel="stylesheet" href="css/estilotela4lista.css">
     <style>
             body
@@ -35,44 +37,74 @@
             </div>
         </a>
 
-        <select class="epadrao" id="qual">
-            <option value="seu">SEUS PERSONAGENS</option>
-            <option value="padrao">PERSONAGENS PADRÃO</option>
+        <select class="epadrao" id="qual" name="qual">
+            <option value="div1">SEUS PERSONAGENS</option>
+            <option value="div2">PERSONAGENS PADRÃO</option>
         </select>
+        
 
-        <table>
-        <tbody>
-        <div id="lista">
-                <?php
-                include("listar.php");
-                
-                //verifica se a variável tem os valores da tabela.
-                if (!empty($lista_personagens)) {
-                    //seleciona linha por linha.
-                    foreach ($lista_personagens as $linha) { ?>
-                        
-                        <tr class="personagem">
-                            <td class="id"> <?php echo $linha['id_personagem']; ?></td>
-                            <td class="nome"> <?php echo $linha['nome']; ?></td>
-                            <td class="jogador"> <?php echo $linha['jogador']; ?></td>
+        <div id="pai">
+            <div id="div1">
+            <table>
+            <tbody>
+                    <?php
+                    include("listar.php");
+                    if (!empty($lista_personagens)) {
+                        foreach ($lista_personagens as $linha) { ?>
+                            
+                            <tr class="personagem">
+                                <td class="id"> <?php echo $linha['id_personagem']; ?></td>
+                                <td class="nome"> <?php echo $linha['nome']; ?></td>
+                                <td class="jogador"> <?php echo $linha['jogador']; ?></td>
 
-                            <td class="delete"> 
-                                <a href="deletar.php?id=<?php echo($linha['id_personagem']);?>">
-                                    <img src="img/excluir.png" width="40px" height="40px">
-                                </a>
-                            </td>
-                            <td class="btalt">
-                                <a href="ficha.php?id=<?php echo($linha['id_personagem']);?>">
-                                    <input type="button" class="alterar" value="ALTERAR">
-                                </a>
-                            </td>
-                        </tr>
-                <?php } 
-                }
-                ?>
+                                <td class="delete"> 
+                                    <a href="deletar.php?id=<?php echo($linha['id_personagem']);?>">
+                                        <img src="img/excluir.png" width="40px" height="40px">
+                                    </a>
+                                </td>
+                                <td class="btalt">
+                                    <a href="ficha.php?id=<?php echo($linha['id_personagem']);?>">
+                                        <input type="button" class="alterar" value="ALTERAR">
+                                    </a>
+                                </td>
+                            </tr>
+                    <?php } 
+                    }
+                    ?>
+            </tbody>
+            </table>
+            </div>
+
+            <div id="div2">
+            <table>
+            <tbody>
+                    <?php
+                    include("listarpadrao.php");
+                    if (!empty($lista_padrao)) {
+                        foreach ($lista_padrao as $linha) { ?>
+                            
+                            <tr class="personagem">
+                                <td class="id"> <?php echo $linha['id_personagem']; ?></td>
+                                <td class="nome"> <?php echo $linha['nome']; ?></td>
+
+                                <td class="delete"> 
+                                    <a href="deletar.php?id=<?php echo($linha['id_personagem']);?>">
+                                        <img src="img/excluir.png" width="40px" height="40px">
+                                    </a>
+                                </td>
+                                <td class="btalt">
+                                    <a href="ficha.php?id=<?php echo($linha['id_personagem']);?>">
+                                        <input type="button" class="alterar" value="ALTERAR">
+                                    </a>
+                                </td>
+                            </tr>
+                    <?php } 
+                    }
+                    ?>
+            </tbody>
+            </table>
+            </div>
         </div>
-        </tbody>
-        </table>
     </div>
 </body>
 </html>

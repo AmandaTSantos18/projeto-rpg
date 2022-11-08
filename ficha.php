@@ -139,12 +139,12 @@
                 if (!empty($lista_pericias)) {
                     foreach ($lista_pericias as $linha) { ?>
                         <div class="peri">
-                            <label class="nome_pericia" name="id"><?php echo $linha['nome_pericia']; ?></label>
-                            <input class="dano2" name="nome" value="<?php echo $linha['valor1']; ?>">
+                            <label class="nome_pericia"><?php echo $linha['nome_pericia']; ?></label>
+                            <input class="dano2" value="<?php echo $linha['valor1']; ?>">
                             <img src="img/soma.png" id="soma">
-                            <input class="dano2" name="jogador" value="<?php echo $linha['valor2']; ?>">
+                            <input class="dano2" value="<?php echo $linha['valor2']; ?>">
                             <img src="img/igual.png" id="soma">
-                            <input class="dano2" name="soma" value="<?php echo $linha['soma']; ?>">
+                            <input class="dano2" value="<?php echo $linha['soma']; ?>">
                     </div>
                 <?php } 
                 }
@@ -154,7 +154,14 @@
         </table>
                 <div class="deslocamento">
                     <label id="textdeslo">DESLOCAMENTO</label>
-                    <input type="number" min="0" max="100" class="desl">
+                    <?php
+                        if(!empty($qual_atual)) {
+                            foreach ($qual_atual as $qual) {
+                    ?>
+                    <input type="number" min="0" max="100" class="desl" name="deslocamento" value="<?php echo $qual['deslocamento']; ?>">
+                    <?php
+                        }}
+                    ?>
                 </div>
         </div>
 

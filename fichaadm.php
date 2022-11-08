@@ -10,11 +10,7 @@
     <link href='https://fonts.googleapis.com/css?family=Paprika' rel='stylesheet'>
 </head>
 <body>
-    <?php
-    session_start();
-    $_SESSION['id_personagem'] = $_GET["id"];
-    $_SESSION['selected'] = true;
-    ?>
+
         <a href="configadm.php"><img src="img/configuracoes.png" id="config"></a>
 
         <a href="criarequipamento.php" id="criar">
@@ -25,327 +21,438 @@
 
 
         <a href="descricoes.html"><img src="img/izinho.png" id="izinho"></a>
-    <form action="salvar.php" method="post">
-        <button type="submit" class="salvar"> SALVAR </button>
+        <form action="salvar.php" method="post" target="_blank">
+        <input type="submit" class="salvar" value="SALVAR"> 
+
         <div class="cabecalho">
             <div class="categoria">
                 <label class="info">PERSONAGEM:</label>
-                <input type="text" class="espacinho pe" name="personagem">
+                
+        <?php 
+        include("qualperso.php");
+            if(!empty($qual_perso)) {
+                foreach ($qual_perso as $qual) {
+        ?>
+                <input type="text" class="espacinho pe" name="personagem" value="<?php echo $qual['nome']; ?>">
             </div>
+
+        <?php
+            }
+        }
+        ?>
 
             <div class="categoria">
                 <label class="info">ORIGEM:</label>
                 <select class="espacinho ori" name="origem">
-                    <option value="1">Desconhecido</option>
-                    <option value="2">Acadêmico</option>
-                    <option value="3">Agente de Saúde</option>
-                    <option value="4">Amnésico</option>
-                    <option value="5">Artista</option>
-                    <option value="6">Atleta</option>
-                    <option value="7">Chef</option>
-                    <option value="8">Criminoso</option>
-                    <option value="9">Cultista Arrependido</option>
-                    <option value="10">Desgarrado</option>
-                    <option value="11">Engenheiro</option>
-                    <option value="12">Executivo</option>
-                    <option value="13">Investigador</option>
-                    <option value="14">Lutador</option>
-                    <option value="15">Magnata</option>
-                    <option value="16">Mercenário</option>
-                    <option value="17">Militar</option>
-                    <option value="18">Operário</option>
-                    <option value="19">Policial</option>
-                    <option value="20">Religioso</option>
-                    <option value="21">Servidor Público</option>
-                    <option value="22">Teórico da Conspiração</option>
-                    <option value="23">Trambiqueiro</option>
-                    <option value="24">Universitário</option>
-                    <option value="25">Vítima</option>
+                <?php 
+                include("filtro.php");
+                    if(!empty($origens)) {
+                        foreach ($origens as $qual) {
+                ?>
+                    <option value="<?php echo $qual['id_origem']; ?>"> <?php echo $qual['nome_origem']; ?></option>
+                <?php
+                        }
+                    }
+                ?>
                 </select>
             </div>
 
             <div class="categoria">
                 <label class="info">CLASSE:</label>
-                <select class="espacinho ori" name="classe">
-                    <option value="1">Desconhecido</option>
-                    <option value="2">Combatente</option>
-                    <option value="3">Especialista</option>
-                    <option value="4">Ocultista</option>
+                <select class="espacinho ori" name="classe" onchange="Selecionado(<?php echo $qual['id_classe']; ?>);">
+                <?php 
+                include("filtro.php");
+                    if(!empty($classes)) {
+                        foreach ($classes as $qual) {
+                ?>
+                    <option value="<?php echo $qual['id_classe']; ?>"> <?php echo $qual['nome_classe']; ?></option>
+                <?php
+                        }
+                    }
+                ?>
                 </select>
             </div>
 
             <div class="categoria">
                 <label class="info">TRILHA:</label>
                 <select class="espacinho tri" name="trilha">
-                    <option value="1">Nenhuma</option>
-                    <option value="2">Comandante</option>
-                    <option value="3">Guerreiro</option>
-                    <option value="4">Operações Especiais</option>
-                    <option value="5">Tropa de Choque</option>
-                    <option value="6">Atirador de Elite</option>
-                    <option value="7">Infiltrador</option>
-                    <option value="8">Médico de Campo</option>
-                    <option value="9">Negociador</option>
-                    <option value="10">Técnico</option>
-                    <option value="11">Conduíte</option>
-                    <option value="12">Flagelador</option>
-                    <option value="13">Graduado</option>
-                    <option value="14">Intuitivo</option>
-                    <option value="15">Lâmina Paranormal</option>
-     
-
+                    <?php 
+                    include("filtro.php");
+                        if(!empty($trilhas)) {
+                            foreach ($trilhas as $qual) {
+                    ?>
+                    <option value="<?php echo $qual['id_trilha']; ?>"><?php echo $qual['nome_trilha']; ?></option>
+                    <?php
+                            }
+                        }
+                    ?>
                 </select>
             </div>
 
             <div class="categoria">
                 <label class="info">ELEMENTO:</label>
-                <select class="espacinho ele" name="elemento">
-                        <option value="1"> Nenhum </option>
-                        <option value="2"> Sangue </option>
-                        <option value="3"> Morte </option>
-                        <option value="4"> Energia </option>
-                        <option value="5"> Conhecimento</option>
+                <select class="espacinho ele" name="elemento" value="<?php echo $qual['fk_elemento']; ?>">
+                <?php 
+                include("filtro.php");
+                    if(!empty($elemento)) {
+                        foreach ($elemento as $qual) {
+                ?>
+                <option value="<?php echo $qual['id_elemento']; ?>"><?php echo $qual['nome_elemento']; ?></option>
+                <?php
+                        }
+                    }
+                ?>
                 </select>
             </div>
 
             <div class="categoria">
                 <label class="info">PATENTE:</label>
-                    <select class="espacinho pat" name="patente">
-                            <option value="1">Recruta</option>
-                            <option value="2">Operador</option>
-                            <option value="3">Agente Especial</option>
-                            <option value="4">Oficial de Operações</option>
-                            <option value="5">Agente de Elite</option>
+                    <select class="espacinho pat" name="patente" value="<?php echo $qual['fk_patente']; ?>">
+                    <?php 
+                    include("filtro.php");
+                        if(!empty($patente)) {
+                            foreach ($patente as $qual) {
+                    ?>
+                    <option value="<?php echo $qual['id_patente']; ?>"><?php echo $qual['nome_patente']; ?></option>
+                    <?php
+                            }
+                        }
+                    ?>
                     </select>
             </div>
 
             <div class="categoria">
                 <label class="info">XP:</label>
-                <input type="number" class="espacinho pm" name="xp">
+                <input type="number" class="espacinho pm" name="xp" value="<?php echo $qual['xp']; ?>">
             </div>
 
             <div class="categoria">
                 <label class="info">PM:</label>
-                <input type="number" class="espacinho pm" name="pm">
+                <input type="number" class="espacinho pm" name="pm" value="<?php echo $qual['pm']; ?>">
             </div>
         </div>
 
         <div class="pericias">
-            <label class="escrito direita">PERÍCIAS</label>
-
-        
-                <div class="peri">
-                    <h4>ADESTRAMENTO</h4>
-                    <input type="number" class="dano2">
-                    <img src="img/soma.png" id="soma">
-                    <input type="number" class="dano2">
-                    <img src="img/igual.png" id="soma">
-                    <input type="number" class="dano2">
-                </div>
-
-
-                <button type="button" class="add_peri">
-                    <label id="textdeslo">ADICIONAR PERÍCIA</label>
-                    <img src="img/mais3.png" id="mais">
-                </button>
-                
+        <label class="escrito direita">PERÍCIAS</label>
+        <table>
+        <tbody>
+            <div id="lista">
+              <?php
+                include("listarpericias.php");
+                if (!empty($lista_pericias)) {
+                    foreach ($lista_pericias as $linha) { ?>
+                        <div class="peri">
+                            <label class="nome_pericia"><?php echo $linha['nome_pericia']; ?></label>
+                            <input class="dano2" value="<?php echo $linha['valor1']; ?>">
+                            <img src="img/soma.png" id="soma">
+                            <input class="dano2" value="<?php echo $linha['valor2']; ?>">
+                            <img src="img/igual.png" id="soma">
+                            <input class="dano2" value="<?php echo $linha['soma']; ?>">
+                    </div>
+                <?php } 
+                }
+                ?>
+            </div>
+        </tbody>
+        </table>
                 <div class="deslocamento">
                     <label id="textdeslo">DESLOCAMENTO</label>
-                    <input type="number" min="0" max="100" class="desl">
+                    <?php
+                        if(!empty($qual_atual)) {
+                            foreach ($qual_atual as $qual) {
+                    ?>
+                    <input type="number" min="0" max="100" class="desl" name="deslocamento" value="<?php echo $qual['deslocamento']; ?>">
+                    <?php
+                        }}
+                    ?>
                 </div>
-
         </div>
 
+        <?php
+            if(!empty($qual_atri)) {
+                foreach ($qual_atri as $qual) {
+        ?>
         <div class="atributos">
             <img src="img/simbolo.png" id="simb">
-            <input type="number" class="atri forca" name="forca">
-            <input type="number" class="atri presenca" name="presenca">
-            <input type="number" class="atri agilidade" name="agilidade">
-            <input type="number" class="atri intelecto" name="intelecto">
-            <input type="number" class="atri vigor" name="vigor">
+            <input type="number" class="atri forca" name="forca" value="<?php echo $qual['forca']; ?>">
+            <input type="number" class="atri presenca" name="presenca" value="<?php echo $qual['presenca']; ?>">
+            <input type="number" class="atri agilidade" name="agilidade" value="<?php echo $qual['agilidade']; ?>">
+            <input type="number" class="atri intelecto" name="intelecto" value="<?php echo $qual['intelecto']; ?>">
+            <input type="number" class="atri vigor" name="vigor" value="<?php echo $qual['vigor']; ?>">
 
-            <input type="number" min="0" max="100" class="atri2 nex">
+            <input type="number" min="0" max="100" class="atri2 nex" name="nex" value="<?php echo $qual['nex']; ?>">
         </div>
+        <?php
+                }
+            }
+        ?>
 
         <div class="bloco">
             <div class="saude">
                 <div class="escrito sa">SAÚDE</div>
                     <div class="conteudo">
                         <label class="saude_texto"><h1>PV</h1><h2>PONTOS DE VIDA</h2></label>
-                        <input type="number" class="dano2" name="vida_atual">
+                        <?php
+                        if(!empty($qual_atual)) {
+                            foreach ($qual_atual as $qual) {
+                        ?>
+                        <input type="number" class="dano2" name="vida_atual" value="<?php echo $qual['vida_atual']; ?>">
+                        <?php
+                            }}
+                        ?>
                         <img src="img/barra.png" id="barra">
-                        <input type="number" class="dano2" name="vida">
+                        <?php
+                            if(!empty($qual_saude)) {
+                                foreach ($qual_saude as $qual) {
+                        ?>
+                        <input type="number" class="dano2" name="vida" value="<?php echo $qual['vida']; ?>">
+                        <?php
+                            }}
+                        ?>
                     </div>
 
                     <div class="conteudo">
                         <label class="saude_texto"><h1>SAN</h1><h2>SANIDADE</h2></label>
-                        <input type="number" class="dano2" name="sanidade_atual">
+                        <?php
+                        if(!empty($qual_atual)) {
+                            foreach ($qual_atual as $qual) {
+                        ?>
+                        <input type="number" class="dano2" name="sanidade_atual" value="<?php echo $qual['sanidade_atual']; ?>">
+                        <?php
+                            }}
+                        ?>
                         <img src="img/barra.png" id="barra">
-                        <input type="number" class="dano2" name="sanidade">
+                        <?php
+                            if(!empty($qual_saude)) {
+                                foreach ($qual_saude as $qual) {
+                        ?>
+                        <input type="number" class="dano2" name="sanidade" value="<?php echo $qual['sanidade']; ?>">
+                        <?php
+                            }}
+                        ?>
                     </div>
 
                     <div class="conteudo">
                         <label class="saude_texto"><h1>PE</h1><h2>PONTOS DE ESFORÇO</h2></label>
-                        <input type="number" class="dano2" name="esforco_atual">
+                        <?php
+                        if(!empty($qual_atual)) {
+                            foreach ($qual_atual as $qual) {
+                        ?>
+                        <input type="number" class="dano2" name="esforco_atual" value="<?php echo $qual['esforco_atual']; ?>">
+                        <?php
+                            }}
+                        ?>
                         <img src="img/barra.png" id="barra">
-                        <input type="number" class="dano2" name="esforco">
+                        <?php
+                            if(!empty($qual_saude)) {
+                                foreach ($qual_saude as $qual) {
+                        ?>
+                        <input type="number" class="dano2" name="esforco" value="<?php echo $qual['esforco']; ?>">
+                        <?php
+                            }}
+                        ?>
                     </div>
             </div>
+            <?php
+            if(!empty($qual_def)) {
+                foreach ($qual_def as $qual) {
+            ?>
             <div class="saude">
                 <label class="escrito sa">DESFESAS</label>
                     <div class="conteudo2">
                         <div class="saude_texto"><h3>PASSIVA</h3></div>
-                        <input type="number" class="dano3" name="passiva">
+                        <input type="number" class="dano3" name="passiva" value="<?php echo $qual['passiva']; ?>">
                     </div>
 
                     <div class="conteudo2">
                         <label class="saude_texto"><h3>BLOQUEIO</h3></label>
-                        <input type="number" class="dano3" name="bloqueio">
+                        <input type="number" class="dano3" name="bloqueio" value="<?php echo $qual['bloqueio']; ?>">
                     </div>
 
                     <div class="conteudo2">
                         <label class="saude_texto"><h3>ESQUIVA</h3></label>
-                        <input type="number" class="dano3" name="esquiva">
+                        <input type="number" class="dano3" name="esquiva" value="<?php echo $qual['esquiva']; ?>">
                     </div>
             </div>
+            <?php
+                }}
+            ?>
         </div>
 
+        <?php
+            if(!empty($qual_resis)) {
+                foreach ($qual_resis as $qual) {
+        ?>
         <div class="resistenciasadano">
             <label class="escrito rd">RESISTÊNCIAS A DANO</label>
                 <div class="tipos">
                     <div class="valor">
                         FÍSICA
-                        <input type="number" class="dano" name="resistencia_fisica">
+                        <input type="number" class="dano" name="resistencia_fisica" value="<?php echo $qual['fisica']; ?>">
                     </div>
                     <div class="valor">
                         BALÍSTICA
-                        <input type="number" class="dano" name="resistencia_balistica">
+                        <input type="number" class="dano" name="resistencia_balistica" value="<?php echo $qual['balistica']; ?>">
                     </div>
                     <div class="valor">
                         MENTAL
-                        <input type="number" class="dano" name="resistencia_mental">
+                        <input type="number" class="dano" name="resistencia_mental" value="<?php echo $qual['mental']; ?>">
                     </div>
                     <div class="valor">
                         SANGUE
-                        <input type="number" class="dano" name="resistencia_sangue">
+                        <input type="number" class="dano" name="resistencia_sangue" value="<?php echo $qual['sangue']; ?>">
                     </div>
                     <div class="valor">
                         MORTE
-                        <input type="number" class="dano" name="resistencia_morte">
+                        <input type="number" class="dano" name="resistencia_morte" value="<?php echo $qual['morte']; ?>">
                     </div>
                     <div class="valor">
                         ENERGIA
-                        <input type="number" class="dano" name="resistencia_energia">
+                        <input type="number" class="dano" name="resistencia_energia" value="<?php echo $qual['energia']; ?>">
                     </div>
                     <div class="valor">
                         CONHECIMENTO
-                        <input type="number" class="dano" name="resistencia_conhecimento">
+                        <input type="number" class="dano" name="resistencia_conhecimento" value="<?php echo $qual['conhecimento']; ?>">
                     </div>
                 </div>
         </div>
+        <?php
+            }}
+        ?>
         <div class="ataques">
                 <div class="escrito rd">ATAQUES</div>
                     <div class="tipos">
                         <div class="valor_2">
                             <label>ARMA</label>
                             <select class="dano_arma" onchange="Mudar();">
-                                    <option value="nenhuma">-</option>
-                                    <option value="faca">Faca</option>
-                                    <option value="martelo">Martelo</option>
-                                    <option value="punhal">Punhal</option>
-                                    <option value="bastao">Bastão</option>
-                                    <option value="machete">Machete</option>
-                                    <option value="lanca">Lança</option>
-                                    <option value="cajado">Cajado</option>
-                                    <option value="arco">Arco</option>
-                                    <option value="besta">Besta</option>
-                                    <option value="pistola">Pistola</option>
-                                    <option value="revolver">Revólver</option>
-                                    <option value="fuzil_de_caca">Fuzil de caça</option>
-                                    <option value="machadinha">Machadinha</option>
-                                    <option value="nunchaku">Nunchaku</option>
-                                    <option value="corrente">Corrente</option>
-                                    <option value="espada">Espada</option>
-                                    <option value="florete">Florete</option>
-                                    <option value="machado">Machado</option>
-                                    <option value="marreta">Marreta</option>
-                                    <option value="acha">Acha</option>
-                                    <option value="gadanho">Gadanho</option>
-                                    <option value="katana">Katana</option>
-                                    <option value="montante">Montante</option>
-                                    <option value="moto_serra">Moto-serra</option>
-                                    <option value="arco_composto">Arco composto</option>
-                                    <option value="balestra">Balestra</option>
-                                    <option value="submetralhadora">Submetralhadora</option>
-                                    <option value="espingarda">Espingarda</option>
-                                    <option value="fuzil_de_assalto">Fuzil de assalto</option>
-                                    <option value="fuzil_de_precisão">Fuzil de precisão</option>
-                                    <option value="bazuca">Bazuca</option>
-                                    <option value="lanca_chamas">Lança-chamas</option>
-                                    <option value="metralhadora">Metralhadora</option>
+                            <?php
+                                if(!empty($arma)) {
+                                    foreach ($arma as $qual) {
+                            ?>
+                            <option value="<?php echo $qual['id_equipamentos']; ?>"><?php echo $qual['nome_equipamento']; ?></option>
+                            <?php
+                                }}
+                            ?>
                             </select>
                         </div>
                         <div class="valor_2">
                             <label>TIPO</label>
-                            <input type="number" min="0" max="100" class="dano">
+                            <textarea type="number" min="0" max="100" class="dano"></textarea>
                         </div>
                         <div class="valor_2">
                             <label class="menor">CATEGORIA</label>
-                            <input type="number" min="0" max="100" class="dano">
+                            <textarea type="number" min="0" max="100" class="dano"></textarea>
                         </div>
                         <div class="valor_2">
                             <label>ALCANCE</label>
-                            <input type="number" min="0" max="100" class="dano">
+                            <textarea type="number" min="0" max="100" class="dano"></textarea>
                         </div>
                         <div class="valor_2">
                             <label>DANO</label>
-                            <input type="number" min="0" max="100" class="dano">
+                            <textarea type="number" min="0" max="100" class="dano"></textarea>
                         </div>
                         <div class="valor_2">
                             <label>CRÍTICO</label>
-                            <input type="number" min="0" max="100" class="dano">
+                            <textarea type="number" min="0" max="100" class="dano"></textarea>
                         </div>
                         <div class="valor_2">
                             <label class="menor">MUNIÇÃO ATUAL</label>
-                            <input type="number" min="0" max="100" class="dano4" name="municao_atual">
+                            <?php
+                                if(!empty($qual_atual)) {
+                                    foreach ($qual_atual as $qual) {
+                            ?>
+                            <textarea type="number" min="0" max="100" class="dano" name="municao_atual"><?php echo $qual['municao_atual']; ?></textarea>
+                            <?php
+                                    }
+                                }
+                            ?>
                         </div>
                         <div class="valor_2">
                             <label class="menor">MUNIÇÃO TOTAL</label>
-                            <input type="number" min="0" max="100" class="dano4">
+                            <textarea type="number" min="0" max="100" class="dano"></textarea>
                         </div>
                     </div>
             </div>
 
 
+        <?php
+            if(!empty($qual_prof)) {
+                foreach ($qual_prof as $qual) {
+        ?>
         <div class="proficiencias">
             <label class="escrito">PROFICIÊNCIAS</label>
-            <textarea cols="30" rows="5" class="espaco direita prof" name="proficiencias"></textarea>
+            <textarea cols="30" rows="5" class="espaco direita prof" name="proficiencias"><?php echo $qual['escrito']; ?></textarea>
         </div>
-
+        <?php
+                }
+            }
+        ?>
+        <?php
+            if(!empty($qual_ataqedef)) {
+                foreach ($qual_ataqedef as $qual) {
+        ?>
         <div class="ataques_e_defesas">
                 <label class="escrito">ATAQUES E DEFESAS DETALHADOS</label>
-                <textarea cols="30" rows="5" class="espaco meio at" name="ataquesedefesas"></textarea>
+                <textarea cols="30" rows="5" class="espaco meio at" name="ataquesedefesas" ><?php echo $qual['escrito']; ?></textarea>
         </div>
-
+        <?php
+                }
+            }
+        ?>
+        <?php
+            if(!empty($qual_inv)) {
+                foreach ($qual_inv as $qual) {
+        ?>
         <div class="inventario">
                 <label class="escrito">INVENTÁRIO</label>
-                <textarea cols="30" rows="5" class="espaco direita inv" name="inventario"></textarea>
+                <textarea cols="30" rows="5" class="espaco direita inv" name="inventario"><?php echo $qual['escrito']; ?></textarea>
         </div>
-
+        <?php
+                }
+            }
+        ?>
+        <?php
+            if(!empty($qual_habil)) {
+                foreach ($qual_habil as $qual) {
+        ?>
         <div class="habilidades">
                 <label class="escrito">HABILIDADES</label>
-                <textarea cols="30" rows="5" class="espaco esquerda hab" name="habilidades"></textarea>
+                <textarea cols="30" rows="5" class="espaco esquerda hab" name="habilidades"><?php echo $qual['escrito']; ?></textarea>
         </div>
-
+        <?php
+                }
+            }
+        ?>
+        <?php
+            if(!empty($qual_ritconh)) {
+                foreach ($qual_ritconh as $qual) {
+        ?>
         <div class="rituais">
                 <label class="escrito">RITUAIS CONHECIDOS</label>
-                <textarea cols="30" rows="5" class="espaco meio at" name="rituais"></textarea>
+                <textarea cols="30" rows="5" class="espaco meio at" name="rituais"><?php echo $qual['escrito']; ?></textarea>
         </div>
-
+        <?php
+                }
+            }
+        ?>
+        <?php
+            if(!empty($qual_hist)) {
+                foreach ($qual_hist as $qual) {
+        ?>
         <div class="historico">
                 <label class="escrito">HISTÓRICO</label>
-                <textarea cols="30" rows="5" class="espaco direita his" name="historico"></textarea>
+                <textarea cols="30" rows="5" class="espaco direita his" name="historico"><?php echo $qual['escrito']; ?></textarea>
         </div>
+        <?php
+                }
+            }
+        ?>
     </form>
 </body>
+<script>
+    function Selecionado(codigo)
+    {
+        window.open("filtro.php?codigo=" + codigo,"_self");
+    }
+</script>
 </html>

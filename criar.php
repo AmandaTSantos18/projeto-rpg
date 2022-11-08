@@ -89,12 +89,13 @@
         /* INSERIR ATUAL -------------------------------------------------- */
         include("conexao.php");
 
-        $comando = $pdo -> prepare("INSERT INTO atual(vida_atual,sanidade_atual,esforco_atual,municao_atual,fk_personagem)
-                                    VALUES (:vida_atual,:sanidade_atual,:esforco_atual,:municao_atual,:fk_personagem)");
+        $comando = $pdo -> prepare("INSERT INTO atual(vida_atual,sanidade_atual,esforco_atual,municao_atual,deslocamento,fk_personagem)
+                                    VALUES (:vida_atual,:sanidade_atual,:esforco_atual,:municao_atual,:deslocamento,:fk_personagem)");
         $comando->bindValue(":vida_atual",$primeiro);
         $comando->bindValue(":sanidade_atual",$primeiro);
         $comando->bindValue(":esforco_atual",$primeiro);
         $comando->bindValue(":municao_atual",$primeiro);
+        $comando->bindValue(":deslocamento",$primeiro);
         $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
         $comando->execute();
         unset($comando);
@@ -193,6 +194,21 @@
         $comando->execute();
         unset($comando);
         unset($pdo);
+
+        /* INSERIR PERICIAS --- ADESTRAMENTO -------------------------------------------------- */
+/*         include("conexao.php");
+
+        $comando = $pdo -> prepare("INSERT INTO pericias (nome_pericia, valor1, valor2, soma) VALUES (:nome_pericia, :valor1, :valor2, :soma, :fk_personagem)");
+        $comando->bindValue(":nome_pericia","Adestramento");
+        $comando->bindValue(":valor1",$primeiro);
+        $comando->bindValue(":valor2",$primeiro);
+        $comando->bindValue(":soma",$primeiro);
+        $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
+        $comando->execute();
+        unset($comando);
+        unset($pdo); */
+
+
         if($_SESSION['is_adm'] == 1)
         {
             unset($comando);

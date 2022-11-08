@@ -44,7 +44,7 @@
 
     /* PROCURANDO ATUAL */
     include("conexao.php");
-    $comando = $pdo -> prepare("SELECT vida_atual, sanidade_atual, esforco_atual, municao_atual FROM atual WHERE fk_personagem = :fk_personagem");
+    $comando = $pdo -> prepare("SELECT vida_atual, sanidade_atual, esforco_atual, municao_atual, deslocamento FROM atual WHERE fk_personagem = :fk_personagem");
     $comando->bindValue(":fk_personagem", $id);
     $comando -> execute();
 

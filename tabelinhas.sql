@@ -329,6 +329,7 @@ create table atual
     sanidade_atual int NOT NULL DEFAULT 0,
     esforco_atual int NOT NULL DEFAULT 0,
     municao_atual int NOT NULL DEFAULT 0,
+    deslocamento int NOT NULL DEFAULT 0,
     fk_personagem int,
     CONSTRAINT fk_atual_personagem FOREIGN KEY (fk_personagem) REFERENCES personagem (id_personagem)
 );
