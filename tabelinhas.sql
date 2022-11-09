@@ -262,35 +262,6 @@ create table pericias(
     CONSTRAINT fk_pericias_personagem FOREIGN KEY (fk_personagem) REFERENCES personagem (id_personagem)
 );
 
-insert into pericias(nome_pericia) values
-	("Adestramento"),
-	("Atletismo"),
-	("Atuação"),
-	("Atualidades"),
-	("Ciência"),
-	("Condução"),
-	("Diplomacia"),
-	("Enganação"),
-	("Fortitude"),
-	("Furtividade"),
-	("Intimidação"),
-	("Intuição"),
-	("Investigação"),
-	("Jogatina"),
-	("Luta"),
-	("Medicina"),
-	("Ocultismo"),
-	("Percepção"),
-	("Pilotagem"),
-	("Pontaria"),
-	("Prestidigitação"),
-	("Profissão"),
-	("Reflexos"),
-	("Religião"),
-	("Tática"),
-	("Tecnologia"),
-	("Vontade");
-
 create table defesas(
 	id_defesas int not null auto_increment primary key,
 	passiva int NOT NULL DEFAULT 0,
