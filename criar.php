@@ -196,8 +196,7 @@
         unset($pdo);
 
        
-        $i = 0;  //Aqui você seta a variavel i para fazer a conta da quantidade de parcelas criadas
-
+        $i = 0;
         $array = array("Adestramento", "Atletismo", "Atuação", "Atualidades");
 
         while($i < 26) 
@@ -215,24 +214,9 @@
             $comando->execute();
             unset($comando);
             unset($pdo);
-        // aqui você coloca o script para gerar 1 boleto
-        $i++; // aqui é para aumentar o valor de $i, assim quando chegar no $i = 24, para de gerar novos boletos.
+        $i++; 
             }
         }
-
-        /* INSERIR PERICIAS --- ADESTRAMENTO -------------------------------------------------- */
-/*         include("conexao.php");
-
-        $comando = $pdo -> prepare("INSERT INTO pericias (nome_pericia, valor1, valor2, soma) VALUES (:nome_pericia, :valor1, :valor2, :soma, :fk_personagem)");
-        $comando->bindValue(":nome_pericia","Adestramento");
-        $comando->bindValue(":valor1",$primeiro);
-        $comando->bindValue(":valor2",$primeiro);
-        $comando->bindValue(":soma",$primeiro);
-        $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
-        $comando->execute();
-        unset($comando);
-        unset($pdo); */
-
 
         if($_SESSION['is_adm'] == 1)
         {

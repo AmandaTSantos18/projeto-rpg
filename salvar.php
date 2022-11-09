@@ -215,6 +215,29 @@
         unset($comando);
         unset($pdo);
 
+        /* INSERIR RESISTENCIAS A DANO -------------------------------------------------- */
+        $i = 0;
+        $array = array("Adestramento", "Atletismo", "Atuação", "Atualidades", "Ciência");
+
+        while($i < 26) 
+        {
+            foreach ($array as $a) {
+            include("conexao.php");
+            $comando = $pdo -> prepare("INSERT INTO pericias (nome_pericia, valor1, valor2, soma, fk_personagem) VALUES (:nome_pericia, :valor1, :valor2, :soma, :fk_personagem)");
+            
+            
+            $comando->bindValue(":nome_pericia",$a);
+            $comando->bindValue(":valor1",$primeiro);
+            $comando->bindValue(":valor2",$primeiro);
+            $comando->bindValue(":soma",$primeiro);
+            $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
+            $comando->execute();
+            unset($comando);
+            unset($pdo);
+            $i++; 
+            }
+        }
+
 
 
         if($_SESSION['is_adm'] == 1)
