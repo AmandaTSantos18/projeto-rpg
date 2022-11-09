@@ -35,10 +35,10 @@
             </div>
         </a>
 
-        <select class="epadrao" id="qual" name="qual">
-            <option value="div1">SEUS PERSONAGENS</option>
-            <option value="div2">PERSONAGENS PADRÃO</option>
-        </select>
+
+        <a href="tela5listapadrao.php">
+            <div class="epadrao">PERSONAGENS PADRÃO</div>
+        </a>
 
         <table>
         <tbody>

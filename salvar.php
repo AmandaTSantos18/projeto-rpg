@@ -215,27 +215,28 @@
         unset($comando);
         unset($pdo);
 
-        /* INSERIR RESISTENCIAS A DANO -------------------------------------------------- */
+        /* INSERIR PERICIAS -------------------------------------------------- */
         $i = 0;
-        $array = array("Adestramento", "Atletismo", "Atuação", "Atualidades", "Ciência");
-
+        
         while($i < 26) 
         {
-            foreach ($array as $a) {
             include("conexao.php");
-            $comando = $pdo -> prepare("INSERT INTO pericias (nome_pericia, valor1, valor2, soma, fk_personagem) VALUES (:nome_pericia, :valor1, :valor2, :soma, :fk_personagem)");
-            
-            
-            $comando->bindValue(":nome_pericia",$a);
-            $comando->bindValue(":valor1",$primeiro);
-            $comando->bindValue(":valor2",$primeiro);
-            $comando->bindValue(":soma",$primeiro);
+            $valor1 = $_POST["valor1"];
+            $valor2 = $_POST["valor2"];
+            $soma = $valor1 + $valor2;
+            echo($valor1 + "," + $valor1  + "," + $soma);
+            die();
+            $comando = $pdo -> prepare("UPDATE pericias SET valor1=:valor1, valor2=:valor2, soma=:soma WHERE fk_personagem=:fk_personagem AND id_pericia=:id_pericia)");
+
+            $comando->bindValue(":id_pericia",$i);
+            $comando->bindValue(":valor1",$valor1);
+            $comando->bindValue(":valor2",$valor2);
+            $comando->bindValue(":soma",$soma);
             $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
             $comando->execute();
             unset($comando);
             unset($pdo);
             $i++; 
-            }
         }
 
 

@@ -140,11 +140,11 @@
                     foreach ($lista_pericias as $linha) { ?>
                         <div class="peri">
                             <label class="nome_pericia"><?php echo $linha['nome_pericia']; ?></label>
-                            <input class="dano2" value="<?php echo $linha['valor1']; ?>">
+                            <input class="dano2" value="<?php echo $linha['valor1']; ?>" name="valor1">
                             <img src="img/soma.png" id="soma">
-                            <input class="dano2" value="<?php echo $linha['valor2']; ?>">
+                            <input class="dano2" value="<?php echo $linha['valor2']; ?>" name="valor2">
                             <img src="img/igual.png" id="soma">
-                            <input class="dano2" value="<?php echo $linha['soma']; ?>">
+                            <label class="dano2"><?php echo $linha['soma']; ?></label>
                     </div>
                 <?php } 
                 }

@@ -15,6 +15,7 @@ body
 
 .conteudo
 {
+    width: 1560px;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -88,9 +89,13 @@ a
 .epadrao
 {
     width: 220px;
-    height: 30px;
-    margin-left: -780px;
-    margin-bottom: 5px;
+    height: 20px;
+    position: absolute;
+    left: 280px;
+    top: 240px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border: solid black 3px;
     border-radius: 5px;
     background: linear-gradient(rgba(207, 131, 131, 1) , rgba(217, 217, 217, 0.3));

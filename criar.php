@@ -213,7 +213,7 @@
             $comando->execute();
             unset($comando);
             unset($pdo);
-        $i++; 
+            $i++; 
             }
         }
 
