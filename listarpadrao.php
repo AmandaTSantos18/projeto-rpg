@@ -7,7 +7,7 @@
 
     if($comando->rowCount() >= 1)
     {
-        $lista_padrao = $comando->fetchAll();
+        $padrao = $comando->fetchAll();
     }else{
         echo("Não há personagens criados.");
     }

@@ -2,17 +2,15 @@
     include("conexao.php");
 
     session_start();
-    //comando sql.
     $id = $_SESSION['id_usuario'];
-    $comando = $pdo->prepare("SELECT id_personagem, nome, jogador FROM personagem WHERE fk_usuario=$id;");
-    //executa a consulta no banco de dados.
+
+    $comando = $pdo->prepare("SELECT id_personagem, nome, jogador FROM personagem WHERE fk_usuario=:fk_usuario;");
+    $comando->bindValue(":fk_usuario", $id);
     $comando->execute();
 
-    //Verifica se existe pelo menos um registro na tabela.
     if($comando->rowCount() >= 1)
     {
-        //o fetch() transforma o retorno em uma matriz (Use quando você para um registro ou mais, ou seja, uma ou múltiplas linhas da tabela).
-        $lista_personagens = $comando->fetchAll();
+        $personagens = $comando->fetchAll();
     }else{
         echo("Não há personagens criados.");
     }

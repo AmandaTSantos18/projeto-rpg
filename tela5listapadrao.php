@@ -43,25 +43,13 @@
         <table>
         <tbody>
                 <?php
-                include("listar.php");
-                if (!empty($personagens)) {
-                    foreach ($personagens as $linha) { ?>
+                include("listarpadrao.php");
+                if (!empty($padrao)) {
+                    foreach ($padrao as $linha) { ?>
                         
                         <tr class="personagem">
                             <td class="id"> <?php echo ($linha['id_personagem']); ?></td>
                             <td class="nome"> <?php echo ($linha['nome']); ?></td>
-                            <td class="jogador"> <?php echo ($linha['jogador']); ?></td>
-
-                            <td class="delete"> 
-                                <a href="deletar.php?id=<?php echo($linha['id_personagem']);?>">
-                                    <img src="img/excluir.png" width="40px" height="40px">
-                                </a>
-                            </td>
-                            <td class="btalt">
-                                <a href="ficha.php?id=<?php echo($linha['id_personagem']);?>">
-                                    <input type="button" class="alterar" value="ALTERAR">
-                                </a>
-                            </td>
                         </tr>
                 <?php } 
                 }
