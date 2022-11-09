@@ -197,8 +197,7 @@
 
        
         $i = 0;
-        $array = array("Adestramento", "Atletismo", "Atuação", "Atualidades");
-
+        $array = array("Adestramento", "Atletismo", "Atuação", "Atualidades", "Ciência", "Condução", "Diplomacia", "Enganação", "Fortitude", "Furtividade", "Intimidação", "Intuição", "Investigação", "Jogatina", "Luta", "Medicina", "Ocultismo", "Percepção", "Pilotagem", "Pontaria", "Prestidigitação", "Profissão", "Reflexos", "Religião", "Tática", "Tecnologia", "Vontade");
         while($i < 26) 
         {
             foreach ($array as $a) {
