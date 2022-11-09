@@ -166,13 +166,14 @@ h3
 {
     position: absolute;
     top: 5800px;
-    width: 100%;
+    left: 10px;
+    width: 95%;
 }
 
 #imgesp
 {
     position: absolute;
-    left: 1130px;
+    left: 1095px;
     top: 720px;
 }
 
@@ -267,11 +268,11 @@ a
     font-size: 23px;
 }
 
-#oap
+#aop
 {
     width: 915px;
     position: absolute;
-    left: 630px;
+    left: 590px;
     top: 703px;
 }
 
