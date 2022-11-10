@@ -64,8 +64,8 @@
     unset($comando);
     unset($pdo);
 
-    include("conexao.php");
-    /* PROCURANDO TRILHA  */
+/*     include("conexao.php");
+    PROCURANDO TRILHA
 
     $fk_classe=$_GET["codigo"];
     function trilha_por_classe($fk_classe){
@@ -79,7 +79,7 @@
             $trilhas = $comando->fetchAll();
         }
         unset($comando);
-        unset($pdo);
+        unset($pdo); */
 
     }
 ?>
