@@ -56,7 +56,7 @@
 
             <div class="categoria">
                 <label class="info">CLASSE:</label>
-                <select class="espacinho ori" name="classe" >
+                <select class="espacinho ori" name="classe">
                 <?php 
                 include("filtro.php");
                     if(!empty($classes)) {
@@ -139,19 +139,18 @@
                 include("listarpericias.php");
                 if (!empty($lista_pericias)) {
                     $i=1;
-                    while($i < 26) 
+                    while($i < 27) 
                     {
-                    foreach ($lista_pericias as $linha) { 
-                        $i++;?>
+                    foreach ($lista_pericias as $linha) { ?>
                         <div class="peri">
                             <label class="nome_pericia"><?php echo $linha['nome_pericia']; ?></label>
-                            <input class="dano2" value="<?php echo $linha['valor1']; ?>" name="<?php$i?>">
+                            <input class="dano2" value="<?php echo $linha['valor1']; ?>" name="valor<?php$i?>">
                             <img src="img/soma.png" id="soma">
-                            <input class="dano2" value="<?php echo $linha['valor2']; ?>" name="<?php$i?>">
+                            <input class="dano2" value="<?php echo $linha['valor2']; ?>" name="valor1<?php$i+1?>">
                             <img src="img/igual.png" id="soma">
                             <label class="dano2"><?php echo $linha['soma']; ?></label>
                     </div>
-                <?php } 
+                <?php $i++;} 
                     }
                 }
                 ?>

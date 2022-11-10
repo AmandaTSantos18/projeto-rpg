@@ -10,8 +10,8 @@
         $personagem = $_POST["personagem"];
         $jogador = $_POST["jogador"];
         $origem = $_POST["origem"];
-        $classe = $_POST["classe"];
-        $trilha = $_POST["trilha"];
+        $classe = $_POST["classe"];/* 
+        $trilha = $_POST["trilha"]; */
         $elemento = $_POST["elemento"];
         $patente = $_POST["patente"];
         $xp = $_POST["xp"];
@@ -19,11 +19,11 @@
 
         if($_SESSION['is_adm'] > 0)
         {
-            $comando = $pdo -> prepare("UPDATE personagem SET nome=:nome, fk_origem=:fk_origem, fk_classe=:fk_classe, fk_trilha=:fk_trilha, fk_elemento=:fk_elemento, fk_patente=:fk_patente, xp=:xp, pm=:pm WHERE id_personagem=:id_personagem");
+            $comando = $pdo -> prepare("UPDATE personagem SET nome=:nome, fk_origem=:fk_origem, fk_classe=:fk_classe/* , fk_trilha=:fk_trilha */, fk_elemento=:fk_elemento, fk_patente=:fk_patente, xp=:xp, pm=:pm WHERE id_personagem=:id_personagem");
             $comando->bindValue(":nome",$personagem);
             $comando->bindValue(":fk_origem",$origem);
-            $comando->bindValue(":fk_classe",$classe);
-            $comando->bindValue(":fk_trilha",$trilha);
+            $comando->bindValue(":fk_classe",$classe);/* 
+            $comando->bindValue(":fk_trilha",$trilha); */
             $comando->bindValue(":fk_elemento",$elemento);
             $comando->bindValue(":fk_patente",$patente);
             $comando->bindValue(":xp",$xp);
@@ -216,30 +216,24 @@
         unset($pdo);
 
         /* INSERIR PERICIAS -------------------------------------------------- */
-        $i = 0;
-        
-        while($i < 26) 
-        {
-            include("conexao.php");
-            $valor1 = $_POST["valor1"];
-            $valor2 = $_POST["valor2"];
-            $soma = $valor1 + $valor2;
-            echo($valor1 + "," + $valor1  + "," + $soma);
-            die();
-            $comando = $pdo -> prepare("UPDATE pericias SET valor1=:valor1, valor2=:valor2, soma=:soma WHERE fk_personagem=:fk_personagem AND id_pericia=:id_pericia)");
+        include("conexao.php");
+        $valor1 = $_POST["valor1"];
+        $valor2 = $_POST["valor12"];
+        $soma = $valor1 + $valor2;
+        echo($valor1 + "," + $valor1  + "," + $soma);
+        die();
+        $comando = $pdo -> prepare("UPDATE pericias SET valor1=:valor1, valor2=:valor2, soma=:soma WHERE fk_personagem=:fk_personagem AND id_pericia=:id_pericia)");
 
-            $comando->bindValue(":id_pericia",$i);
-            $comando->bindValue(":valor1",$valor1);
-            $comando->bindValue(":valor2",$valor2);
-            $comando->bindValue(":soma",$soma);
-            $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
-            $comando->execute();
-            unset($comando);
-            unset($pdo);
-            $i++; 
+        $comando->bindValue(":id_pericia",$i);
+        $comando->bindValue(":valor1",$valor1);
+        $comando->bindValue(":valor2",$valor2);
+        $comando->bindValue(":soma",$soma);
+        $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
+        $comando->execute();
+        unset($comando);
+        unset($pdo);
+        $i++; 
         }
-
-
 
         if($_SESSION['is_adm'] == 1)
         {
