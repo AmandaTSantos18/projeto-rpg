@@ -10,7 +10,6 @@
     <link href='https://fonts.googleapis.com/css?family=Paprika' rel='stylesheet'>
 </head>
 <body>
-
         <a href="config.php"><img src="img/configuracoes.png" id="config"></a>
         <a href="descricoes.html"><img src="img/izinho.png" id="izinho"></a>
 
@@ -57,7 +56,7 @@
 
             <div class="categoria">
                 <label class="info">CLASSE:</label>
-                <select class="espacinho ori" name="classe" onchange="Selecionado(<?php echo $qual['id_classe']; ?>);">
+                <select class="espacinho ori" name="classe" onchange="">
                 <?php 
                 include("filtro.php");
                     if(!empty($classes)) {
@@ -76,6 +75,7 @@
                 <select class="espacinho tri" name="trilha">
                     <?php 
                     include("filtro.php");
+                    $trilhas = trilha_por_classe();
                         if(!empty($trilhas)) {
                             foreach ($trilhas as $qual) {
                     ?>
@@ -138,16 +138,21 @@
               <?php
                 include("listarpericias.php");
                 if (!empty($lista_pericias)) {
-                    foreach ($lista_pericias as $linha) { ?>
+                    $i=1;
+                    while($i < 26) 
+                    {
+                    foreach ($lista_pericias as $linha) { 
+                        $i++;?>
                         <div class="peri">
                             <label class="nome_pericia"><?php echo $linha['nome_pericia']; ?></label>
-                            <input class="dano2" value="<?php echo $linha['valor1']; ?>" name="valor1">
+                            <input class="dano2" value="<?php echo $linha['valor1']; ?>" name="<?php$i?>">
                             <img src="img/soma.png" id="soma">
-                            <input class="dano2" value="<?php echo $linha['valor2']; ?>" name="valor2">
+                            <input class="dano2" value="<?php echo $linha['valor2']; ?>" name="<?php$i?>">
                             <img src="img/igual.png" id="soma">
                             <label class="dano2"><?php echo $linha['soma']; ?></label>
                     </div>
                 <?php } 
+                    }
                 }
                 ?>
             </div>
@@ -447,10 +452,4 @@
         ?>
     </form>
 </body>
-<script>
-    function Selecionado(codigo)
-    {
-        window.open("filtro.php?codigo=" + codigo,"_self");
-    }
-</script>
 </html>

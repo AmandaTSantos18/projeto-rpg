@@ -25,25 +25,57 @@
         <div class="tudo">
             <div class="opcaonome">
                 <label class="info">NOME DO EQUIPAMENTO</label>
+                <?php 
+                include("qualequip.php");
+                    if(!empty($equipamento)) {
+                        foreach ($equipamento as $qual) {
+                ?>
                     <input type="text" class="nome" name="nome">
+                <?php
+                    }
+                }
+                ?>
             </div>
 
                 <div class="opcoes">
                     <div class="um">
-                        <label class="info num">ID</label>
-                            <input type="number" class="valor" name="id">
-                    </div>
-                    <div class="um">
                         <label class="info num">DANO</label>
+                        <?php 
+                        include("qualequip.php");
+                            if(!empty($equipamento)) {
+                                foreach ($equipamento as $qual) {
+                        ?>
                             <input type="text" class="valor" name="dano">
+                            <?php
+                    }
+                }
+                ?>
                     </div>
                     <div class="um">
                         <label class="info num">CRÍTICO</label>
+                        <?php 
+                        include("qualequip.php");
+                            if(!empty($equipamento)) {
+                                foreach ($equipamento as $qual) {
+                        ?>
                             <input type="text" class="valor" name="critico">
+                        <?php
+                            }
+                        }
+                        ?>
                     </div>
                     <div class="um">
                         <label class="info num">ESPAÇO</label>
+                        <?php 
+                        include("qualequip.php");
+                            if(!empty($equipamento)) {
+                                foreach ($equipamento as $qual) {
+                        ?>
                             <input type="number" class="valor" name="espaco">
+                        <?php
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
                 <div class="opcoes2">
@@ -89,47 +121,6 @@
                     </div> 
                 </div>              
             </div>
-        </form>
-
-        <table class="lista">
-        <tbody>
-        <div>
-                <?php
-                include("listarequip.php");
-                
-                //verifica se a variável tem os valores da tabela.
-                if (!empty($lista_equipamentos)) {
-                    //seleciona linha por linha.
-                    foreach ($lista_equipamentos as $linha) { ?>
-                        <tr class="equipamento">
-                            <td class="id"> <?php echo $linha['id_equipamentos']; ?></td>
-                            <td class="nome_equip"> <?php echo $linha['nome_equipamento']; ?></td>
-                            <td class="dano"> <?php echo $linha['dano']; ?></td>
-                            <td class="critico"> <?php echo $linha['critico']; ?></td>
-                            <td class="tipo"> <?php echo $linha['fk_tipo']; ?></td>
-                            <td class="categoria"> <?php echo $linha['fk_categoria']; ?></td>
-                            <td class="alcance"> <?php echo $linha['fk_alcance']; ?></td>
-                            <td class="municao"> <?php echo $linha['fk_municao']; ?></td>
-                            <td class="espaco"> <?php echo $linha['espaco']; ?></td>
-
-                            <td class="btalt">
-                                <a href="alterarequip.php?id=<?php echo($linha['id_equipamentos']);?>">
-                                    <input type="button" class="alterar" value="ALTERAR">
-                                </a>
-                            </td>
-                            <td class="delete"> 
-                                <a href="excluirequip.php?id=<?php echo($linha['id_equipamentos']);?>">
-                                    <img src="img/excluir.png" width="40px" height="40px">
-                                </a>
-                            </td>
-                           <!--  https://blog.betrybe.com/javascript/javascript-alert/ -->
-                        </tr>
-                <?php } 
-                }
-                ?>
-            </div>
-        </tbody>
-        </table>
     </form>
 </body>
 </html>

@@ -15,7 +15,7 @@
 
 
     //comando sql.
-    $comando = $pdo->prepare("UPDATE equipamentos SET nome = :nome, dano = :dano, critico = :critico, espaco = :espaco, fk_tipo = :fk_tipo, fk_categoria = :fk_categoria, fk_alcance = :fk_alcance, fk_municao = :fk_municao WHERE id_equipamentos = :id_equipamentos;");
+    $comando = $pdo->prepare("UPDATE equipamentos SET nome_equipamento = :nome, dano = :dano, critico = :critico, espaco = :espaco, fk_tipo = :fk_tipo, fk_categoria = :fk_categoria, fk_alcance = :fk_alcance, fk_municao = :fk_municao WHERE id_equipamentos = :id_equipamentos;");
 
     //insere valores das variaveis no comando sql.
     $comando->bindValue(":id_equipamentos",$id);

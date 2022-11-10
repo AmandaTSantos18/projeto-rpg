@@ -25,5 +25,5 @@
     $comando->execute();
     unset($comando);
     unset($pdo);
-    header("location:criarequipamento.php");
+    header("location:listaequipadm.php");
 ?>

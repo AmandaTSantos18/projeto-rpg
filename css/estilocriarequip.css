@@ -90,9 +90,9 @@ a
     border-color: black;
     border-width: 2px;
     border-radius: 3px;
-    width: 1530px;
-    height: 380px;
-    padding: 20px;
+    width: 1565px;
+    height: 580px;
+    padding: 150px 20px 0px 0px;
 }
 
 .opcaonome
@@ -164,7 +164,7 @@ a
     padding: 30px;
     flex-wrap: wrap;
     position: absolute;
-    top: 115px;
+    top: 246px;
     left: 550px;
 }
 

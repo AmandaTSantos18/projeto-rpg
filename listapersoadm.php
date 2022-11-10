@@ -35,6 +35,10 @@
             </div>
         </a>
 
+        <a href="listaequipadm.php">
+            <div class="epadrao">EQUIPAMENTOS</div>
+        </a>
+
         <table>
         <tbody>
         <div id="lista">
@@ -57,7 +61,7 @@
                                 </a>
                             </td>
                             <td class="btalt">
-                                <a href="fichaadm.php?id=<?php echo($linha['id_personagem']);?>">
+                                <a href="selectedalt.php?id=<?php echo($linha['id_personagem']);?>">
                                     <input type="button" class="alterar" value="ALTERAR">
                                 </a>
                             </td>

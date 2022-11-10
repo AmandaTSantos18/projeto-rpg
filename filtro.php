@@ -25,21 +25,6 @@
     unset($comando);
     unset($pdo);
 
-    /* PROCURANDO TRILHA */
-    include("conexao.php");
-
-    $fk_classe=$_GET["codigo"];
-    $comando=$pdo->prepare("SELECT nome_trilha, id_trilha FROM trilha WHERE fk_classe=:fk_classe");
-    $comando->bindValue(":fk_classe", $fk_classe);
-    $comando->execute();
-
-    if($comando->rowCount() >= 1)
-    {
-        $trilhas = $comando->fetchAll();
-    }
-    unset($comando);
-    unset($pdo);
-
     /* PROCURANDO ELEMENTO */
     include("conexao.php");
 
@@ -78,4 +63,23 @@
     }
     unset($comando);
     unset($pdo);
+
+    include("conexao.php");
+    /* PROCURANDO TRILHA */
+
+    $fk_classe=$_GET["codigo"];
+    function trilha_por_classe($fk_classe){
+        
+        $comando=$pdo->prepare("SELECT nome_trilha, id_trilha FROM trilha WHERE fk_classe=:fk_classe");
+        $comando->bindValue(":fk_classe", $fk_classe);
+        $comando->execute();
+
+        if($comando->rowCount() >= 1)
+        {
+            $trilhas = $comando->fetchAll();
+        }
+        unset($comando);
+        unset($pdo);
+
+    }
 ?>
