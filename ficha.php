@@ -56,7 +56,7 @@
 
             <div class="categoria">
                 <label class="info">CLASSE:</label>
-                <select class="espacinho ori" name="classe" onchange="">
+                <select class="espacinho ori" name="classe" >
                 <?php 
                 include("filtro.php");
                     if(!empty($classes)) {
@@ -452,4 +452,10 @@
         ?>
     </form>
 </body>
+<script>
+    function Selecionado(classe){
+    var URL = document.form.site.options[document.form.site.selectedIndex].value;
+    window.open(URL);
+}
+</script>
 </html>
