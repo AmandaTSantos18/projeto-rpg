@@ -10,7 +10,12 @@
     <link href='https://fonts.googleapis.com/css?family=Paprika' rel='stylesheet'>
 </head>
 <body>
-
+    <?php
+        include("conexao.php");
+        session_start();
+        $_SESSION['id_personagem'] = $_GET["id"];
+        $_SESSION['selected'] = true;
+    ?>
         <a href="configadm.php"><img src="img/configuracoes.png" id="config"></a>
 
         <a href="criarequipamento.php" id="criar">

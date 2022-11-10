@@ -58,7 +58,7 @@
                                 </a>
                             </td>
                             <td class="btalt">
-                                <a href="ficha.php?id=<?php echo($linha['id_personagem']);?>">
+                                <a href="selectedalt.php?id=<?php echo($linha['id_personagem']);?>">
                                     <input type="button" class="alterar" value="ALTERAR">
                                 </a>
                             </td>

@@ -10,6 +10,7 @@
     <link href='https://fonts.googleapis.com/css?family=Paprika' rel='stylesheet'>
 </head>
 <body>
+
         <a href="config.php"><img src="img/configuracoes.png" id="config"></a>
         <a href="descricoes.html"><img src="img/izinho.png" id="izinho"></a>
 

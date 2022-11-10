@@ -42,9 +42,9 @@
                 include("listar.php");
                 
                 //verifica se a variável tem os valores da tabela.
-                if (!empty($lista_personagens)) {
+                if (!empty($personagens)) {
                     //seleciona linha por linha.
-                    foreach ($lista_personagens as $linha) { ?>
+                    foreach ($personagens as $linha) { ?>
                         
                         <tr class="personagem">
                             <td class="id"> <?php echo $linha['id_personagem']; ?></td>
