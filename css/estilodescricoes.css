@@ -360,3 +360,11 @@ a
     top: 71px;
     width: 300px;
 }
+
+.linhahorizontal
+{
+    background-color: black;
+    width: 1560px;
+    height: 3px;
+    margin-bottom: 20px;
+}

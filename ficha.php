@@ -46,7 +46,7 @@
                     if(!empty($origens)) {
                         foreach ($origens as $qual) {
                 ?>
-                    <option value="<?php echo $qual['id_origem']; ?>"> <?php echo $qual['nome_origem']; ?></option>
+                    <option value="<?php echo$qual['id_origem']; ?>"> <?php echo$qual['nome_origem'];?></option>
                 <?php
                         }
                     }
@@ -56,13 +56,13 @@
 
             <div class="categoria">
                 <label class="info">CLASSE:</label>
-                <select class="espacinho ori" name="classe">
+                <select class="espacinho ori" name="classe" onchange="">
                 <?php 
                 include("filtro.php");
                     if(!empty($classes)) {
                         foreach ($classes as $qual) {
                 ?>
-                    <option value="<?php echo $qual['id_classe']; ?>"> <?php echo $qual['nome_classe']; ?></option>
+                    <option value="<?php echo $qual['id_classe']; ?>"> <?php echo $qual['nome_classe'];?></option>
                 <?php
                         }
                     }
