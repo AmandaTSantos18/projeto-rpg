@@ -56,7 +56,7 @@
 
             <div class="categoria">
                 <label class="info">CLASSE:</label>
-                <select class="espacinho ori" name="classe" onchange="">
+                <select class="espacinho ori" name="classe" onchange="trilha()">
                 <?php 
                 include("filtro.php");
                     if(!empty($classes)) {
@@ -452,9 +452,8 @@
     </form>
 </body>
 <script>
-    function Selecionado(classe){
-    var URL = document.form.site.options[document.form.site.selectedIndex].value;
-    window.open(URL);
-}
+function trilha(cod_trilha){
+        window.open("filtro.php");
+    }
 </script>
 </html>
