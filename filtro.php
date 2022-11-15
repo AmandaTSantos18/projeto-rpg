@@ -66,8 +66,17 @@
 
     /* PROCURANDO TRILHA */
     include("conexao.php");
-    /*
-    $fk_classe=$_GET["codigo"];
+    $comando=$pdo->prepare("SELECT * FROM trilha");
+    $comando->execute();
+
+    if($comando->rowCount() >= 1)
+    {
+        $trilhas = $comando->fetchAll();
+    }
+    unset($comando);
+    unset($pdo);
+    
+/*     $fk_classe=$_GET["cod_trilha"];
     function trilha_por_classe($fk_classe){
         
         $comando=$pdo->prepare("SELECT * FROM trilha WHERE fk_classe=:fk_classe");
@@ -81,5 +90,5 @@
         unset($comando);
         unset($pdo);
 
-    }*/
+    } */
 ?>

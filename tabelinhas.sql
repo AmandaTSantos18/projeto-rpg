@@ -21,6 +21,7 @@ create table trilha(
 );
 
  insert into trilha(nome_trilha, fk_classe)values
+    ("Nenhuma", 1),
     ("Aniquilador", 2),
     ("Comandante de campo", 2),
     ("Guerreiro", 2),

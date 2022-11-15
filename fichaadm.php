@@ -18,8 +18,6 @@
 
         <label class="principal">CRIAR PERSONAGEM</label>
 
-
-        <a href="descricoes.html"><img src="img/izinho.png" id="izinho"></a>
         <form action="salvar.php" method="post" target="_blank">
         <input type="submit" class="salvar" value="SALVAR"> 
 

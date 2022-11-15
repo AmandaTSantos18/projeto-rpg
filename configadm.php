@@ -22,7 +22,7 @@
 <body>
     
 <div class="menu">
-        <a href="ficha.php" id="voltar"><img src="img/voltar.png"></a>
+        <a href="ficha.php" id="voltar" onclick="Fechar();"><img src="img/voltar.png"></a>
         <h1>CONFIGURAÇÕES DE CONTA</h1>
 
                     <form action="alterar.php" method="POST" class="form">
@@ -46,4 +46,10 @@
 
     </div>
 </body>
+<script>
+    function Fechar()
+    {
+        window.close();
+    }
+</script>
 </html>

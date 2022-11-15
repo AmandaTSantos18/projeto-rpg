@@ -10,20 +10,37 @@
         $personagem = $_POST["personagem"];
         $jogador = $_POST["jogador"];
         $origem = $_POST["origem"];
-        $classe = $_POST["classe"];/* 
-        $trilha = $_POST["trilha"]; */
+        $classe = $_POST["classe"]; 
+        $trilha = $_POST["trilha"]; 
         $elemento = $_POST["elemento"];
         $patente = $_POST["patente"];
         $xp = $_POST["xp"];
         $pm = $_POST["pm"];
 
-        if($_SESSION['is_adm'] > 0)
+        $comando = $pdo -> prepare("SELECT id_personagem FROM personagem WHERE nome = :nome AND fk_usuario = :fk_usuario");
+        $comando->bindValue(":nome",$personagem);
+        $comando->bindValue(":fk_usuario", $_SESSION['id_usuario']);
+        $comando->execute();
+
+        if($comando->rowCount() >=1)
         {
-            $comando = $pdo -> prepare("UPDATE personagem SET nome=:nome, fk_origem=:fk_origem, fk_classe=:fk_classe/* , fk_trilha=:fk_trilha */, fk_elemento=:fk_elemento, fk_patente=:fk_patente, xp=:xp, pm=:pm WHERE id_personagem=:id_personagem");
+            unset($comando);
+            unset($pdo);
+            echo('<script> alert("Você já criou um personagem com esse nome.");
+            window.close();
+            </script>');
+
+        }else{
+            unset($comando);
+            unset($pdo);
+            include("conexao.php");
+            if($_SESSION['is_adm'] > 0)
+        {
+            $comando = $pdo -> prepare("UPDATE personagem SET nome=:nome, fk_origem=:fk_origem, fk_classe=:fk_classe , fk_trilha=:fk_trilha , fk_elemento=:fk_elemento, fk_patente=:fk_patente, xp=:xp, pm=:pm WHERE id_personagem=:id_personagem");
             $comando->bindValue(":nome",$personagem);
             $comando->bindValue(":fk_origem",$origem);
-            $comando->bindValue(":fk_classe",$classe);/* 
-            $comando->bindValue(":fk_trilha",$trilha); */
+            $comando->bindValue(":fk_classe",$classe);
+            $comando->bindValue(":fk_trilha",$trilha);
             $comando->bindValue(":fk_elemento",$elemento);
             $comando->bindValue(":fk_patente",$patente);
             $comando->bindValue(":xp",$xp);
@@ -216,15 +233,21 @@
         unset($pdo);
 
         /* INSERIR PERICIAS -------------------------------------------------- */
-        include("conexao.php");
-        $valor1 = $_POST["valor1"];
-        $valor2 = $_POST["valor12"];
-        $soma = $valor1 + $valor2;
-        echo($valor1 + "," + $valor1  + "," + $soma);
-        die();
-        $comando = $pdo -> prepare("UPDATE pericias SET valor1=:valor1, valor2=:valor2, soma=:soma WHERE fk_personagem=:fk_personagem AND id_pericia=:id_pericia)");
+/*         include("conexao.php");
 
-        $comando->bindValue(":id_pericia",$i);
+        $i = 0;
+        $array = array("Adestramento", "Atletismo", "Atuação", "Atualidades", "Ciência", "Condução", "Diplomacia", "Enganação", "Fortitude", "Furtividade", "Intimidação", "Intuição", "Investigação", "Jogatina", "Luta", "Medicina", "Ocultismo", "Percepção", "Pilotagem", "Pontaria", "Prestidigitação", "Profissão", "Reflexos", "Religião", "Tática", "Tecnologia", "Vontade");
+        while($i < 26){
+        foreach($array as $a){
+        
+        $valor1 = $_POST["valor$i"];
+        $valor2 = $_POST["valor1$i"];
+        $soma = $valor1 + $valor2;
+        echo($valor1 + "," + $valor2  + "," + $soma);
+        die();
+        $comando = $pdo -> prepare("UPDATE pericias SET valor1=:valor1, valor2=:valor2, soma=:soma WHERE fk_personagem=:fk_personagem AND nome_pericia=:nome_pericia");
+
+        $comando->bindValue(":nome_pericia",$a);
         $comando->bindValue(":valor1",$valor1);
         $comando->bindValue(":valor2",$valor2);
         $comando->bindValue(":soma",$soma);
@@ -233,7 +256,9 @@
         unset($comando);
         unset($pdo);
         $i++; 
-        }
+            }
+        } */
+        
 
         if($_SESSION['is_adm'] == 1)
         {
@@ -243,5 +268,5 @@
             $_SESSION['selected'] = false;
             header("location: tela4lista.php");
         }
-
+        }
     }

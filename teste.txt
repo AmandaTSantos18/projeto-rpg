@@ -1,0 +1,13 @@
+drop database app;
+
+                    <?php 
+                    include("filtro.php");
+                    $trilhas = trilha_por_classe();
+                        if(!empty($trilhas)) {
+                            foreach ($trilhas as $qual) {
+                    ?>
+                    <option value="<?php echo $qual['id_trilha']; ?>"><?php echo $qual['nome_trilha']; ?></option>
+                    <?php
+                            }
+                        }
+                    ?>

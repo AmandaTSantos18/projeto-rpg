@@ -10,8 +10,8 @@
     <link href='https://fonts.googleapis.com/css?family=Paprika' rel='stylesheet'>
 </head>
 <body>
-        <a href="config.php"><img src="img/configuracoes.png" id="config"></a>
-        <a href="descricoes.html"><img src="img/izinho.png" id="izinho"></a>
+        <a href="config.php" target="_blank"><img src="img/configuracoes.png" id="config"></a>
+        <a href="descricoes.html" target="_blank"><img src="img/izinho.png" id="izinho"></a>
 
         <form action="salvar.php" method="post" target="_blank">
         <input type="submit" class="salvar" value="SALVAR"> 
@@ -73,17 +73,14 @@
             <div class="categoria">
                 <label class="info">TRILHA:</label>
                 <select class="espacinho tri" name="trilha">
-                    <?php 
+                <?php 
                     include("filtro.php");
-                    $trilhas = trilha_por_classe();
                         if(!empty($trilhas)) {
                             foreach ($trilhas as $qual) {
                     ?>
                     <option value="<?php echo $qual['id_trilha']; ?>"><?php echo $qual['nome_trilha']; ?></option>
-                    <?php
-                            }
-                        }
-                    ?>
+                <?php
+                    }}?>
                 </select>
             </div>
 
@@ -138,18 +135,18 @@
               <?php
                 include("listarpericias.php");
                 if (!empty($lista_pericias)) {
-                    $i=1;
-                    while($i < 27) 
+                    $i=0;
+                    while($i < 26) 
                     {
                     foreach ($lista_pericias as $linha) { ?>
                         <div class="peri">
                             <label class="nome_pericia"><?php echo $linha['nome_pericia']; ?></label>
-                            <input class="dano2" value="<?php echo $linha['valor1']; ?>" name="valor<?php$i?>">
+                            <input type="number" class="dano2" value="<?php echo $linha['valor1']; ?>" name="valor<?php$i?>" id="num1" onblur="calcular();">
                             <img src="img/soma.png" id="soma">
-                            <input class="dano2" value="<?php echo $linha['valor2']; ?>" name="valor1<?php$i+1?>">
+                            <input type="number" class="dano2" value="<?php echo $linha['valor2']; ?>" name="valor1<?php$i?>" id="num2" onblur="calcular();">
                             <img src="img/igual.png" id="soma">
-                            <label class="dano2"><?php echo $linha['soma']; ?></label>
-                    </div>
+                            <label type="number" class="dano2" id="resultado" name="soma<?php$i?>"><?php echo $linha['soma']; ?></label>
+                        </div>
                 <?php $i++;} 
                     }
                 }
@@ -452,8 +449,15 @@
     </form>
 </body>
 <script>
-function trilha(cod_trilha){
-        window.open("filtro.php");
+    function trilha(cod_trilha){
+            window.open("filtro.php?");
+        }
+
+    function calcular() {
+    var valor1 = parseInt(document.getElementById('num1').value);
+    var valor2 = parseInt(document.getElementById('num2').value);
+    document.getElementById('resultado').value = valor1 + valor2;
+
     }
 </script>
 </html>
