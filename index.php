@@ -23,6 +23,7 @@
         session_abort();
         session_start();
         $_SESSION['loggedin'] = false;
+        $_SESSION['id_usuario'] = null;
     ?>
     <img src="img/logo.png" id="logo">
 

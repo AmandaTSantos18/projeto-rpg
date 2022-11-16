@@ -23,15 +23,15 @@
     
         include("conexao.php");
         $comando = $pdo -> prepare("DELETE FROM pericias WHERE fk_personagem=:fk_personagem");
-        $comando->bindValue(":fk_personagem", $id);
+        $comando->bindValue(":fk_personagem", $id['id_personagem']);
         $comando->execute();
     
         unset($comando);
         unset($pdo);
     
-       /*  include("conexao.php");
+        include("conexao.php");
         $comando = $pdo -> prepare("DELETE FROM atributos WHERE fk_personagem=:fk_personagem");
-        $comando->bindValue(":fk_personagem", $id);
+        $comando->bindValue(":fk_personagem", $id['id_personagem']);
         $comando->execute();
     
         unset($comando);
@@ -39,7 +39,7 @@
         
         include("conexao.php");
         $comando = $pdo -> prepare("DELETE FROM defesas WHERE fk_personagem=:fk_personagem");
-        $comando->bindValue(":fk_personagem", $id);
+        $comando->bindValue(":fk_personagem", $id['id_personagem']);
         $comando->execute();
     
         unset($comando);
@@ -47,7 +47,7 @@
     
         include("conexao.php");
         $comando = $pdo -> prepare("DELETE FROM saude WHERE fk_personagem=:fk_personagem");
-        $comando->bindValue(":fk_personagem", $id);
+        $comando->bindValue(":fk_personagem", $id['id_personagem']);
         $comando->execute();
     
         unset($comando);
@@ -55,7 +55,7 @@
     
         include("conexao.php");
         $comando = $pdo -> prepare("DELETE FROM resistencias_a_dano WHERE fk_personagem=:fk_personagem");
-        $comando->bindValue(":fk_personagem", $id);
+        $comando->bindValue(":fk_personagem", $id['id_personagem']);
         $comando->execute();
     
         unset($comando);
@@ -63,7 +63,7 @@
     
         include("conexao.php");
         $comando = $pdo -> prepare("DELETE FROM atual WHERE fk_personagem=:fk_personagem");
-        $comando->bindValue(":fk_personagem", $id);
+        $comando->bindValue(":fk_personagem", $id['id_personagem']);
         $comando->execute();
     
         unset($comando);
@@ -71,7 +71,7 @@
     
         include("conexao.php");
         $comando = $pdo -> prepare("DELETE FROM textos WHERE fk_personagem=:fk_personagem");
-        $comando->bindValue(":fk_personagem", $id);
+        $comando->bindValue(":fk_personagem", $id['id_personagem']);
         $comando->execute();
     
         unset($comando);
@@ -79,11 +79,11 @@
     
         include("conexao.php");
         $comando = $pdo -> prepare("DELETE FROM personagem WHERE id_personagem=:fk_personagem");
-        $comando->bindValue(":fk_personagem", $id);
+        $comando->bindValue(":fk_personagem", $id['id_personagem']);
         $comando->execute();
     
         unset($comando);
-        unset($pdo); */
+        unset($pdo);
 
         $quantidade--;
     }}
