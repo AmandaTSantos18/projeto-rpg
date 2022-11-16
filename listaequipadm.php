@@ -46,9 +46,7 @@
                 <?php
                 include("listarequip.php");
                 
-                //verifica se a variável tem os valores da tabela.
                 if (!empty($lista_equipamentos)) {
-                    //seleciona linha por linha.
                     foreach ($lista_equipamentos as $linha) { ?>
                         <tr class="equipamento">
                             <td class="id"> <?php echo $linha['id_equipamentos']; ?></td>
@@ -71,7 +69,6 @@
                                     <img src="img/excluir.png" width="40px" height="40px">
                                 </a>
                             </td>
-                           <!--  https://blog.betrybe.com/javascript/javascript-alert/ -->
                         </tr>
                 <?php } 
                 }

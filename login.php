@@ -21,7 +21,6 @@
             $_SESSION['is_adm'] = $resultado['is_adm'];
             $_SESSION['loggedin'] = true;
 
-            //verifica se o usuario conectado é administrador para mostrar a mensagem.
             if ($resultado['is_adm'] == 1) {
             header("location: listapersoadm.php");
             }

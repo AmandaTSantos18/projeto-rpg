@@ -45,15 +45,12 @@
                 <?php
                 include("listar.php");
                 
-                //verifica se a variável tem os valores da tabela.
                 if (!empty($personagens)) {
-                    //seleciona linha por linha.
                     foreach ($personagens as $linha) { ?>
                         
                         <tr class="personagem">
                             <td class="id"> <?php echo $linha['id_personagem']; ?></td>
                             <td class="nome"> <?php echo $linha['nome']; ?></td>
-                            <td class="jogador"> <?php echo $linha['jogador']; ?></td>
 
                             <td class="delete"> 
                                 <a href="deletar.php?id=<?php echo($linha['id_personagem']);?>">

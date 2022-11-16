@@ -37,7 +37,7 @@
         }
         ?>
 
-<div class="categoria">
+        <div class="categoria">
                 <label class="info">ORIGEM:</label>
                 <select class="espacinho ori" name="origem">
                 <option
