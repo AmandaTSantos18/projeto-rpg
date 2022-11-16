@@ -233,7 +233,7 @@
         unset($pdo);
 
         /* INSERIR PERICIAS -------------------------------------------------- */
-/*         include("conexao.php");
+        include("conexao.php");
 
         $i = 0;
         $array = array("Adestramento", "Atletismo", "Atuação", "Atualidades", "Ciência", "Condução", "Diplomacia", "Enganação", "Fortitude", "Furtividade", "Intimidação", "Intuição", "Investigação", "Jogatina", "Luta", "Medicina", "Ocultismo", "Percepção", "Pilotagem", "Pontaria", "Prestidigitação", "Profissão", "Reflexos", "Religião", "Tática", "Tecnologia", "Vontade");
@@ -243,7 +243,8 @@
         $valor1 = $_POST["valor$i"];
         $valor2 = $_POST["valor1$i"];
         $soma = $valor1 + $valor2;
-        echo($valor1 + "," + $valor2  + "," + $soma);
+
+        echo("$valor1, $valor2, $soma");
         die();
         $comando = $pdo -> prepare("UPDATE pericias SET valor1=:valor1, valor2=:valor2, soma=:soma WHERE fk_personagem=:fk_personagem AND nome_pericia=:nome_pericia");
 
@@ -257,7 +258,7 @@
         unset($pdo);
         $i++; 
             }
-        } */
+        } 
         
 
         if($_SESSION['is_adm'] == 1)

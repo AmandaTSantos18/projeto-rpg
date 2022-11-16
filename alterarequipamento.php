@@ -10,6 +10,12 @@
     <link href='https://fonts.googleapis.com/css?family=Paprika' rel='stylesheet'>
 </head>
 <body>
+    <?php
+        include("conexao.php");
+        session_start();
+        $_SESSION['id_equipamento'] = $_GET["id"];
+    ?>
+
            
             <a href="configadm.php"><img src="img/configuracoes.png" id="config"></a>
 
@@ -25,22 +31,57 @@
         <div class="tudo">
             <div class="opcaonome">
                 <label class="info">NOME DO EQUIPAMENTO</label>
-                    <input type="text" class="nome" name="nome">
+                <?php 
+                include("qualequip.php");
+                    if(!empty($equipamento)) {
+                        foreach ($equipamento as $qual) {
+                ?>
+                    <input type="text" class="nome" name="nome" value="<?php echo $qual['nome_equipamento']; ?>">
+                <?php
+                    }
+                }
+                ?>
             </div>
 
                 <div class="opcoes">
                     <div class="um">
                         <label class="info num">DANO</label>
-                            <input type="text" class="valor" name="dano">
+                        <?php 
+                        include("qualequip.php");
+                            if(!empty($equipamento)) {
+                                foreach ($equipamento as $qual) {
+                        ?>
+                            <input type="text" class="valor" name="dano" value="<?php echo $qual['dano']; ?>>
+                            <?php
+                    }
+                }
+                ?>
                     </div>
                     <div class="um">
                         <label class="info num">CRÍTICO</label>
+                        <?php 
+                        include("qualequip.php");
+                            if(!empty($equipamento)) {
+                                foreach ($equipamento as $qual) {
+                        ?>
                             <input type="text" class="valor" name="critico">
+                        <?php
+                            }
+                        }
+                        ?>
                     </div>
                     <div class="um">
                         <label class="info num">ESPAÇO</label>
+                        <?php 
+                        include("qualequip.php");
+                            if(!empty($equipamento)) {
+                                foreach ($equipamento as $qual) {
+                        ?>
                             <input type="number" class="valor" name="espaco">
-
+                        <?php
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
                 <div class="opcoes2">

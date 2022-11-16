@@ -61,7 +61,7 @@
                             <td class="espaco"> <?php echo $linha['espaco']; ?></td>
 
                             <td class="btalt">
-                                <a href="alterarequip.php?id=<?php echo($linha['id_equipamentos']);?>">
+                                <a href="alterarequipamento.php?id=<?php echo($linha['id_equipamentos']);?>">
                                     <input type="button" class="alterar" value="ALTERAR">
                                 </a>
                             </td>

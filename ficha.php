@@ -56,7 +56,7 @@
 
             <div class="categoria">
                 <label class="info">CLASSE:</label>
-                <select class="espacinho ori" name="classe" onchange="trilha()">
+                <select class="espacinho ori" name="classe">
                 <?php 
                 include("filtro.php");
                     if(!empty($classes)) {
@@ -141,11 +141,11 @@
                     foreach ($lista_pericias as $linha) { ?>
                         <div class="peri">
                             <label class="nome_pericia"><?php echo $linha['nome_pericia']; ?></label>
-                            <input type="number" class="dano2" value="<?php echo $linha['valor1']; ?>" name="valor<?php$i?>" id="num1" onblur="calcular();">
+                            <input type="text" class="dano2" value="<?php echo $linha['valor1']; ?>" name="valor<?php$i?>">
                             <img src="img/soma.png" id="soma">
-                            <input type="number" class="dano2" value="<?php echo $linha['valor2']; ?>" name="valor1<?php$i?>" id="num2" onblur="calcular();">
+                            <input type="text" class="dano2" value="<?php echo $linha['valor2']; ?>" name="valor1<?php$i?>">
                             <img src="img/igual.png" id="soma">
-                            <label type="number" class="dano2" id="resultado" name="soma<?php$i?>"><?php echo $linha['soma']; ?></label>
+                            <label type="text" class="dano2" id="resultado" name="soma<?php$i?>"><?php echo $linha['soma']; ?></label>
                         </div>
                 <?php $i++;} 
                     }
@@ -448,16 +448,4 @@
         ?>
     </form>
 </body>
-<script>
-    function trilha(cod_trilha){
-            window.open("filtro.php?");
-        }
-
-    function calcular() {
-    var valor1 = parseInt(document.getElementById('num1').value);
-    var valor2 = parseInt(document.getElementById('num2').value);
-    document.getElementById('resultado').value = valor1 + valor2;
-
-    }
-</script>
 </html>

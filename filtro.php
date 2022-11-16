@@ -76,7 +76,7 @@
     unset($comando);
     unset($pdo);
     
-/*     $fk_classe=$_GET["cod_trilha"];
+/*     $fk_classe=$_GET["codigo"];
     function trilha_por_classe($fk_classe){
         
         $comando=$pdo->prepare("SELECT * FROM trilha WHERE fk_classe=:fk_classe");
