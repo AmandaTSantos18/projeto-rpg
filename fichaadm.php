@@ -433,7 +433,7 @@
                     <div class="tipos">
                         <div class="valor_2">
                             <label>ARMA</label>
-                            <select class="dano_arma" onchange="Mudar();">
+                            <select class="dano_arma">
                             <?php
                                 if(!empty($arma)) {
                                     foreach ($arma as $qual) {

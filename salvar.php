@@ -7,8 +7,8 @@
     {
         /* INSERIR PERSONAGEM -------------------------------------------------- */
         include("conexao.php");
-        $personagem = $_POST["personagem"];
         $jogador = $_POST["jogador"];
+        $personagem = $_POST["personagem"];
         $origem = $_POST["origem"];
         $classe = $_POST["classe"]; 
         $trilha = $_POST["trilha"]; 
@@ -34,7 +34,7 @@
             unset($comando);
             unset($pdo);
             include("conexao.php");
-            if($_SESSION['is_adm'] > 0)
+            if($_SESSION['is_adm'] == 1)
         {
             $comando = $pdo -> prepare("UPDATE personagem SET nome=:nome, fk_origem=:fk_origem, fk_classe=:fk_classe , fk_trilha=:fk_trilha , fk_elemento=:fk_elemento, fk_patente=:fk_patente, xp=:xp, pm=:pm WHERE id_personagem=:id_personagem");
             $comando->bindValue(":nome",$personagem);
@@ -231,35 +231,6 @@
         $comando->execute();
         unset($comando);
         unset($pdo);
-
-        /* INSERIR PERICIAS -------------------------------------------------- */
-/*         include("conexao.php");
-
-        $i = 0;
-        $array = array("Adestramento", "Atletismo", "Atuação", "Atualidades", "Ciência", "Condução", "Diplomacia", "Enganação", "Fortitude", "Furtividade", "Intimidação", "Intuição", "Investigação", "Jogatina", "Luta", "Medicina", "Ocultismo", "Percepção", "Pilotagem", "Pontaria", "Prestidigitação", "Profissão", "Reflexos", "Religião", "Tática", "Tecnologia", "Vontade");
-        while($i < 26){
-        foreach($array as $a){
-        
-        $valor1 = $_POST["valor$i"];
-        $valor2 = $_POST["valor1$i"];
-        $soma = $valor1 + $valor2;
-
-        echo("$valor1, $valor2, $soma");
-        die();
-        $comando = $pdo -> prepare("UPDATE pericias SET valor1=:valor1, valor2=:valor2, soma=:soma WHERE fk_personagem=:fk_personagem AND nome_pericia=:nome_pericia");
-
-        $comando->bindValue(":nome_pericia",$a);
-        $comando->bindValue(":valor1",$valor1);
-        $comando->bindValue(":valor2",$valor2);
-        $comando->bindValue(":soma",$soma);
-        $comando->bindValue(":fk_personagem",$_SESSION['id_personagem']); 
-        $comando->execute();
-        unset($comando);
-        unset($pdo);
-        $i++; 
-            }
-        }  */
-        
 
         if($_SESSION['is_adm'] == 1)
         {

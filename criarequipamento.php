@@ -47,11 +47,11 @@
                     <div class="um">
                         <label class="info">TIPO</label>
                         <select class="selecao" name="tipo">
-                            <option value="1">CORTE</option>
-                            <option value="2">IMPACTO</option>
-                            <option value="3">PERFURAÇÃO</option>
-                            <option value="4">BALÍSTICO</option>
-                            <option value="5">FOGO</option>
+                            <option value="1">Corte</option>
+                            <option value="2">Impacto</option>
+                            <option value="3">Perfuração</option>
+                            <option value="4">Balístico</option>
+                            <option value="5">Fogo</option>
                         </select>                    
                     </div>
                     <div class="um">
@@ -67,21 +67,21 @@
                     <div class="um">
                         <label class="info">ALCANCE</label>
                         <select class="selecao" name="alcance">
-                            <option value="1">CURTO</option>
-                            <option value="2">MÉDIO</option>
-                            <option value="3">LONGO</option>
-                            <option value="4">EXTREMO</option>
+                            <option value="1">Curto</option>
+                            <option value="2">Médio</option>
+                            <option value="3">Longo</option>
+                            <option value="4">Extremo</option>
                         </select>                    
                     </div>
                     <div class="um">
                         <label class="info">MUNIÇÃO</label>
                         <select class="selecao" name="municao">
-                            <option value="1">FLECHAS</option>
-                            <option value="2">BALAS LEVES</option>
-                            <option value="3">BALAS PESADAS</option>
-                            <option value="4">CARTUCHOS</option>
-                            <option value="5">FOGUETES</option>
-                            <option value="6">COMBUSTÍVEL</option>
+                            <option value="1">Flechas</option>
+                            <option value="2">Balas Leves</option>
+                            <option value="3">Balas Pesadas</option>
+                            <option value="4">Cartuchos</option>
+                            <option value="5">Foguetes</option>
+                            <option value="6">Combustível</option>
                         </select>     
                     </div> 
                 </div>              
