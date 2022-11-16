@@ -18,7 +18,9 @@
     unset($comando);
     unset($pdo);
 
-    while ($quantidade > 0){
+    $i = 0;
+
+    while ($i <> $quantidade){
     foreach ($personagens as $id) {
     
         include("conexao.php");
@@ -78,14 +80,14 @@
         unset($pdo);
     
         include("conexao.php");
-        $comando = $pdo -> prepare("DELETE FROM personagem WHERE id_personagem=:fk_personagem");
-        $comando->bindValue(":fk_personagem", $id['id_personagem']);
+        $comando = $pdo -> prepare("DELETE FROM personagem WHERE id_personagem=:id_personagem");
+        $comando->bindValue(":id_personagem", $id['id_personagem']);
         $comando->execute();
     
         unset($comando);
         unset($pdo);
 
-        $quantidade--;
+        $i++;
     }}
 
     include("conexao.php");

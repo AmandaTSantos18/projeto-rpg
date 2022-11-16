@@ -23,7 +23,7 @@
                     <button type="submit" class="criarqual"> PERSONAGEM </button>
             </a>
 
-        <form action="salvarequip.php" method="post"> 
+        <form action="alterarequip.php" method="post"> 
             <label class="principal">CRIAR EQUIPAMENTO</label>
 
             <button type="submit" class="salvar"> SALVAR </button>
@@ -51,7 +51,7 @@
                             if(!empty($equipamento)) {
                                 foreach ($equipamento as $qual) {
                         ?>
-                            <input type="text" class="valor" name="dano" value="<?php echo $qual['dano']; ?>
+                            <input type="text" class="valor" name="dano" value="<?php echo $qual['dano']; ?>">
                             <?php
                     }
                 }
@@ -64,7 +64,7 @@
                             if(!empty($equipamento)) {
                                 foreach ($equipamento as $qual) {
                         ?>
-                            <input type="text" class="valor" name="critico">
+                            <input type="text" class="valor" name="critico" value="<?php echo $qual['critico']; ?>">
                         <?php
                             }
                         }
@@ -77,7 +77,7 @@
                             if(!empty($equipamento)) {
                                 foreach ($equipamento as $qual) {
                         ?>
-                            <input type="number" class="valor" name="espaco">
+                            <input type="number" class="valor" name="espaco" value="<?php echo $qual['espaco']; ?>">
                         <?php
                             }
                         }
@@ -88,17 +88,58 @@
                     <div class="um">
                         <label class="info">TIPO</label>
                         <select class="selecao" name="tipo">
-                            <option value="">CORTE</option>
-                            <option value="1">CORTE</option>
-                            <option value="2">IMPACTO</option>
-                            <option value="3">PERFURAÇÃO</option>
-                            <option value="4">BALÍSTICO</option>
-                            <option value="5">FOGO</option>
+                            <option
+                            <?php 
+                            include("qualequip.php");
+                                if(!empty($equipamento)) {
+                                    foreach ($equipamento as $qual) {
+                            ?> value="<?php echo $qual['fk_tipo']; ?>"
+                            <?php
+                                }
+                            }
+                            ?>>
+                            
+                            <?php 
+                            include("qualequip.php");
+                                if(!empty($tipo)) {
+                                    foreach ($tipo as $qual) {
+                            ?><?php echo $qual['nome_tipo']; ?>
+                            <?php
+                                }
+                            }
+                            ?>
+                            </option>
+                            <option value="1">Corte</option>
+                            <option value="2">Impacto</option>
+                            <option value="3">Perfuração</option>
+                            <option value="4">Balístico</option>
+                            <option value="5">Fogo</option>
                         </select>                    
                     </div>
                     <div class="um">
                         <label class="info">CATEGORIA</label>
                         <select class="selecao" name="categoria">
+                            <option
+                            <?php 
+                            include("qualequip.php");
+                                if(!empty($equipamento)) {
+                                    foreach ($equipamento as $qual) {
+                            ?> value="<?php echo $qual['fk_categoria']; ?>"
+                            <?php
+                                }
+                            }
+                            ?>>
+                            
+                            <?php 
+                            include("qualequip.php");
+                                if(!empty($categorias)) {
+                                    foreach ($categorias as $qual) {
+                            ?><?php echo $qual['nome_categoria']; ?>
+                            <?php
+                                }
+                            }
+                            ?>
+                            </option>
                             <option value="1">0</option>
                             <option value="2">I</option>
                             <option value="3">II</option>
@@ -109,21 +150,63 @@
                     <div class="um">
                         <label class="info">ALCANCE</label>
                         <select class="selecao" name="alcance">
-                            <option value="1">CURTO</option>
-                            <option value="2">MÉDIO</option>
-                            <option value="3">LONGO</option>
-                            <option value="4">EXTREMO</option>
+                        <option
+                            <?php 
+                            include("qualequip.php");
+                                if(!empty($equipamento)) {
+                                    foreach ($equipamento as $qual) {
+                            ?> value="<?php echo $qual['fk_alcance']; ?>"
+                            <?php
+                                }
+                            }
+                            ?>>
+                            
+                            <?php 
+                            include("qualequip.php");
+                                if(!empty($alcance)) {
+                                    foreach ($alcance as $qual) {
+                            ?><?php echo $qual['distancia']; ?>
+                            <?php
+                                }
+                            }
+                            ?>
+                            </option>
+                            <option value="1">Curto</option>
+                            <option value="2">Médio</option>
+                            <option value="3">Longo</option>
+                            <option value="4">Extremo</option>
                         </select>                    
                     </div>
                     <div class="um">
                         <label class="info">MUNIÇÃO</label>
                         <select class="selecao" name="municao">
-                            <option value="1">FLECHAS</option>
-                            <option value="2">BALAS LEVES</option>
-                            <option value="3">BALAS PESADAS</option>
-                            <option value="4">CARTUCHOS</option>
-                            <option value="5">FOGUETES</option>
-                            <option value="6">COMBUSTÍVEL</option>
+                            <option
+                            <?php 
+                            include("qualequip.php");
+                                if(!empty($equipamento)) {
+                                    foreach ($equipamento as $qual) {
+                            ?> value="<?php echo $qual['fk_municao']; ?>"
+                            <?php
+                                }
+                            }
+                            ?>>
+                            
+                            <?php 
+                            include("qualequip.php");
+                                if(!empty($municao)) {
+                                    foreach ($municao as $qual) {
+                            ?><?php echo $qual['nome_municao']; ?>
+                            <?php
+                                }
+                            }
+                            ?>
+                            </option>
+                            <option value="1">Flechas</option>
+                            <option value="2">Balas Leves</option>
+                            <option value="3">Balas Pesadas</option>
+                            <option value="4">Cartuchos</option>
+                            <option value="5">Foguetes</option>
+                            <option value="6">Combustível</option>
                         </select>     
                     </div> 
                 </div>              

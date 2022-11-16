@@ -233,7 +233,7 @@
         unset($pdo);
 
         /* INSERIR PERICIAS -------------------------------------------------- */
-        include("conexao.php");
+/*         include("conexao.php");
 
         $i = 0;
         $array = array("Adestramento", "Atletismo", "Atuação", "Atualidades", "Ciência", "Condução", "Diplomacia", "Enganação", "Fortitude", "Furtividade", "Intimidação", "Intuição", "Investigação", "Jogatina", "Luta", "Medicina", "Ocultismo", "Percepção", "Pilotagem", "Pontaria", "Prestidigitação", "Profissão", "Reflexos", "Religião", "Tática", "Tecnologia", "Vontade");
@@ -258,7 +258,7 @@
         unset($pdo);
         $i++; 
             }
-        } 
+        }  */
         
 
         if($_SESSION['is_adm'] == 1)

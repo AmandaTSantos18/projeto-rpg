@@ -114,10 +114,10 @@ create table categorias(
 
 insert into categorias(nome_categoria) values
     ("0"),
-	("1"),
-    ("2"),
-    ("3"),
-    ("4");
+	("I"),
+    ("II"),
+    ("III"),
+    ("IV");
 
 create table municao(
 	id_municao int not null auto_increment primary key,

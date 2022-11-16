@@ -1,10 +1,7 @@
 <?php
     include("conexao.php");
 
-    $id = $_GET["id"];
     $nome = $_POST["nome"];
-    print_r($nome);
-    die();
     $dano = $_POST["dano"];
     $critico = $_POST["critico"];
     $espaco = $_POST["espaco"];
@@ -14,11 +11,10 @@
     $fk_municao = $_POST["municao"];
 
 
-    //comando sql.
-    $comando = $pdo->prepare("UPDATE equipamentos SET nome_equipamento = :nome, dano = :dano, critico = :critico, espaco = :espaco, fk_tipo = :fk_tipo, fk_categoria = :fk_categoria, fk_alcance = :fk_alcance, fk_municao = :fk_municao WHERE id_equipamentos = :id_equipamentos;");
+    $comando = $pdo->prepare("UPDATE equipamentos SET nome_equipamento = :nome, dano = :dano, critico = :critico, espaco = :espaco, fk_tipo = :fk_tipo, fk_categoria = :fk_categoria, fk_alcance = :fk_alcance, fk_municao = :fk_municao WHERE id_equipamentos = :id_equipamentos");
 
-    //insere valores das variaveis no comando sql.
-    $comando->bindValue(":id_equipamentos",$id);
+    session_start();
+    $comando->bindValue(":id_equipamentos",$_SESSION['id_equipamentos']);
     $comando->bindValue(":nome",$nome);
     $comando->bindValue(":dano",$dano);
     $comando->bindValue(":critico",$critico);                                     
@@ -28,12 +24,10 @@
     $comando->bindValue(":fk_alcance",$fk_alcance);    
     $comando->bindValue(":fk_municao",$fk_municao);
 
-    //executa a consulta no banco de dados.
     $comando->execute();
 
-    //Fecha declaração e conexão.
     unset($comando);
     unset($pdo);
 
-    header("location:criarequipamento.php");
+    header("location:listaequipadm.php");
 ?>

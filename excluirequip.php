@@ -6,5 +6,5 @@
     $comando = $pdo -> prepare("DELETE FROM equipamentos WHERE id_equipamentos = $id;");
     $comando -> execute();
 
-    header("location:criarequipamento.php")
+    header("location:listequipadm.php")
 ?>

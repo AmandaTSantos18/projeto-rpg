@@ -16,6 +16,71 @@
     unset($comando);
     unset($pdo);
 
+    $i = 0;
+    while ($i < 1){
+    foreach ($qual_perso as $id_p) {
+    include("conexao.php");
+    $comando = $pdo -> prepare("SELECT nome_origem FROM origem WHERE id_origem = :id_origem");
+    $comando->bindValue(":id_origem", $id_p['fk_origem']);
+    $comando->execute();
+
+    if($comando->rowCount() >= 1)
+    {
+        $origem = $comando->fetchAll();
+    }
+    unset($comando);
+    unset($pdo);
+
+    include("conexao.php");
+    $comando = $pdo -> prepare("SELECT nome_classe FROM classe WHERE id_classe = :id_classe");
+    $comando->bindValue(":id_classe", $id_p['fk_classe']);
+    $comando->execute();
+
+    if($comando->rowCount() >= 1)
+    {
+        $classe = $comando->fetchAll();
+    }
+    unset($comando);
+    unset($pdo);
+
+    include("conexao.php");
+    $comando = $pdo -> prepare("SELECT nome_trilha FROM trilha WHERE id_trilha = :id_trilha");
+    $comando->bindValue(":id_trilha", $id_p['fk_trilha']);
+    $comando->execute();
+
+    if($comando->rowCount() >= 1)
+    {
+        $trilha = $comando->fetchAll();
+    }
+    unset($comando);
+    unset($pdo);
+
+    include("conexao.php");
+    $comando = $pdo -> prepare("SELECT nome_elemento FROM elemento WHERE id_elemento = :id_elemento");
+    $comando->bindValue(":id_elemento", $id_p['fk_elemento']);
+    $comando->execute();
+
+    if($comando->rowCount() >= 1)
+    {
+        $ele = $comando->fetchAll();
+    }
+    unset($comando);
+    unset($pdo);
+
+    include("conexao.php");
+    $comando = $pdo -> prepare("SELECT nome_patente FROM patente WHERE id_patente = :id_patente");
+    $comando->bindValue(":id_patente", $id_p['fk_patente']);
+    $comando->execute();
+
+    if($comando->rowCount() >= 1)
+    {
+        $pat = $comando->fetchAll();
+    }
+    unset($comando);
+    unset($pdo);
+    $i++;
+    }}
+
     /* PROCURANDO ATRIBUTOS */
     include("conexao.php");
     $comando = $pdo -> prepare("SELECT vigor, agilidade, intelecto, presenca, forca, nex FROM atributos WHERE fk_personagem = :fk_personagem");

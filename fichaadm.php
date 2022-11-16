@@ -37,15 +37,34 @@
         }
         ?>
 
-            <div class="categoria">
+<div class="categoria">
                 <label class="info">ORIGEM:</label>
                 <select class="espacinho ori" name="origem">
+                <option
+                            <?php 
+                                if(!empty($qual_perso)) {
+                                    foreach ($qual_perso as $qual) {
+                            ?> value="<?php echo $qual['fk_origem']; ?>"
+                            <?php
+                                }
+                            }
+                            ?>>
+                            
+                            <?php 
+                                if(!empty($origem)) {
+                                    foreach ($origem as $qual) {
+                            ?><?php echo $qual['nome_origem']; ?>
+                            <?php
+                                }
+                            }
+                            ?>
+                            </option>
                 <?php 
                 include("filtro.php");
                     if(!empty($origens)) {
                         foreach ($origens as $qual) {
                 ?>
-                    <option value="<?php echo $qual['id_origem']; ?>"> <?php echo $qual['nome_origem']; ?></option>
+                    <option value="<?php echo$qual['id_origem']; ?>"> <?php echo$qual['nome_origem'];?></option>
                 <?php
                         }
                     }
@@ -55,13 +74,32 @@
 
             <div class="categoria">
                 <label class="info">CLASSE:</label>
-                <select class="espacinho ori" name="classe" onchange="Selecionado(<?php echo $qual['id_classe']; ?>);">
+                <select class="espacinho ori" name="classe">
+                            <option
+                            <?php 
+                                if(!empty($qual_perso)) {
+                                    foreach ($qual_perso as $qual) {
+                            ?> value="<?php echo $qual['fk_classe']; ?>"
+                            <?php
+                                }
+                            }
+                            ?>>
+                            
+                            <?php 
+                                if(!empty($classe)) {
+                                    foreach ($classe as $qual) {
+                            ?><?php echo $qual['nome_classe']; ?>
+                            <?php
+                                }
+                            }
+                            ?>
+                            </option>
                 <?php 
                 include("filtro.php");
                     if(!empty($classes)) {
                         foreach ($classes as $qual) {
                 ?>
-                    <option value="<?php echo $qual['id_classe']; ?>"> <?php echo $qual['nome_classe']; ?></option>
+                    <option value="<?php echo $qual['id_classe']; ?>"> <?php echo $qual['nome_classe'];?></option>
                 <?php
                         }
                     }
@@ -72,22 +110,58 @@
             <div class="categoria">
                 <label class="info">TRILHA:</label>
                 <select class="espacinho tri" name="trilha">
-                    <?php 
+                <option
+                            <?php 
+                                if(!empty($qual_perso)) {
+                                    foreach ($qual_perso as $qual) {
+                            ?> value="<?php echo $qual['fk_trilha']; ?>"
+                            <?php
+                                }
+                            }
+                            ?>>
+                            
+                            <?php 
+                                if(!empty($trilha)) {
+                                    foreach ($trilha as $qual) {
+                            ?><?php echo $qual['nome_trilha']; ?>
+                            <?php
+                                }
+                            }
+                            ?>
+                            </option>
+                <?php 
                     include("filtro.php");
                         if(!empty($trilhas)) {
                             foreach ($trilhas as $qual) {
                     ?>
                     <option value="<?php echo $qual['id_trilha']; ?>"><?php echo $qual['nome_trilha']; ?></option>
-                    <?php
-                            }
-                        }
-                    ?>
+                <?php
+                    }}?>
                 </select>
             </div>
 
             <div class="categoria">
                 <label class="info">ELEMENTO:</label>
                 <select class="espacinho ele" name="elemento" value="<?php echo $qual['fk_elemento']; ?>">
+                <option
+                            <?php 
+                                if(!empty($qual_perso)) {
+                                    foreach ($qual_perso as $qual) {
+                            ?> value="<?php echo $qual['fk_elemento']; ?>"
+                            <?php
+                                }
+                            }
+                            ?>>
+                            
+                            <?php 
+                                if(!empty($ele)) {
+                                    foreach ($ele as $qual) {
+                            ?><?php echo $qual['nome_elemento']; ?>
+                            <?php
+                                }
+                            }
+                            ?>
+                            </option>
                 <?php 
                 include("filtro.php");
                     if(!empty($elemento)) {
@@ -104,6 +178,25 @@
             <div class="categoria">
                 <label class="info">PATENTE:</label>
                     <select class="espacinho pat" name="patente" value="<?php echo $qual['fk_patente']; ?>">
+                    <option
+                            <?php 
+                                if(!empty($qual_perso)) {
+                                    foreach ($qual_perso as $qual) {
+                            ?> value="<?php echo $qual['fk_patente']; ?>"
+                            <?php
+                                }
+                            }
+                            ?>>
+                            
+                            <?php 
+                                if(!empty($pat)) {
+                                    foreach ($pat as $qual) {
+                            ?><?php echo $qual['nome_patente']; ?>
+                            <?php
+                                }
+                            }
+                            ?>
+                            </option>
                     <?php 
                     include("filtro.php");
                         if(!empty($patente)) {
@@ -119,12 +212,28 @@
 
             <div class="categoria">
                 <label class="info">XP:</label>
+                <?php 
+                    if(!empty($qual_perso)) {
+                        foreach ($qual_perso as $qual) {
+                ?>
                 <input type="number" class="espacinho pm" name="xp" value="<?php echo $qual['xp']; ?>">
+                <?php
+                    }
+                }
+                ?>
             </div>
 
             <div class="categoria">
                 <label class="info">PM:</label>
+                <?php 
+                    if(!empty($qual_perso)) {
+                        foreach ($qual_perso as $qual) {
+                ?>
                 <input type="number" class="espacinho pm" name="pm" value="<?php echo $qual['pm']; ?>">
+                <?php
+                    }
+                }
+                ?>
             </div>
         </div>
 
@@ -136,16 +245,20 @@
               <?php
                 include("listarpericias.php");
                 if (!empty($lista_pericias)) {
+                    $i=0;
+                    while($i < 26) 
+                    {
                     foreach ($lista_pericias as $linha) { ?>
                         <div class="peri">
                             <label class="nome_pericia"><?php echo $linha['nome_pericia']; ?></label>
-                            <input class="dano2" value="<?php echo $linha['valor1']; ?>" name="valor1">
+                            <input type="text" class="dano2" value="<?php echo $linha['valor1']; ?>" name="valor<?php$i?>">
                             <img src="img/soma.png" id="soma">
-                            <input class="dano2" value="<?php echo $linha['valor2']; ?>" name="valor2">
+                            <input type="text" class="dano2" value="<?php echo $linha['valor2']; ?>" name="valor1<?php$i?>">
                             <img src="img/igual.png" id="soma">
-                            <label class="dano2"><?php echo $linha['soma']; ?></label>
-                    </div>
-                <?php } 
+                            <label type="text" class="dano2" id="resultado" name="soma<?php$i?>"><?php echo $linha['soma']; ?></label>
+                        </div>
+                <?php $i++;} 
+                    }
                 }
                 ?>
             </div>
@@ -445,10 +558,4 @@
         ?>
     </form>
 </body>
-<script>
-    function Selecionado(codigo)
-    {
-        window.open("filtro.php?codigo=" + codigo,"_self");
-    }
-</script>
 </html>
