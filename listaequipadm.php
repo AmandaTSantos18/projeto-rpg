@@ -24,6 +24,7 @@
     <?php
         $_SESSION['id_personagem'] = null;
         $_SESSION['selected'] = false;
+        $_SESSION['id_equipamentos'] = null;
     ?>
 
     <div class="conteudo">

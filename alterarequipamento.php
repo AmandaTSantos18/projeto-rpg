@@ -13,7 +13,7 @@
     <?php
         include("conexao.php");
         session_start();
-        $_SESSION['id_equipamento'] = $_GET["id"];
+        $_SESSION['id_equipamentos'] = $_GET["id"];
     ?>
 
            
@@ -51,7 +51,7 @@
                             if(!empty($equipamento)) {
                                 foreach ($equipamento as $qual) {
                         ?>
-                            <input type="text" class="valor" name="dano" value="<?php echo $qual['dano']; ?>>
+                            <input type="text" class="valor" name="dano" value="<?php echo $qual['dano']; ?>
                             <?php
                     }
                 }
@@ -88,6 +88,7 @@
                     <div class="um">
                         <label class="info">TIPO</label>
                         <select class="selecao" name="tipo">
+                            <option value="">CORTE</option>
                             <option value="1">CORTE</option>
                             <option value="2">IMPACTO</option>
                             <option value="3">PERFURAÇÃO</option>
