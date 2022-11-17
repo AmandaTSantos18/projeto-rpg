@@ -26,9 +26,9 @@
     <img src="img/logo.png" id="logo">
     
     <form action="inserir.php" method="POST" class="form">
-        <input type="text" class="input" name="nome" placeholder="NOME" maxlength="50">
-        <input type="text" class="input" name="email" placeholder="E-MAIL" maxlength="50">
-        <input type="password" class="input" name="senha" placeholder="SENHA" maxlength="50">
+        <input type="text" class="input" name="nome" placeholder="NOME" maxlength="50" required>
+        <input type="text" class="input" name="email" placeholder="E-MAIL" maxlength="50" required>
+        <input type="password" class="input" name="senha" placeholder="SENHA" maxlength="50" required>
 
         <input type="submit" value="CADASTRAR" class="botao_cadastro alinhado">
     </form>

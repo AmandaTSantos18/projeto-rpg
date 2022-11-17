@@ -26,8 +26,8 @@
     <img src="img/logo.png" id="logo">
     
     <form action="login.php" method="POST" class="form">
-        <input type="text" class="input" name="email" placeholder="E-MAIL" maxlength="50">
-        <input type="password" class="input" name="senha" placeholder="SENHA" maxlength="50">
+        <input type="text" class="input" name="email" placeholder="E-MAIL" maxlength="50" required>
+        <input type="password" class="input" name="senha" placeholder="SENHA" maxlength="50" required>
 
         <input type="submit" value="LOGIN" class="botao_login alinhado">
     </form>
