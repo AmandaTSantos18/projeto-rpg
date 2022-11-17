@@ -10,11 +10,7 @@
     <link href='https://fonts.googleapis.com/css?family=Paprika' rel='stylesheet'>
 </head>
 <body>
-        <a href="configadm.php"><img src="img/configuracoes.png" id="config"></a>
-
-        <a href="criarequipamento.php" id="criar">
-            <button type="submit" class="criarqual"> EQUIPAMENTO </button>
-        </a>
+        <a href="configadm.php" target="_blank"><img src="img/configuracoes.png" id="config"></a>
 
         <label class="principal">CRIAR PERSONAGEM</label>
 
