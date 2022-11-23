@@ -19,10 +19,6 @@
            
             <a href="configadm.php"><img src="img/configuracoes.png" id="config"></a>
 
-            <a href="fichaadm.php" id="criar">
-                    <button type="submit" class="criarqual"> PERSONAGEM </button>
-            </a>
-
         <form action="alterarequip.php" method="post"> 
             <label class="principal">CRIAR EQUIPAMENTO</label>
 
